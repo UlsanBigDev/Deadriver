@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MuMovement : MonoBehaviour
 {
     private float currentSpeed = 0f;
@@ -10,8 +9,6 @@ public class MuMovement : MonoBehaviour
     private float maxSpeed = 50f;
     private float rotationSpeed = 100f;
     private Rigidbody rb;
-    private bool isAccel = false;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,7 +33,7 @@ public class MuMovement : MonoBehaviour
         else
         {
             currentSpeed -= decelSpeed * Time.deltaTime;
-            currentSpeed = Mathf.Max(currentSpeed, 0f);
+            currentSpeed = Mathf.Max(currentSpeed, 0f); // decelSpeed 로 currentSpeed 값 감소를 최대 0f 까지만 감소하게 함
         }
 
         // 자동차 앞뒤 이동
@@ -49,6 +46,5 @@ public class MuMovement : MonoBehaviour
         float rotation = h * rotationSpeed * Time.deltaTime;
         Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * deltaRotation);
-
     }
 }
