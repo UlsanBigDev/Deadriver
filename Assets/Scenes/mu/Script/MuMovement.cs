@@ -1,24 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MuMovement : MonoBehaviour
 {
-    private float currentSpeed = 0f;
+    public static float currentSpeed = 0f;
     private float accelSpeed = 2f;
     private float decelSpeed = 10f;
     private float maxSpeed = 50f;
     public static float rotationSpeed = 100f;
-    private Rigidbody rb;
-<<<<<<< HEAD
-    private bool isAccel = false;
-=======
+    public static Rigidbody rb;
 
-    public Text textText;
+    private bool isAccel = false;
+
     public int cnt;
 
->>>>>>> 8b3f3237d8da6295baf04e86d71adc57293595dc
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
