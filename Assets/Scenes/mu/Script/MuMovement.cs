@@ -10,6 +10,7 @@ public class MuMovement : MonoBehaviour
     private float maxSpeed = 50f;
     public static float rotationSpeed = 100f;
     public static Rigidbody rb;
+    private DirectionDrag directionDrag;
 
     private bool isAccel = false;
 
@@ -19,6 +20,8 @@ public class MuMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cnt = 0;
+        directionDrag = new DirectionDrag(transform); 
+
     }
     void Update()
     {
@@ -28,11 +31,8 @@ public class MuMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            if (isAccel)
-            {
                 currentSpeed += accelSpeed * Time.deltaTime;
                 currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // 최대 속도 제한
-            }
         }
         else if (Input.GetKey(KeyCode.S)) // ?????????????????? 정지상태에서 왜 후진하면 차가 뒤로 자빠지는지 모르겠음
         {
@@ -49,24 +49,7 @@ public class MuMovement : MonoBehaviour
         // 자동차 앞뒤 이동
         Vector3 movement = transform.forward * v * currentSpeed;
         // velocity 는 Rigidbody 를 통해 게임 오브젝트의 속도를 나타내는 속성임. 속도 벡터는 물체의 이동 방향과 속도를 포함함.
-        cnt++;
-        Debug.Log(cnt);
-        if (cnt > 0 && 1000 > cnt)
-        {
-            Debug.Log("1단계");
-            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
-        }
-        else if(cnt >= 1000 && 2000 > cnt) //방향키를 반대로
-        {
-            Debug.Log("2단계");
-            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
-        }else if (cnt >= 2000)//방향키를 반대로 하면서 회전속도를 높임
-        {
-            Debug.Log("3단계");
-            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
-            DirectionDrag.SpeedRotation();
-        }
-        
+        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
         // 자동차 회전
         // 쿼터니언, 오일러각
