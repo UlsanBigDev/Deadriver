@@ -9,6 +9,7 @@ public class MuMovement : MonoBehaviour
     private float maxSpeed = 50f;
     private float rotationSpeed = 100f;
     private Rigidbody rb;
+    private bool isAccel = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,8 +22,11 @@ public class MuMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            currentSpeed += accelSpeed * Time.deltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // 최대 속도 제한
+            if (isAccel)
+            {
+                currentSpeed += accelSpeed * Time.deltaTime;
+                currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // 최대 속도 제한
+            }
         }
         else if (Input.GetKey(KeyCode.S)) // ?????????????????? 정지상태에서 왜 후진하면 차가 뒤로 자빠지는지 모르겠음
         {
