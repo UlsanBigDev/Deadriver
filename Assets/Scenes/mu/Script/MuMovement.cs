@@ -11,7 +11,7 @@ public class MuMovement : MonoBehaviour
     public static float rotationSpeed = 100f;
     public static Rigidbody rb;
     private DirectionDrag directionDrag;
-
+    private PedestrianDrag pedestrianDrag;
     private bool isAccel = false;
 
     public int cnt;
@@ -20,9 +20,9 @@ public class MuMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cnt = 0;
-        directionDrag = new DirectionDrag(transform); 
-
+        directionDrag = new DirectionDrag(transform);
     }
+
     void Update()
     {
         // 수직 수평 입력값 가져오는거

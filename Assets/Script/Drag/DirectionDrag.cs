@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DirectionDrag : MonoBehaviour
+public class DirectionDrag
 {
     Vector3 movement;
     Transform current;
@@ -26,7 +26,7 @@ public class DirectionDrag : MonoBehaviour
 
     public static void SpeedRotation() //회전 속도를 더 높여줌
     {
-        MuMovement.rotationSpeed = 150F;
+        MuMovement.rotationSpeed = 200F;
     }
 
  
