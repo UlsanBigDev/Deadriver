@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class MuMovement : MonoBehaviour
 {
     private float currentSpeed = 0f;
     private float accelSpeed = 2f;
     private float decelSpeed = 10f;
     private float maxSpeed = 50f;
-    private float rotationSpeed = 100f;
+    public static float rotationSpeed = 100f;
     private Rigidbody rb;
+
+    public Text textText;
+    public int cnt;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cnt = 0;
     }
     void Update()
     {
@@ -39,7 +46,24 @@ public class MuMovement : MonoBehaviour
         // 자동차 앞뒤 이동
         Vector3 movement = transform.forward * v * currentSpeed;
         // velocity 는 Rigidbody 를 통해 게임 오브젝트의 속도를 나타내는 속성임. 속도 벡터는 물체의 이동 방향과 속도를 포함함.
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        cnt++;
+        Debug.Log(cnt);
+        if (cnt > 0 && 1000 > cnt)
+        {
+            Debug.Log("1단계");
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        }
+        else if(cnt >= 1000 && 2000 > cnt) //방향키를 반대로
+        {
+            Debug.Log("2단계");
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
+        }else if (cnt >= 2000)//방향키를 반대로 하면서 회전속도를 높임
+        {
+            Debug.Log("3단계");
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
+            DirectionDrag.SpeedRotation();
+        }
+        
 
         // 자동차 회전
         // 쿼터니언, 오일러각
