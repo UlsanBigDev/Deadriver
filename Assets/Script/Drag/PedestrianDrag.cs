@@ -30,7 +30,7 @@ public class PedestrianDrag : MonoBehaviour
 
         else if(levelint == 1)
         {
-            Debug.Log("1단계");
+            Debug.Log("1단계"); 
             for (int i = 0; i <= levelint; i++)
             {
                 Debug.Log(i);
