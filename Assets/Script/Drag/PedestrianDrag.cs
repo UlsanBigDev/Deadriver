@@ -8,11 +8,7 @@ using UnityEngine.SceneManagement;
 public class PedestrianDrag : MonoBehaviour
 {
     //Arragne 스크립트처럼 각 배열에 난이도별 방해물을 각각 넣고 활성화/비활성화
-    public List<GameObject> listObject = new List<GameObject>();
-    public GameObject[] LevelArrange0;
-    public GameObject[] LevelArrange1;
-    public GameObject[] LevelArrange2;
-    public GameObject[] LevelArrange4;
+    public GameObject[] LevelArrange;
     public GameObject PedestrianObject;
 
     void Awake()
@@ -23,17 +19,45 @@ public class PedestrianDrag : MonoBehaviour
     public void PedestrianLevel()
     {
         int levelint = PlayerPrefs.GetInt("GameLevel");
-        //LevelArrange = LevelArrange[levelint];
         Debug.Log("levelint" + levelint);
 
-        for(int i=0; i<levelint; i++)
+        if(levelint == 0)
         {
-            listObject.Add(LevelArrange0[i]);
+            Debug.Log("0단계");
+            PedestrianObject = LevelArrange[levelint];
+            PedestrianObject.SetActive(true);
         }
 
-        //for(int i=0; i<levelint ; i++)
-        //{
-        //    for(int j=0; j<)
-        //}
+        else if(levelint == 1)
+        {
+            Debug.Log("1단계"); 
+            for (int i = 0; i <= levelint; i++)
+            {
+                Debug.Log(i);
+                PedestrianObject = LevelArrange[i];
+                PedestrianObject.SetActive(true);
+
+            }
+        }
+
+        else if (levelint == 2)
+        {
+            Debug.Log("2단계");
+            for (int i = 0; i <= levelint; i++)
+            {
+                PedestrianObject = LevelArrange[i];
+                PedestrianObject.SetActive(true);
+            }
+        }
+
+        else if (levelint == 3)
+        {
+            Debug.Log("3단계");
+            for (int i = 0; i <= levelint; i++)
+            {
+                PedestrianObject = LevelArrange[i];
+                PedestrianObject.SetActive(true);
+            }
+        }
     }
 }
