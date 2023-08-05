@@ -9,10 +9,18 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public float rotation { get; set; }
 
     private PlayerCarMoveMent playerCarMoveMent;
+    
     private void Awake()
     {
         Car.playerAccelSpeed = 2f; // 그냥 디폴트로 초기화..
         playerCarMoveMent = new PlayerCarMoveMent(transform);
+    }
+
+    private void Start()
+    {
+        foreach(DrunkEvent drunkEvent in Car.drunkEvents) {
+            drunkEvent.Run();
+        }
     }
 
     private void FixedUpdate()
