@@ -8,12 +8,13 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public float speed { get; set; }
     public float rotation { get; set; }
 
-    private PlayerCarMoveMent playerCarMoveMent;
+    private PlayerCarMovement playerCarMovement;
     
     private void Awake()
     {
         Car.playerAccelSpeed = 2f; // 그냥 디폴트로 초기화..
-        playerCarMoveMent = new PlayerCarMoveMent(transform);
+        Car.rotationSpeed = 100f;
+        playerCarMovement = new PlayerCarMovement(transform);
     }
 
     private void Start()
@@ -25,17 +26,17 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private void FixedUpdate()
     {
-        playerCarMoveMent.Update();
+        playerCarMovement.Update();
     }
 }
 
-public class PlayerCarMoveMent
+public class PlayerCarMovement
 {
     public static float currentSpeed = 0f;
     private float accelSpeed;
     private float decelSpeed = 10f;
     private float maxSpeed = 50f;
-    public static float rotationSpeed = 100f;
+    /*public static float rotationSpeed = 100f;*/
     public static Rigidbody rb;
     /*private DirectionDrag directionDrag;
     private PedestrianDrag pedestrianDrag;
@@ -43,9 +44,8 @@ public class PlayerCarMoveMent
 
     public int cnt;
     private Transform currentTransform;
-    public PlayerCarMoveMent(Transform transform)
-    {
-        accelSpeed = Car.playerAccelSpeed;
+    public PlayerCarMovement(Transform transform)
+    {   
         currentTransform = transform;
         rb = transform.GetComponent<Rigidbody>();
         cnt = 0;
@@ -53,6 +53,7 @@ public class PlayerCarMoveMent
     }
     public void Update()
     {
+        accelSpeed = Car.playerAccelSpeed;
         // 수직 수평 입력값 가져오는거
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -81,7 +82,7 @@ public class PlayerCarMoveMent
 
         // 자동차 회전
         // 쿼터니언, 오일러각
-        float rotation = h * rotationSpeed * Time.deltaTime;
+        float rotation = h * Car.rotationSpeed * Time.deltaTime;
         Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
