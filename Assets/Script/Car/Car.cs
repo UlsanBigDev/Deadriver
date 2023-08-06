@@ -9,7 +9,7 @@ public interface Car
     static float rotationSpeed { set; get; }
 
     static List<DrunkEvent> drunkEvents = new List<DrunkEvent>(); // 현재 어떤 음주 이벤트를 가지고있는지..
-    static void AddDrunkEvent(DrunkEvent drunkEvent) { // 음주 이벤트 추가
+    static void AddDrunkEvent(DrunkEvent drunkEvent) { // 음주 이벤트 추가 ->   GameManager에서 이 함수를 호출
         drunkEvents.Add(drunkEvent);
     }
     bool isPlayer { set; get; }

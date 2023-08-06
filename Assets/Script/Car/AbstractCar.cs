@@ -9,15 +9,17 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public float rotation { get; set; }
 
     private PlayerCarMovement playerCarMovement;
-    
+    private ControlEvent controlEvent;
+
     private void Awake()
     {
         Car.playerAccelSpeed = 2f; // 그냥 디폴트로 초기화..
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
+        controlEvent = new ControlEvent(transform);
     }
 
-    private void Start()
+    private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
     {
         foreach(DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
@@ -42,7 +44,9 @@ public class PlayerCarMovement
     private PedestrianDrag pedestrianDrag;
     private bool isAccel = false;*/
 
-    private Transform currentTransform;
+    public static Transform currentTransform;
+
+    public PlayerCarMovement() { }
     public PlayerCarMovement(Transform transform)
     {   
         currentTransform = transform;

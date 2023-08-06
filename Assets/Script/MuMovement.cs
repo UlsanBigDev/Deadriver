@@ -10,7 +10,6 @@ public class MuMovement : MonoBehaviour
     private float maxSpeed = 50f;
     public static float rotationSpeed = 100f;
     public static Rigidbody rb;
-    private ControlDrag controlDrag;
     private PedestrianDrag pedestrianDrag;
     private bool isAccel = false;
 
@@ -20,7 +19,6 @@ public class MuMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cnt = 0;
-        //controlDrag = new ControlDrag(transform);
     }
 
     void Update()
