@@ -42,13 +42,11 @@ public class PlayerCarMovement
     private PedestrianDrag pedestrianDrag;
     private bool isAccel = false;*/
 
-    public int cnt;
     private Transform currentTransform;
     public PlayerCarMovement(Transform transform)
     {   
         currentTransform = transform;
         rb = transform.GetComponent<Rigidbody>();
-        cnt = 0;
         /*directionDrag = new DirectionDrag(transform);*/
     }
     public void Update()

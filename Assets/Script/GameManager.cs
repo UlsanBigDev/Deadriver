@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         Car.AddDrunkEvent(new RashEvent());
         Car.AddDrunkEvent(new RotationEvent());
