@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private void Awake() //µğ¹öÇÁ¸¦ drunkEvents ¸®½ºÆ®¿¡ Ãß°¡(Add)ÇØÁÜ
+    private void Awake() //ë””ë²„í”„ë¥¼ drunkEvents ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€(Add)í•´ì¤Œ
     { 
-      //Start·Î ÇÏ¸é AbstractCar ½ºÅ©¸³Æ®¿¡¼­ÀÇ Start¿¡¼­ foreach¹®À¸·Î ¸®½ºÆ®ÀÇ RunÀ» È£ÃâÇÏ´Â°Å¶û
-      //¿©±â¼­ AddÇÏ´Â °Å¶û µ¿½Ã¿¡ ÀÏ¾î³ª±â ¶§¹®¿¡ Add¸¦ ¸ÕÀú ÇØÁØ ÈÄ¿¡ ¸®½ºÆ®ÀÇ RunµéÀ» È£ÃâÇØ¾ßÇÏ´Ï±î ¿©±â´Â Awake·Î
-      /* Awake( ¸®½ºÆ®¿¡ Add ) -> Start( ¸®½ºÆ®¿¡ Add µÈ °ªµé¿¡ ÇØ´çÇÏ´Â RunÀ» ½ÇÇà ) */
-        Car.AddDrunkEvent(new RashEvent());
-        Car.AddDrunkEvent(new RotationEvent());
-        Car.AddDrunkEvent(new ControlEvent());
+      //Startë¡œ í•˜ë©´ AbstractCar ìŠ¤í¬ë¦½íŠ¸ì—ì„œì˜ Startì—ì„œ foreachë¬¸ìœ¼ë¡œ ë¦¬ìŠ¤íŠ¸ì˜ Runì„ í˜¸ì¶œí•˜ëŠ”ê±°ë‘
+      //ì—¬ê¸°ì„œ Addí•˜ëŠ” ê±°ë‘ ë™ì‹œì— ì¼ì–´ë‚˜ê¸° ë•Œë¬¸ì— Addë¥¼ ë¨¼ì € í•´ì¤€ í›„ì— ë¦¬ìŠ¤íŠ¸ì˜ Runë“¤ì„ í˜¸ì¶œí•´ì•¼í•˜ë‹ˆê¹Œ ì—¬ê¸°ëŠ” Awakeë¡œ
+      /* Awake( ë¦¬ìŠ¤íŠ¸ì— Add ) -> Start( ë¦¬ìŠ¤íŠ¸ì— Add ëœ ê°’ë“¤ì— í•´ë‹¹í•˜ëŠ” Runì„ ì‹¤í–‰ ) */
+        //Car.AddDrunkEvent(new RashEvent());
+        //Car.AddDrunkEvent(new RotationEvent());
+        //Car.AddDrunkEvent(new ControlEvent());
     }
 }
