@@ -10,7 +10,7 @@ public class DamageCar : AbstractCar
     {
         if (collision.gameObject.CompareTag("building")) // building 이라는 tag 를 가진 오브젝트와 충돌했을때, CompareTag = 자바 Equals랑 비슷한 느낌?
         {
-            CarDamage(1);
+            CarDamage(carDamage);
         }
     }
 }

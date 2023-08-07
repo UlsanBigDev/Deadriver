@@ -35,9 +35,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     public void CarDamage(int carDamage)
     {
-        carHp -= carDamage;
+        Car.carHp -= carDamage;
         Debug.Log("차의 HP가 -10 감소되었습니다.");
-        Debug.Log("현재 차량의 hp = " + carHp);
+        Debug.Log("현재 차량의 hp = " + Car.carHp);
     }
 }
 
