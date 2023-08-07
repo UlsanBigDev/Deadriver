@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Story
 {
-    int id;
     List<string> messages;
     int index;
-    bool isLast;
+    public bool isLast;
 
-    public Story(int id, List<string> messages)
+    public Story(List<string> messages)
     {
-        this.id = id;
         this.messages = messages;
         index = 0;
+        isLast = false;
+    }
+
+    public string Now()
+    {
+        string message = messages[index++];
+        if (index == messages.Count) isLast = true;
+        return message;
     }
 
 }
