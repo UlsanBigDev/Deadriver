@@ -7,12 +7,14 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public bool isPlayer { get; set; }
     public float speed { get; set; }
     public float rotation { get; set; }
+    public int carHp { get; set; }
 
     private PlayerCarMovement playerCarMovement;
     private ControlEvent controlEvent;
 
     private void Awake()
     {
+        Car.carHp = 100; //초기Hp 100으로 초기화
         Car.playerAccelSpeed = 2f; // 그냥 디폴트로 초기화..
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
@@ -29,6 +31,13 @@ public abstract class AbstractCar : MonoBehaviour, Car
     private void FixedUpdate()
     {
         playerCarMovement.Update();
+    }
+
+    public void CarDamage(int carDamage)
+    {
+        carHp -= carDamage;
+        Debug.Log("차의 HP가 -10 감소되었습니다.");
+        Debug.Log("현재 차량의 hp = " + carHp);
     }
 }
 
