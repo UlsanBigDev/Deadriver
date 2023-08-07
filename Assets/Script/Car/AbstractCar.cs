@@ -14,14 +14,14 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private void Awake()
     {
-        Car.carHp = 100; //ÃÊ±âHp 100À¸·Î ÃÊ±âÈ­
-        Car.playerAccelSpeed = 2f; // ±×³É µğÆúÆ®·Î ÃÊ±âÈ­..
+        Car.carHp = 100; //ì´ˆê¸°Hp 100ìœ¼ë¡œ ì´ˆê¸°í™”
+        Car.playerAccelSpeed = 5f; // 5fë¡œ í•´ì•¼ ë¬¸ì œì—†ì´ í›„ì§„ê¹Œì§€ ê°€ëŠ¥í•¨
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
         controlEvent = new ControlEvent(transform);
     }
 
-    private void Start() //foreach¹®À¸·Î Car.drunkEvents ¸®½ºÆ®¿¡¼­ °¢°¢ ÇØ´çÇÏ´Â RunÀ» ½ÇÇà½ÃÅ´
+    private void Start() //foreachë¬¸ìœ¼ë¡œ Car.drunkEvents ë¦¬ìŠ¤íŠ¸ì—ì„œ ê°ê° í•´ë‹¹í•˜ëŠ” Runì„ ì‹¤í–‰ì‹œí‚´
     {
         foreach(DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
@@ -36,10 +36,11 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public void CarDamage(int carDamage)
     {
         Car.carHp -= carDamage;
-        Debug.Log("Â÷ÀÇ HP°¡ -10 °¨¼ÒµÇ¾ú½À´Ï´Ù.");
-        Debug.Log("ÇöÀç Â÷·®ÀÇ hp = " + Car.carHp);
+        Debug.Log("ì°¨ì˜ HPê°€ -10 ê°ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+        Debug.Log("í˜„ì¬ ì°¨ëŸ‰ì˜ hp = " + Car.carHp);
         if (Car.carHp <= 0)
         {
+            Debug.Log("ë‹˜ ì°¨ í„°ì§ ã……ã„±ã…ƒ2");
             DestroyCar();
         }
     }
@@ -52,7 +53,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
 public class PlayerCarMovement
 {
     public static float currentSpeed = 0f;
-    private float accelSpeed;
     private float decelSpeed = 10f;
     private float maxSpeed = 50f;
     /*public static float rotationSpeed = 100f;*/
@@ -72,35 +72,28 @@ public class PlayerCarMovement
     }
     public void Update()
     {
-        accelSpeed = Car.playerAccelSpeed;
-        // ¼öÁ÷ ¼öÆò ÀÔ·Â°ª °¡Á®¿À´Â°Å
+        Debug.Log(Car.playerAccelSpeed);
+        // ìˆ˜ì§ ìˆ˜í‰ ì…ë ¥ê°’ ê°€ì ¸ì˜¤ëŠ”ê±°
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.S))
         {
-            currentSpeed += accelSpeed * Time.deltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // ÃÖ´ë ¼Óµµ Á¦ÇÑ
-        }
-        else if (Input.GetKey(KeyCode.S)) // ?????????????????? Á¤Áö»óÅÂ¿¡¼­ ¿Ö ÈÄÁøÇÏ¸é Â÷°¡ µÚ·Î ÀÚºüÁö´ÂÁö ¸ğ¸£°ÚÀ½
-        {
-            // ¿©±â Áö±İ ÀÌ»óÇØ¼­ ¾Èµ¹¾Æ°¨;;
-            currentSpeed += accelSpeed * Time.deltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // ÃÖ´ë ¼Óµµ Á¦ÇÑ
+            currentSpeed += Car.playerAccelSpeed * Time.deltaTime;
+            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // ìµœëŒ€ ì†ë„ ì œí•œ
         }
         else
         {
             currentSpeed -= decelSpeed * Time.deltaTime;
-            currentSpeed = Mathf.Max(currentSpeed, 0f); // decelSpeed ·Î currentSpeed °ª °¨¼Ò¸¦ ÃÖ´ë 0f ±îÁö¸¸ °¨¼ÒÇÏ°Ô ÇÔ
+            currentSpeed = Mathf.Max(currentSpeed, 0f); // decelSpeed ë¡œ currentSpeed ê°’ ê°ì†Œë¥¼ ìµœëŒ€ 0f ê¹Œì§€ë§Œ ê°ì†Œí•˜ê²Œ í•¨
         }
-
-        // ÀÚµ¿Â÷ ¾ÕµÚ ÀÌµ¿
+        // ìë™ì°¨ ì•ë’¤ ì´ë™
         Vector3 movement = currentTransform.forward * v * currentSpeed;
-        // velocity ´Â Rigidbody ¸¦ ÅëÇØ °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ ¼Óµµ¸¦ ³ªÅ¸³»´Â ¼Ó¼ºÀÓ. ¼Óµµ º¤ÅÍ´Â ¹°Ã¼ÀÇ ÀÌµ¿ ¹æÇâ°ú ¼Óµµ¸¦ Æ÷ÇÔÇÔ.
+        // velocity ëŠ” Rigidbody ë¥¼ í†µí•´ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ì†ë„ë¥¼ ë‚˜íƒ€ë‚´ëŠ” ì†ì„±ì„. ì†ë„ ë²¡í„°ëŠ” ë¬¼ì²´ì˜ ì´ë™ ë°©í–¥ê³¼ ì†ë„ë¥¼ í¬í•¨í•¨.
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
-        // ÀÚµ¿Â÷ È¸Àü
-        // ÄõÅÍ´Ï¾ğ, ¿ÀÀÏ·¯°¢
+        // ìë™ì°¨ íšŒì „
+        // ì¿¼í„°ë‹ˆì–¸, ì˜¤ì¼ëŸ¬ê°
         float rotation = h * Car.rotationSpeed * Time.deltaTime;
         Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * deltaRotation);
