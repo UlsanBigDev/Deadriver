@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyChat:
-    chatBox: {fileID: 0}
+    storyChatText: {fileID: 1575752648}
 --- !u!4 &568328005
 Transform:
   m_ObjectHideFlags: 0
