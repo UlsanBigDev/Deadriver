@@ -12,14 +12,15 @@ public class DamageCar : AbstractCar
         {
             if (!delayedDamage)
             {
-                Invoke("DelayedCarDamage", 1f);
-                delayedDamage = true;
+                StartCoroutine(DamageDelay(carDamage, 1f)); //코루틴으로 순간적으로 충돌이 중복적으로 일어나는 현상을 방지하기 위해 최소한의 딜레이값 설정필요함
             }
         }
     }
-    private void DelayedCarDamage()
+    private IEnumerator DamageDelay(int carDamage, float delay)
     {
-        CarDamage(carDamage);
+        delayedDamage = true;
+        CarDamage(carDamage); //Invoke 함수 썼을때는 박자마자 Log 출력 안되고 1초 딜레이가 처음부터 걸려버림 그래서 박자마자 실행후
+        yield return new WaitForSeconds(delay); // 딜레이를 걸어줌
         delayedDamage = false;
     }
 }
