@@ -4,18 +4,18 @@ using UnityEngine;
 
 public struct StoryTitle
 {
-    string title;
-    Story story;
-    StoryTitle(string title, Story story)
+    public string title;
+    public int id;
+    public StoryTitle(string title, int id)
     {
         this.title = title;
-        this.story = story;
+        this.id = id;
     }
 }
 public class StorySelect : Story
 {
-    StoryTitle s1;
-    StoryTitle s2;
+    public StoryTitle s1;
+    public StoryTitle s2;
     public StorySelect(List<string> message, (StoryTitle, StoryTitle) storys) : base(message)
     {
         s1 = storys.Item1;

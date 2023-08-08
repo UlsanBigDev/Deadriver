@@ -190,8 +190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d21c30b339384325bebc7f7845822c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storyChat:
+  storyChatUI:
     storyChatText: {fileID: 1575752648}
+    storyButton1: {fileID: 1459774333}
+    storyButtonText1: {fileID: 0}
+    storyButton2: {fileID: 2102656483}
+    storyButtonText2: {fileID: 0}
 --- !u!4 &568328005
 Transform:
   m_ObjectHideFlags: 0
@@ -219,7 +223,7 @@ GameObject:
   - component: {fileID: 1169374880}
   - component: {fileID: 1169374879}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StorySelectButtonText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +442,7 @@ GameObject:
   - component: {fileID: 1380931077}
   - component: {fileID: 1380931076}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StorySelectButtonText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
