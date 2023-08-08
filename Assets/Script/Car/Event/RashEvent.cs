@@ -6,7 +6,7 @@ public class RashEvent : DrunkEvent
 {
     public override void Run()
     {   
-        Car.playerAccelSpeed = 5f;
-        Debug.Log("´ëÃæ ±Þ¹ßÁø ÇÏ´Â ÇÔ¼ö");
+        Car.playerAccelSpeed = 10f;
+        Debug.Log("ëŒ€ì¶© ê¸‰ë°œì§„ í•˜ëŠ” í•¨ìˆ˜");
     }
 }

@@ -10,7 +10,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public int carHp { get; set; }
 
     private PlayerCarMovement playerCarMovement;
-    private ControlEvent controlEvent;
 
     private void Awake()
     {
@@ -18,7 +17,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
-        controlEvent = new ControlEvent(transform);
     }
 
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
@@ -89,8 +87,16 @@ public class PlayerCarMovement
         }
         // 자동차 앞뒤 이동
         Vector3 movement = currentTransform.forward * v * currentSpeed;
+        if (Car.isDirectionDragEvent == true)
+        {
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
+        }
+        else
+        {
+            rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        }  
         // velocity 는 Rigidbody 를 통해 게임 오브젝트의 속도를 나타내는 속성임. 속도 벡터는 물체의 이동 방향과 속도를 포함함.
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        
 
         // 자동차 회전
         // 쿼터니언, 오일러각
