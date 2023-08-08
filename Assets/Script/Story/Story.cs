@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Story
 {
-    List<string> messages;
-    int index;
+    protected List<string> messages;
+    protected int index;
     public bool isLast;
 
     public Story(List<string> messages)
