@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
-    //static List<Story> storyList = new List<Story>();
+    public static StoryManager instance;
     static Dictionary<int, Story> storyMap = new Dictionary<int, Story>();
 
     [SerializeField]
     StoryChatUI storyChatUI;
 
-    Story current;
+    static Story current;
 
     bool isChatting;
 
     private void Awake()
     {
+        instance = this;
         isChatting = true;
         // storyList.Add(new Story(0, new List<string>(){"aaa", "bbb"})); // 데이터 임시 하드코딩
         storyMap.Add(0, new StorySelect(new List<string>() { "안녕하세요 어쩌구입니다 ", "HI", "BY", "그래서 술 마심 "}, (new StoryTitle("ONE", 1), new StoryTitle("TWO", 2))));
@@ -49,7 +50,13 @@ public class StoryManager : MonoBehaviour
     }
     public void SetCurrentStory(Story story)
     {
-        this.current = story;
+        if (current != null) current.Reset();
+        current = story;
         storyChatUI.PrintStoryChatText(current.Now());
+    }
+
+    public void ChangeStory(int id)
+    {
+        SetCurrentStory(storyMap[id]);
     }
 }

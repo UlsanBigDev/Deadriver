@@ -22,4 +22,10 @@ public class Story
         return message;
     }
 
+    public void Reset()
+    {
+        index = 0;
+        isLast = false;
+    }
+
 }
