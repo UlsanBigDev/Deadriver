@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface Car
-{   
-    static bool isDirectionDragEvent { set; get; } // ¹æÇâ ¹İÀü ÀÌº¥Æ®
+{
+    static bool isDirectionDragEvent { set; get; } // ë°©í–¥ ë°˜ì „ ì´ë²¤íŠ¸
+    static int Level { set; get; }
     static float playerAccelSpeed { set; get; }
     static float rotationSpeed { set; get; }
     static int carHp { set; get; }
+    
+    static List<GameObject> obstacleObject = new List<GameObject>();
+    static void AddObstacle(GameObject obstacle)
+    {
+        obstacleObject.Add(obstacle);
+    }
 
-    static List<DrunkEvent> drunkEvents = new List<DrunkEvent>(); // ÇöÀç ¾î¶² À½ÁÖ ÀÌº¥Æ®¸¦ °¡Áö°íÀÖ´ÂÁö..
-    static void AddDrunkEvent(DrunkEvent drunkEvent) { // À½ÁÖ ÀÌº¥Æ® Ãß°¡ ->   GameManager¿¡¼­ ÀÌ ÇÔ¼ö¸¦ È£Ãâ
+    static List<DrunkEvent> drunkEvents = new List<DrunkEvent>(); // í˜„ì¬ ì–´ë–¤ ìŒì£¼ ì´ë²¤íŠ¸ë¥¼ ê°€ì§€ê³ ìˆëŠ”ì§€..
+    static void AddDrunkEvent(DrunkEvent drunkEvent) { // ìŒì£¼ ì´ë²¤íŠ¸ ì¶”ê°€ ->   GameManagerì—ì„œ ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œ
         drunkEvents.Add(drunkEvent);
     }
 

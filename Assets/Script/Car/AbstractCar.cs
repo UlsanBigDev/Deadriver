@@ -13,6 +13,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private void Awake()
     {
+        Car.Level = 15; 
         Car.carHp = 100; //초기Hp 100으로 초기화
         Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
         Car.rotationSpeed = 100f;
@@ -87,7 +88,8 @@ public class PlayerCarMovement
         }
         // 자동차 앞뒤 이동
         Vector3 movement = currentTransform.forward * v * currentSpeed;
-        if (Car.isDirectionDragEvent == true)
+
+        if (Car.isDirectionDragEvent == true) //W -> 뒤로, S -> 앞으로
         {
             rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z) * -1;
         }
