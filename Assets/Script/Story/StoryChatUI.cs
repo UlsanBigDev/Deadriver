@@ -11,6 +11,9 @@ public class StoryChatUI
     TMP_Text storyChatText;
 
     [SerializeField]
+    GameObject storySelectPanel;
+
+    [SerializeField]
     Button storyButton1;
 
     [SerializeField]
@@ -28,6 +31,17 @@ public class StoryChatUI
     }
 
     public void PrintStorySelectButton(StorySelect storySelect)
+    {
+        EnablePanel();
+        SetStoryButtonText(storySelect);
+    }
+
+    private void EnablePanel()
+    {
+        storySelectPanel.gameObject.SetActive(true);
+    }
+
+    private void SetStoryButtonText(StorySelect storySelect)
     {
         storyButtonText1.text = storySelect.s1.title;
         storyButtonText2.text = storySelect.s2.title;
