@@ -10,46 +10,46 @@ public class ObstacleObject : MonoBehaviour
     public GameObject arrangeObject;
     public int i = 613;
 
-    public void obstacle()
-    {
-        if (0 < Car.Level && Car.Level < 25)
-        {
-            Debug.Log("0단계");
-            arrangeObject = obstacleArrange[0];
-            arrangeObject.SetActive(true);
-        }
+    //public void obstacle()
+    //{
+    //    if (0 < Car.Level && Car.Level < 25)
+    //    {
+    //        Debug.Log("0단계");
+    //        arrangeObject = obstacleArrange[0];
+    //        arrangeObject.SetActive(true);
+    //    }
 
-        else if (25 < Car.Level && Car.Level < 50)
-        {
-            Debug.Log("1단계");
-            for (int i = 0; i <= 1; i++)
-            {
-                Debug.Log(i);
-                arrangeObject = obstacleArrange[i];
-                arrangeObject.SetActive(true);
+    //    else if (25 < Car.Level && Car.Level < 50)
+    //    {
+    //        Debug.Log("1단계");
+    //        for (int i = 0; i <= 1; i++)
+    //        {
+    //            Debug.Log(i);
+    //            arrangeObject = obstacleArrange[i];
+    //            arrangeObject.SetActive(true);
 
-            }
-        }
+    //        }
+    //    }
 
-        else if (50 < Car.Level && Car.Level < 75)
-        {
-            Debug.Log("2단계");
-            for (int i = 0; i <= 2; i++)
-            {
-                arrangeObject = obstacleArrange[i];
-                arrangeObject.SetActive(true);
-            }
-        }
+    //    else if (50 < Car.Level && Car.Level < 75)
+    //    {
+    //        Debug.Log("2단계");
+    //        for (int i = 0; i <= 2; i++)
+    //        {
+    //            arrangeObject = obstacleArrange[i];
+    //            arrangeObject.SetActive(true);
+    //        }
+    //    }
 
-        else if (75 < Car.Level && Car.Level < 100)
-        {
-            Debug.Log("3단계");
-            for (int i = 0; i <= 2; i++)
-            {
-                arrangeObject = obstacleArrange[i];
-                arrangeObject.SetActive(true);
-            }
-        }
+    //    else if (75 < Car.Level && Car.Level < 100)
+    //    {
+    //        Debug.Log("3단계");
+    //        for (int i = 0; i <= 2; i++)
+    //        {
+    //            arrangeObject = obstacleArrange[i];
+    //            arrangeObject.SetActive(true);
+    //        }
+    //    }
     }
 
 
