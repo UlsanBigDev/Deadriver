@@ -6,21 +6,21 @@ public class DamageCar : AbstractCar
 {
     public int carDamage = 10;
     private bool delayedDamage = false;
-    private void OnCollisionEnter(Collision collision) // Ãæµ¹ÀÌ ÀÏ¾î³ªÀÚ ¸¶ÀÚ
+    private void OnCollisionEnter(Collision collision) // ì¶©ëŒì´ ì¼ì–´ë‚˜ì ë§ˆì
     {
-        if (collision.gameObject.CompareTag("building")) // building ÀÌ¶ó´Â tag ¸¦ °¡Áø ¿ÀºêÁ§Æ®¿Í Ãæµ¹ÇßÀ»¶§, CompareTag = ÀÚ¹Ù Equals¶û ºñ½ÁÇÑ ´À³¦?
+        if (collision.gameObject.CompareTag("building")) // building ì´ë¼ëŠ” tag ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ì™€ ì¶©ëŒí–ˆì„ë•Œ, CompareTag = ìë°” Equalsë‘ ë¹„ìŠ·í•œ ëŠë‚Œ?
         {
             if (!delayedDamage)
             {
-                StartCoroutine(DamageDelay(carDamage, 1f)); //ÄÚ·çÆ¾À¸·Î ¼ø°£ÀûÀ¸·Î Ãæµ¹ÀÌ Áßº¹ÀûÀ¸·Î ÀÏ¾î³ª´Â Çö»óÀ» ¹æÁöÇÏ±â À§ÇØ ÃÖ¼ÒÇÑÀÇ µô·¹ÀÌ°ª ¼³Á¤ÇÊ¿äÇÔ
+                StartCoroutine(DamageDelay(carDamage, 1f)); //ì½”ë£¨í‹´ìœ¼ë¡œ ìˆœê°„ì ìœ¼ë¡œ ì¶©ëŒì´ ì¤‘ë³µì ìœ¼ë¡œ ì¼ì–´ë‚˜ëŠ” í˜„ìƒì„ ë°©ì§€í•˜ê¸° ìœ„í•´ ìµœì†Œí•œì˜ ë”œë ˆì´ê°’ ì„¤ì •í•„ìš”í•¨
             }
         }
     }
     private IEnumerator DamageDelay(int carDamage, float delay)
     {
         delayedDamage = true;
-        CarDamage(carDamage); //Invoke ÇÔ¼ö ½èÀ»¶§´Â ¹ÚÀÚ¸¶ÀÚ Log Ãâ·Â ¾ÈµÇ°í 1ÃÊ µô·¹ÀÌ°¡ Ã³À½ºÎÅÍ °É·Á¹ö¸² ±×·¡¼­ ¹ÚÀÚ¸¶ÀÚ ½ÇÇàÈÄ
-        yield return new WaitForSeconds(delay); // µô·¹ÀÌ¸¦ °É¾îÁÜ
+        CarDamage(carDamage); //Invoke í•¨ìˆ˜ ì¼ì„ë•ŒëŠ” ë°•ìë§ˆì Log ì¶œë ¥ ì•ˆë˜ê³  1ì´ˆ ë”œë ˆì´ê°€ ì²˜ìŒë¶€í„° ê±¸ë ¤ë²„ë¦¼ ê·¸ë˜ì„œ ë°•ìë§ˆì ì‹¤í–‰í›„
+        yield return new WaitForSeconds(delay); // ë”œë ˆì´ë¥¼ ê±¸ì–´ì¤Œ
         delayedDamage = false;
     }
 }
