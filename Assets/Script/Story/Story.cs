@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Story
 {
-    List<string> messages;
-    int index;
+    protected List<string> messages;
+    protected int index;
     public bool isLast;
 
     public Story(List<string> messages)
@@ -20,6 +20,12 @@ public class Story
         string message = messages[index++];
         if (index == messages.Count) isLast = true;
         return message;
+    }
+
+    public void Reset()
+    {
+        index = 0;
+        isLast = false;
     }
 
 }
