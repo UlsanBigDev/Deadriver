@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject obstacleGroup;
+
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
         //Start로 하면 AbstractCar 스크립트에서의 Start에서 foreach문으로 리스트의 Run을 호출하는거랑
@@ -13,6 +16,6 @@ public class GameManager : MonoBehaviour
         //Car.AddDrunkEvent(new RashEvent());
         //Car.AddDrunkEvent(new RotationEvent());
         //Car.AddDrunkEvent(new ControlEvent());
-        Car.AddDrunkEvent(new ObstacleEvent());
+        Car.AddDrunkEvent(new ObstacleEvent(obstacleGroup));
     }
 }

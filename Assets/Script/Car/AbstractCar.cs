@@ -11,15 +11,16 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private PlayerCarMovement playerCarMovement;
 
+
     private void Awake()
     {
-        Car.Level = 15; 
+        Car.Level = 1; 
         Car.carHp = 100; //초기Hp 100으로 초기화
         Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
     }
-
+ 
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
     {
         foreach(DrunkEvent drunkEvent in Car.drunkEvents) {
