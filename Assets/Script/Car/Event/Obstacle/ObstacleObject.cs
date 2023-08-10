@@ -50,7 +50,7 @@ public class ObstacleObject : MonoBehaviour
     //            arrangeObject.SetActive(true);
     //        }
     //    }
-    }
+    //}
 
 
 }
