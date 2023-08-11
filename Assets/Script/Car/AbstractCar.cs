@@ -10,6 +10,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public int carHp { get; set; }
 
     private PlayerCarMovement playerCarMovement;
+    public ObstacleEvent obstacleEvent;
+    public Transform gameObject;
 
 
     private void Awake()
@@ -19,11 +21,13 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
+        
     }
  
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
     {
-        foreach(DrunkEvent drunkEvent in Car.drunkEvents) {
+        obstacleEvent = new ObstacleEvent(gameObject);
+        foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
         }
     }
