@@ -15,8 +15,8 @@ interface Player
         if (instance == null) instance = new AbstractPlayer();
         return instance;
     }
-    public int drunkGauge { get; protected set; }
-    public bool isDrunk { get; protected set; }
-    public DrunkLevel dunkLevel { get; protected set; }
+    public int drunkGauge { get; set; }
+    public bool isDrunk { get; set; }
+    public DrunkLevel dunkLevel { get; set; }
     public void SetDrunkGauge(int value);
 }

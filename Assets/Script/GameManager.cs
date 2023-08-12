@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour
         //Car.AddDrunkEvent(new RashEvent());
         //Car.AddDrunkEvent(new RotationEvent());
         //Car.AddDrunkEvent(new ControlEvent());
-        Car.AddDrunkEvent(new ObstacleEvent(obstacleGroup));
+        //Car.AddDrunkEvent(new ObstacleEvent(obstacleGroup));
     }
 }

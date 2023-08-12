@@ -24,7 +24,7 @@ public class ObstacleEvent : DrunkEvent
 
         Debug.Log("장애물 디버프");
 
-        for(int i = 0; i< this.transform.childCount)
+        //for(int i = 0; i< this.transform.childCount)
     }
 
     public override void Run()
