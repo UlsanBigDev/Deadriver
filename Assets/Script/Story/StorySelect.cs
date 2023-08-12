@@ -21,4 +21,9 @@ public class StorySelect : Story
         s1 = storys.Item1;
         s2 = storys.Item2;
     }
+
+    public StorySelect(List<string> message, (StoryTitle, StoryTitle) storys, System.Action action) : this(message, storys)
+    {
+        OnLoad = action;
+    }
 }
