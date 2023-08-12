@@ -1127,7 +1127,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -50, y: 50}
+=======
+  m_AnchoredPosition: {x: -20, y: 20}
+>>>>>>> 2bd2bd333b3490a7ab31f2f5e1e82df51d709d9b
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1057454928
@@ -1929,7 +1933,11 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 7f1efada1f7a08d43bde55f1cde20b18, type: 2}
+<<<<<<< HEAD
   m_TargetDisplay: 1
+=======
+  m_TargetDisplay: 0
+>>>>>>> 2bd2bd333b3490a7ab31f2f5e1e82df51d709d9b
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
