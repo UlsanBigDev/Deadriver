@@ -10,3 +10,5 @@ public class RashEvent : DrunkEvent
         Debug.Log("대충 급발진 하는 함수");
     }
 }
+
+
