@@ -6,22 +6,25 @@ public class StoryManager : MonoBehaviour
 {
     public static StoryManager instance;
     static Dictionary<int, Story> storyMap = new Dictionary<int, Story>();
-
     [SerializeField]
     StoryChatUI storyChatUI;
-
     static Story current;
-
     bool isChatting;
 
-    Player player;
 
     private void Awake()
     {
         instance = this;
         isChatting = true;
-        // storyList.Add(new Story(0, new List<string>(){"aaa", "bbb"})); // 데이터 임시 하드코딩
-        storyMap.Add(0, new StorySelect(new List<string>() { "안녕하세요 어쩌구입니다 ", "HI", "BY", "그래서 술 마심 "}, (new StoryTitle("ONE", 1), new StoryTitle("TWO", 2))));
+        InitializeStoryData();
+    }
+
+    private void InitializeStoryData()
+    {
+        /*
+         * StorySelect(대화내용[], (다음 스토리 선택지1, 다음 스토리 선택지2), [callBack=없어도])
+         */
+        storyMap.Add(0, new StorySelect(new List<string>() { "안녕하세요 어쩌구입니다 ", "HI", "BY", "그래서 술 마심 " }, (new StoryTitle("ONE", 1), new StoryTitle("TWO", 2))));
         storyMap.Add(1,
             new StorySelect(
                 new List<string>() { "'휴 어쩌' 어쩌구입니다 ", "HI", "BY", "그래서 술 마심 " },
@@ -34,8 +37,8 @@ public class StoryManager : MonoBehaviour
                 Debug.Log("여기는 2번째 스토리다!");
             }
             ));
-        player = Player.GetPlayer();
     }
+
     private void Start()
     {
         //current = storyMap[0];
