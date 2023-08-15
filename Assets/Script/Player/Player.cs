@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum DrunkLevel
 {
-    GRREN, YELLOW, ORANGE, RED
+    GREEN, YELLOW, ORANGE, RED
 }
 
 interface Player
@@ -17,6 +17,6 @@ interface Player
     }
     public int drunkGauge { get; set; }
     public bool isDrunk { get; set; }
-    public DrunkLevel dunkLevel { get; set; }
+    public DrunkLevel drunkLevel { get; set; }
     public void SetDrunkGauge(int value);
 }

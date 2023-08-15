@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject obstacleGroup;
+    public Transform[] pointArray;
+
     Player player;
+    ObstacleEvent obstacleEvent;
+
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
@@ -18,7 +20,9 @@ public class GameManager : MonoBehaviour
         //Car.AddDrunkEvent(new RashEvent());
         //Car.AddDrunkEvent(new RotationEvent());
         //Car.AddDrunkEvent(new ControlEvent());
-        //Car.AddDrunkEvent(new ObstacleEvent(obstacleGroup));
+        Car.AddDrunkEvent(new ObstacleEvent(pointArray));
+
+        obstacleEvent = new ObstacleEvent(pointArray);
     }
 
     private void Start()
