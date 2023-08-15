@@ -9,7 +9,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public float rotation { get; set; }
     public int carHp { get; set; }
 
-    private PlayerCarMovement playerCarMovement;
+    
+    private CarMovement carMovement;
     public ObstacleEvent obstacleEvent;
 
     [SerializeField]
@@ -19,9 +20,13 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         Car.Level = 1; 
         Car.carHp = 100; //초기Hp 100으로 초기화
-        Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
+        /*
+          5f로 해야 문제없이 후진까지 가능함
+          23.08.15 전진 후진 가속도 이슈 수정이후 5f는 너무 느려서 값
+        */
+        Car.playerAccelSpeed = 5f; 
         Car.rotationSpeed = 100f;
-        playerCarMovement = new PlayerCarMovement(transform);
+        carMovement = new CarMovement(transform);
         carNavigation.Init();
         
     }
@@ -40,7 +45,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private void FixedUpdate()
     {
-        playerCarMovement.Update();
+        carMovement.Update();
     }
 
     public void CarDamage(int carDamage)

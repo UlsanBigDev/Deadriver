@@ -20,8 +20,27 @@ public class CarMovement
         
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            currentSpeed += Car.playerAccelSpeed * Time.deltaTime;
+            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed);
+        }
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (currentSpeed > 0)
+            {
+                currentSpeed -= decelSpeed * Time.deltaTime;
+                currentSpeed = Mathf.Max(currentSpeed, 0f); // decelSpeed 로 currentSpeed 값 감소를 최대 0f 까지만 감소하게 함
+            }
+            
+        }
+
+        Debug.Log(currentSpeed);
+
+
+        /*if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
             currentSpeed += Car.playerAccelSpeed * Time.deltaTime;
             currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed); // 최대 속도 제한
@@ -41,8 +60,11 @@ public class CarMovement
         else
         {
             rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+
         }
         // velocity 는 Rigidbody 를 통해 게임 오브젝트의 속도를 나타내는 속성임. 속도 벡터는 물체의 이동 방향과 속도를 포함함.
+
+        */
 
 
         // 자동차 회전
