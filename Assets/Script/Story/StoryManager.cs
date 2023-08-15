@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class StoryManager : MonoBehaviour
     private void InitializeStoryData()
     {
         /*
-         * StorySelect(대화내용[], (다음 스토리 선택지1, 다음 스토리 선택지2), [callBack=없어도])
+         * StorySelect(대화내용[], (다음 스토리 선택지1, 다음 스토리 선택지2), [callBack=없어도됨])
          */
         storyMap.Add(1000,
             new StoryNormal(
@@ -49,8 +50,45 @@ public class StoryManager : MonoBehaviour
                 )
             )
         );
-        /*storyMap.Add(1100); // 고등학교 친구를 만나는 이벤트*/        
-        /*storyMap.Add(1200); // 고등학교 친구 약속 거절 이벤트*/
+
+        // 고등학교 친구를 만나서 밥 먹는 이벤트
+        storyMap.Add(1100,
+            new StorySelect(
+                new List<string>()
+                {
+                    "민광 : 사장님 삼겹살 4인분에 소주 두병이요~",
+                    "나 : 나는 차몰고 와서 소주는 못 마실것 같은데 콜라나 마실게",
+                    "민광 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만",
+                    "민광 : 어차피 이 동네 단속도 잘 안떠~",
+                    "나 : 쓰읍 단속이 문제가 아닌데..."
+                },
+                (
+                    new StoryTitle("마신다", 1110),
+                    new StoryTitle("안마신다", 1120)
+                )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술까지 마시는 이벤트 - 1
+        storyMap.Add(1110,
+            new Story(
+                new List<string>()
+                {
+                    "(알딸딸한게 취기가 올라온다)",
+                    "민광 : 야 재미있었다~ 내일 보자~",
+                    "나 : 어~ 그래 잘들어가고 언젠가 보자",
+                    "하아.. 별로 안 취한것 같은데 운전이나 해야겠다"
+                },
+                () => {
+                    Player player = Player.GetPlayer();
+                    player.SetDrunkGauge(player.drunkGauge + 13);
+                    SceneManager.LoadScene("car_drive_develop");
+                }
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 거절 이벤트 - 1
+        /*storyMap.Add(1120,)*/
     }
 
     private void Start()
