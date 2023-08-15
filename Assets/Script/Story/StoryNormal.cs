@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class StoryNormal : Story
 {
-    Story nextStory;
+    public Story next;
     public StoryNormal(List<string> message, Story story) : base(message)
     {
-        nextStory = story;
+        next = story;
     }
 
     public StoryNormal(List<string> message, Story story, System.Action listener) : this(message, story)
