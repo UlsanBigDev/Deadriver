@@ -7,9 +7,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public bool isPlayer { get; set; }
     public float speed { get; set; }
     public float rotation { get; set; }
-    public int carHp { get; set; }
+    public int carHp { get; set; } 
 
-    
+     
     private CarMovement carMovement;
     public ObstacleEvent obstacleEvent;
 
