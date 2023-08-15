@@ -6,12 +6,32 @@ using UnityEngine.AI;
 [System.Serializable]
 public class CarNavigation
 {
-    private GameObject current;
     [SerializeField]
     private Transform target;
-    public CarNavigation(GameObject gameObject)
+
+    [SerializeField]
+    private NavMeshAgent agent;
+
+    [SerializeField]
+    private LineRenderer line;
+
+    public void Init()
     {
-        current = gameObject;
+        InitializeAgent();
+    }
+
+    private void InitializeAgent() 
+    {
+        agent.speed = 0f;
+        agent.SetDestination(target.position);
+    }
+
+    internal void DrawLIne()
+    {
+        int length = agent.path.corners.Length;
+        if (length < 2) return;
+        line.positionCount = length;
+        line.SetPositions(agent.path.corners);
     }
 
 }

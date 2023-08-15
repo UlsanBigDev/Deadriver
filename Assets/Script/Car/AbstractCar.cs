@@ -14,7 +14,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     [SerializeField]
     private CarNavigation carNavigation;
-    public Transform endPoint;
 
     private void Awake()
     {
@@ -23,7 +22,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.playerAccelSpeed = 5f; // 5f로 해야 문제없이 후진까지 가능함
         Car.rotationSpeed = 100f;
         playerCarMovement = new PlayerCarMovement(transform);
-        carNavigation = new CarNavigation(gameObject);
+        carNavigation.Init();
         
     }
  
@@ -33,6 +32,10 @@ public abstract class AbstractCar : MonoBehaviour, Car
         foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
         }        
+    }
+    private void Update()
+    {
+        carNavigation.DrawLIne();
     }
 
     private void FixedUpdate()
@@ -79,7 +82,7 @@ public class PlayerCarMovement
     }
     public void Update()
     {
-        Debug.Log(Car.playerAccelSpeed);
+        /*Debug.Log(Car.playerAccelSpeed);*/
         // 수직 수평 입력값 가져오는거
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
