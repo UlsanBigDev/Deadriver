@@ -32,8 +32,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         obstacleEvent = new ObstacleEvent(transform);
         foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
-        }
-        carNavigation.SetTarget(endPoint);
+        }        
     }
 
     private void FixedUpdate()
