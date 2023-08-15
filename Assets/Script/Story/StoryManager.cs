@@ -26,7 +26,7 @@ public class StoryManager : MonoBehaviour
          * StorySelect(대화내용[], (다음 스토리 선택지1, 다음 스토리 선택지2), [callBack=없어도됨])
          */
         storyMap.Add(1000,
-            new StoryNormal(
+            new StoryChain(
                 new List<string>()
                 {
                     "차를 사고 좋은 점이라 하면 여러 가지가 있겠지만.",
@@ -114,8 +114,8 @@ public class StoryManager : MonoBehaviour
             }
             return;
         } else {            
-            if (current is StoryNormal) {
-                StoryNormal sn = current as StoryNormal;
+            if (current is StoryChain) {
+                StoryChain sn = current as StoryChain;
                 SetCurrentStory(sn.next);
                 return;
             }
