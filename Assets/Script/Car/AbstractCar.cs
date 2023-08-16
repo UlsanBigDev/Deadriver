@@ -25,7 +25,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
           5f로 해야 문제없이 후진까지 가능함
           23.08.15 전진 후진 가속도 이슈 수정이후 5f는 너무 느려서 값
         */
-        Car.playerAccelSpeed = 5f; 
+        Car.playerAccelSpeed = 10f; 
         Car.rotationSpeed = 100f;
         carMovement = new CarMovement(transform);
         carNavigation.Init();
