@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform[] pointArray;
+    public Transform[] GreenArray;
+    public Transform[] YELLOWArray;
+    public Transform[] ORANGEArray;
+    public Transform[] REDArray;
 
     Player player;
-    ObstacleEvent obstacleEvent;
+    public ObstacleEvent obstacleEvent;
 
+    public GameObject drag;
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
@@ -19,13 +23,17 @@ public class GameManager : MonoBehaviour
 
         //Car.AddDrunkEvent(new RashEvent());
         //Car.AddDrunkEvent(new RotationEvent());
-        //Car.AddDrunkEvent(new ControlEvent());
-        Car.AddDrunkEvent(new ObstacleEvent(pointArray));
-
-        obstacleEvent = new ObstacleEvent(pointArray);
+        //Car.AddDrunkEvent(new ControlEvent()); 
+        if(Player.GetPlayer().drunkLevel == DrunkLevel.GREEN )
+        {
+            Car.AddDrunkEvent(new ObstacleEvent(GreenArray, drag));
+            obstacleEvent = new ObstacleEvent(GreenArray, drag);
+            //drag Object를 ObstacleEvent에서 지정해주는 게 아니라 여기서 drag Object를 지정해주고 전달해야함
+            //ObstacleEvent에서 지정하니까 초기화가 되는 듯?
+        }        
     }
 
-    private void Start()
+    private void Start()    
     {
         Debug.Log(player.drunkGauge);
     }

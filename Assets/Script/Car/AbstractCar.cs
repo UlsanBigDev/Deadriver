@@ -11,7 +11,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
      
     private CarMovement carMovement;
-    public ObstacleEvent obstacleEvent;
+
+    //public ObstacleEvent obstacleEvent;
 
     [SerializeField]
     private CarNavigation carNavigation;
