@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class AbstractCar : MonoBehaviour, Car
 {
@@ -65,4 +66,5 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         Destroy(this);
     }
+
 }
