@@ -7,9 +7,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public bool isPlayer { get; set; }
     public float speed { get; set; }
     public float rotation { get; set; }
-    public int carHp { get; set; } 
+    public int carHp { get; set; }
 
-     
+    public SoundManager soundManager;
     private CarMovement carMovement;
 
     //public ObstacleEvent obstacleEvent;
@@ -29,7 +29,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.rotationSpeed = 100f;
         carMovement = new CarMovement(transform);
         carNavigation.Init();
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
  
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴

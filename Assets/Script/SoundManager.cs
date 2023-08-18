@@ -14,10 +14,21 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.Play();
         Debug.Log("브금ON");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SfxPlay(Sfx type)
     {
-        
+        switch (type)
+        {
+            case Sfx.click:
+                sfxPlayer[sfxCursor].clip = sfxClip[Random.Range(0, 3)];
+                break;
+            case Sfx.crashBots:
+                sfxPlayer[sfxCursor].clip = sfxClip[16];
+                break;
+            case Sfx.crashBuiling:
+                sfxPlayer[sfxCursor].clip = sfxClip[41];
+                break;
+        }
+        sfxPlayer[sfxCursor].Play();
+        sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
     }
 }
