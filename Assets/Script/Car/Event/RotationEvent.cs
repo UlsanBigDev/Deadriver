@@ -3,10 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotationEvent : DrunkEvent
-{   
+{
+    DrunkLevel level = Player.GetPlayer().drunkLevel;
+
     public override void Run()
     {
-        Debug.Log("´ëÃæ Çîµé¸µ °ü·Ã ÀÌº¥Æ®");
-        Car.rotationSpeed = 200f;
+        if (level == DrunkLevel.GREEN)
+        {
+            Car.playerAccelSpeed = 10f;
+            Debug.Log("GREEN íšŒì „ì†ë ¥");
+        }
+        else if (level == DrunkLevel.YELLOW)
+        {
+            //Car.playerAccelSpeed = 10f;
+            Debug.Log("YELLOW íšŒì „ì†ë ¥");
+        }
+        else if (level == DrunkLevel.ORANGE)
+        {
+            //Car.playerAccelSpeed = 10f;
+            Debug.Log("ORANGE íšŒì „ì†ë ¥");
+        }
+        else if (level == DrunkLevel.RED)
+        {
+            //Car.playerAccelSpeed = 10f;
+            Debug.Log("RED íšŒì „ì†ë ¥");
+        }
     }
 }
