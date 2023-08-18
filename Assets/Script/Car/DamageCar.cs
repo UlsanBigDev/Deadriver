@@ -12,7 +12,7 @@ public class DamageCar : AbstractCar
         {
             if (!delayedDamage)
             {
-                soundManager.SendMessage("SfxPlay", SoundManager.Sfx.crashBuiling);
+                soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
                 StartCoroutine(DamageDelay(carDamage, 1f)); //코루틴으로 순간적으로 충돌이 중복적으로 일어나는 현상을 방지하기 위해 최소한의 딜레이값 설정필요함
             }
         }

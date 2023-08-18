@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashBots };
+    public enum Sfx { click, crashBuiling, crashBots, over };
     int sfxCursor;
     void Start()
     {
@@ -26,6 +26,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case Sfx.crashBuiling:
                 sfxPlayer[sfxCursor].clip = sfxClip[41];
+                break;
+            case Sfx.over:
+                sfxPlayer[sfxCursor].clip = sfxClip[32];
                 break;
         }
         sfxPlayer[sfxCursor].Play();

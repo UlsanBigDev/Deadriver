@@ -56,6 +56,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (Car.carHp <= 0)
         {
             Debug.Log("님 차 터짐 ㅅㄱㅃ2");
+            soundManager.bgmPlayer.Stop();
+            soundManager.SfxPlay(SoundManager.Sfx.over);
             DestroyCar();
         }
     }
