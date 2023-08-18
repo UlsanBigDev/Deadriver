@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { crash, };
+    public enum Sfx { click, crashBuiling, crashBots };
     int sfxCursor;
     void Start()
     {
