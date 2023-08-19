@@ -7,16 +7,16 @@ public class SightEvent : DrunkEvent
 {
     public Image image;
 
-    public SightEvent(Image panelImage)
+    public SightEvent(Image panel)
     {
-        this.image = panelImage;
+        this.image = panel;
     }
 
     public void sight()
     {
         Debug.Log(image);
         Debug.Log("시야방해 디버프");
-        image.color = new Color(255, 255, 255, 0.5f);
+        image.color = new Color(255,255, 255, 0.5F);
     }
 
     public override void Run()

@@ -13,8 +13,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public SoundManager soundManager;
     private CarMovement carMovement;
 
-    //public ObstacleEvent obstacleEvent;
-
     [SerializeField]
     private CarNavigation carNavigation;
 
