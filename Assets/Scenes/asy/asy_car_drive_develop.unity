@@ -1422,7 +1422,7 @@ MonoBehaviour:
   YELLOWArray: []
   ORANGEArray: []
   REDArray: []
-  panelImage: {fileID: 0}
+  panel: {fileID: 0}
   drag: {fileID: 0}
 --- !u!4 &1679047598
 Transform:
@@ -1552,7 +1552,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  panelImage: {fileID: 0}
+  panel: {fileID: 1633452410}
   drag: {fileID: 439334566514975779, guid: 09ede8fc53afc0040ae66f35c8103a07, type: 3}
 --- !u!1 &1971676646
 GameObject:
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   YELLOWArray: []
   ORANGEArray: []
   REDArray: []
-  panelImage: {fileID: 1633452410}
+  panel: {fileID: 0}
   drag: {fileID: 0}
 --- !u!1 &2114745443
 GameObject:
