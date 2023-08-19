@@ -7,6 +7,7 @@ public class ObstacleEvent : DrunkEvent
     private GameObject dragPrefab;
 
     private Transform[] gameObjectGroup; //장애물들이 생성될 위치를을 배열에 저장
+
     DrunkLevel level = Player.GetPlayer().drunkLevel; //난이도 받아옴
 
     public ObstacleEvent(Transform[] pointArray,GameObject drag) { 
@@ -30,3 +31,4 @@ public class ObstacleEvent : DrunkEvent
         obstacle();
     }
 }
+

@@ -37,6 +37,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             drunkEvent.Run();
         }        
     }
+
     private void Update()
     {
         carNavigation.DrawLIne();
@@ -60,6 +61,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             DestroyCar();
         }
     }
+
     private void DestroyCar()
     {
         Destroy(this);

@@ -28,33 +28,34 @@ public class GameManager : MonoBehaviour
         //Car.AddDrunkEvent(new RashEvent());
         //Car.AddDrunkEvent(new RotationEvent());
         //Car.AddDrunkEvent(new ControlEvent()); 
-        Debug.Log(panel);
-        Car.AddDrunkEvent(new SightEvent(panel));
-        sightEvent = new SightEvent(panel);
+        //Debug.Log(panel);
+        //Car.AddDrunkEvent(new SightEvent(panel));
+        //sightEvent = new SightEvent(panel);
 
         /* 장애물 생성 코드*/
         //난이도마다 배열을 만들고 그 배열에 객체를 넣고 그 객체를 넘겨줌
-        //if (level == DrunkLevel.GREEN)
-        //{
-        //    Car.AddDrunkEvent(new ObstacleEvent(GreenArray, drag));
-        //    obstacleEvent = new ObstacleEvent(GreenArray, drag);
-        //    //drag Object를 ObstacleEvent에서 지정해주는 게 아니라 여기서 drag Object를 지정해주고 전달해야함
-        //    //ObstacleEvent에서 지정하니까 초기화가 되는 듯?
-        //}
-        //else if (level == DrunkLevel.YELLOW)
-        //{
-        //    Car.AddDrunkEvent(new ObstacleEvent(YELLOWArray, drag));
-        //    obstacleEvent = new ObstacleEvent(YELLOWArray, drag);
-        //}
-        //else if(level == DrunkLevel.ORANGE)
-        //{
-        //    Car.AddDrunkEvent(new ObstacleEvent(ORANGEArray, drag));
-        //    obstacleEvent = new ObstacleEvent(ORANGEArray, drag);
-        //}else if(level == DrunkLevel.RED)
-        //{
-        //    Car.AddDrunkEvent(new ObstacleEvent(REDArray, drag));
-        //    obstacleEvent = new ObstacleEvent(REDArray, drag);
-        //}        
+        if (level == DrunkLevel.GREEN)
+        {
+            Car.AddDrunkEvent(new ObstacleEvent(GreenArray, drag));
+            obstacleEvent = new ObstacleEvent(GreenArray, drag);
+            //drag Object를 ObstacleEvent에서 지정해주는 게 아니라 여기서 drag Object를 지정해주고 전달해야함
+            //ObstacleEvent에서 지정하니까 초기화가 되는 듯?
+        }
+        else if (level == DrunkLevel.YELLOW)
+        {
+            Car.AddDrunkEvent(new ObstacleEvent(YELLOWArray, drag));
+            obstacleEvent = new ObstacleEvent(YELLOWArray, drag);
+        }
+        else if (level == DrunkLevel.ORANGE)
+        {
+            Car.AddDrunkEvent(new ObstacleEvent(ORANGEArray, drag));
+            obstacleEvent = new ObstacleEvent(ORANGEArray, drag);
+        }
+        else if (level == DrunkLevel.RED)
+        {
+            Car.AddDrunkEvent(new ObstacleEvent(REDArray, drag));
+            obstacleEvent = new ObstacleEvent(REDArray, drag);
+        }
     }
 
     private void Start()    
