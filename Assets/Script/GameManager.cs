@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     Player player;
     public ObstacleEvent obstacleEvent;
     public SightEvent sightEvent;
+    
     public Image panelImage;
-
     public GameObject drag;
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         //Car.AddDrunkEvent(new RotationEvent());
         //Car.AddDrunkEvent(new ControlEvent()); 
         Car.AddDrunkEvent(new SightEvent(panelImage));
+        sightEvent = new SightEvent(panelImage);
 
         /* 장애물 생성 코드*/
         //난이도마다 배열을 만들고 그 배열에 객체를 넣고 그 객체를 넘겨줌
@@ -58,6 +59,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()    
     {
-        Debug.Log(player.drunkGauge);
+        //Debug.Log(player.drunkGauge);
     }
 }

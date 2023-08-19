@@ -15,17 +15,17 @@ public class RashEvent : DrunkEvent
         }
         else if (level == DrunkLevel.YELLOW)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 15f;
             Debug.Log("YELLOW 급발진");
         }
         else if (level == DrunkLevel.ORANGE)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 20f;
             Debug.Log("ORANGE 급발진");
         }
         else if (level == DrunkLevel.RED)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 25f;
             Debug.Log("RED 급발진");
         }
        

@@ -15,17 +15,17 @@ public class RotationEvent : DrunkEvent
         }
         else if (level == DrunkLevel.YELLOW)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 15f;
             Debug.Log("YELLOW 회전속력");
         }
         else if (level == DrunkLevel.ORANGE)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 20f;
             Debug.Log("ORANGE 회전속력");
         }
         else if (level == DrunkLevel.RED)
         {
-            //Car.playerAccelSpeed = 10f;
+            Car.playerAccelSpeed = 25f;
             Debug.Log("RED 회전속력");
         }
     }
