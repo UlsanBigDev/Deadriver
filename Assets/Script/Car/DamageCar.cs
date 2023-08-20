@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageCar : AbstractCar
 {
-    public int carDamage = 10;
+    public int carDamage;
     private bool delayedDamage = false;
 
     private void OnCollisionEnter(Collision collision) // 충돌이 일어나자 마자
@@ -13,7 +13,28 @@ public class DamageCar : AbstractCar
         {
             if (!delayedDamage)
             {
-                soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+                //soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+                carDamage = 10;
+                Debug.Log(carDamage);
+                StartCoroutine(DamageDelay(carDamage, 1f)); //코루틴으로 순간적으로 충돌이 중복적으로 일어나는 현상을 방지하기 위해 최소한의 딜레이값 설정필요함
+            }
+        }
+        else if (collision.gameObject.CompareTag("CarDrag"))
+        {
+            if (!delayedDamage)
+            {
+                //soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+                carDamage = 5;
+                Debug.Log(carDamage);
+                StartCoroutine(DamageDelay(carDamage, 1f)); //코루틴으로 순간적으로 충돌이 중복적으로 일어나는 현상을 방지하기 위해 최소한의 딜레이값 설정필요함
+            }
+        }else if (collision.gameObject.CompareTag("Person"))
+        {
+            if (!delayedDamage)
+            {
+                //soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+                carDamage = 1;
+                Debug.Log(carDamage);
                 StartCoroutine(DamageDelay(carDamage, 1f)); //코루틴으로 순간적으로 충돌이 중복적으로 일어나는 현상을 방지하기 위해 최소한의 딜레이값 설정필요함
             }
         }
