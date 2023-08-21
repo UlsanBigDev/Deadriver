@@ -8,7 +8,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public bool isPlayer { get; set; }
     public float speed { get; set; }
     public float rotation { get; set; }
-    public int carHp { get; set; }
 
     public SoundManager soundManager;
     private CarMovement carMovement;
@@ -66,5 +65,4 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         Destroy(this);
     }
-
 }
