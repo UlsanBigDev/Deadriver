@@ -12,7 +12,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public int carDamage;
     private bool delayedDamage = false;
 
-    public SoundManager soundManager;
+    public DriveSceneSoundManager driveSceneSoundManager;
     private CarMovement carMovement;
 
     [SerializeField]
@@ -30,7 +30,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.rotationSpeed = 100f;
         carMovement = new CarMovement(transform);
         carNavigation.Init();
-        soundManager = FindObjectOfType<SoundManager>();
+        driveSceneSoundManager = FindObjectOfType<DriveSceneSoundManager>();
     }
  
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
@@ -57,8 +57,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (Car.carHp <= 0)
         {
             Debug.Log("님 차 터짐 ㅅㄱㅃ2");
-            soundManager.bgmPlayer.Stop();
-            soundManager.SfxPlay(SoundManager.Sfx.over);
+            driveSceneSoundManager.bgmPlayer.Stop();
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.over);
             DestroyCar();
         }
     }
@@ -76,21 +76,21 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (delayedDamage) return;
         if (enemy is Building)
         {
-            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
             Debug.Log("차의 HP가 -5 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 5;
         }
         else if (enemy is EnemyCar)
         {
-            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
             Debug.Log("차의 HP가 -3 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
         }
         else if (enemy is Person)
         {
-            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
             Debug.Log("차의 HP가 -1 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
