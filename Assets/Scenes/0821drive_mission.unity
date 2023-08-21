@@ -1554,6 +1554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 3093707400183702737, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
       propertyPath: carNavigation.target
       value: 
