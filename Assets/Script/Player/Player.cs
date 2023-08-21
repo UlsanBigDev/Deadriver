@@ -7,7 +7,7 @@ public enum DrunkLevel
     GREEN, YELLOW, ORANGE, RED
 }
 
-interface Player
+public interface Player
 {
     private static Player instance;
     public static Player GetPlayer()

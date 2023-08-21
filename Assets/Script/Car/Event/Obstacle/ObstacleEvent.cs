@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 장애물 생성 디버프 클레스
+/// </summary>
 public class ObstacleEvent : DrunkEvent
 {
     private GameObject dragPrefab;
@@ -28,32 +32,29 @@ public class ObstacleEvent : DrunkEvent
             //Debug.Log(gameObjectGroup.Length);
             Object.Instantiate(dragPrefab, gameObjectGroup[i].transform);
         }
+ 
+    }
 
-        void OnTrigger(Collider other)
+    void OnTrigger(Collider other)
+    {
+        while (move)
         {
-            while (move)
+            for (int i = 0; i < gameObjectGroup.Length; i++)
             {
-                for (int i = 0; i < gameObjectGroup.Length; i++)
+                currentPosition[i] = gameObjectGroup[i].transform.position;
+                float newXPosition = gameObjectGroup[i].transform.position.x + plus;
+                float newYPosition = gameObjectGroup[i].transform.position.y;
+                float newZPosition = gameObjectGroup[i].transform.position.z;
+
+                gameObjectGroup[i].transform.position = new Vector3(newXPosition, newYPosition, newZPosition);
+
+                if (other.tag == "building" || other.tag == "CarDrag" || other.tag == "Person")
                 {
-                    currentPosition[i] = gameObjectGroup[i].transform.position;
-                    float newXPosition = gameObjectGroup[i].transform.position.x + plus;
-                    float newYPosition = gameObjectGroup[i].transform.position.y;
-                    float newZPosition = gameObjectGroup[i].transform.position.z;
-
-                    gameObjectGroup[i].transform.position = new Vector3(newXPosition, newYPosition, newZPosition);
-
-                    if (other.tag == "building" || other.tag == "CarDrag" || other.tag == "Person")
-                    {
-                        gameObjectGroup[i].transform.position = new Vector3(currentPosition[i].x, currentPosition[i].y, currentPosition[i].z);
-                    }
+                    gameObjectGroup[i].transform.position = new Vector3(currentPosition[i].x, currentPosition[i].y, currentPosition[i].z);
                 }
-
-
             }
         }
     }
-
-   
 
     public override void Run()
     {

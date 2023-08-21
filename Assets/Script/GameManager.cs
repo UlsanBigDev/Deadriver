@@ -36,25 +36,30 @@ public class GameManager : MonoBehaviour
         //난이도마다 배열을 만들고 그 배열에 객체를 넣고 그 객체를 넘겨줌
         if (level == DrunkLevel.GREEN)
         {
-            Car.AddDrunkEvent(new ObstacleEvent(GreenArray, drag));
-            obstacleEvent = new ObstacleEvent(GreenArray, drag);
+            ObstacleEvent obstacleEvent = new ObstacleEvent(GreenArray, drag);
+            Car.AddDrunkEvent(obstacleEvent);
+            this.obstacleEvent = obstacleEvent;
+            //obstacleEvent = new ObstacleEvent(GreenArray, drag);
             //drag Object를 ObstacleEvent에서 지정해주는 게 아니라 여기서 drag Object를 지정해주고 전달해야함
             //ObstacleEvent에서 지정하니까 초기화가 되는 듯?
         }
         else if (level == DrunkLevel.YELLOW)
         {
-            Car.AddDrunkEvent(new ObstacleEvent(YELLOWArray, drag));
-            obstacleEvent = new ObstacleEvent(YELLOWArray, drag);
+            ObstacleEvent obstacleEvent = new ObstacleEvent(YELLOWArray, drag);
+            Car.AddDrunkEvent(obstacleEvent);
+            this.obstacleEvent = obstacleEvent;
         }
         else if (level == DrunkLevel.ORANGE)
         {
-            Car.AddDrunkEvent(new ObstacleEvent(ORANGEArray, drag));
-            obstacleEvent = new ObstacleEvent(ORANGEArray, drag);
+            ObstacleEvent obstacleEvent = new ObstacleEvent(ORANGEArray, drag);
+            Car.AddDrunkEvent(obstacleEvent);
+            this.obstacleEvent = obstacleEvent;
         }
         else if (level == DrunkLevel.RED)
         {
-            Car.AddDrunkEvent(new ObstacleEvent(REDArray, drag));
-            obstacleEvent = new ObstacleEvent(REDArray, drag);
+            ObstacleEvent obstacleEvent = new ObstacleEvent(REDArray, drag);
+            Car.AddDrunkEvent(obstacleEvent);
+            this.obstacleEvent = obstacleEvent;
         }
     }
 

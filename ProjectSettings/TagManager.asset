@@ -7,6 +7,11 @@ TagManager:
   - building
   - CarDrag
   - Person
+<<<<<<< HEAD
+=======
+  - EnemyCar
+  - Enemy
+>>>>>>> bb963a22077be6892a21aec95ef186d374de1e90
   layers:
   - Default
   - TransparentFX

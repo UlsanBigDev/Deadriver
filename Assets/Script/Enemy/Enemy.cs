@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageCar : AbstractCar
+public interface Enemy
 {
-    
+
 }
