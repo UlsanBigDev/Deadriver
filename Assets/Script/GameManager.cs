@@ -17,7 +17,12 @@ public class GameManager : MonoBehaviour
 
     public Image panel;
     public GameObject drag;
+
+    public AudioSource bgmPlayer;
+    public SoundManager soundManager;
+
     public int i = 613;
+
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
@@ -67,6 +72,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()    
     {
+        bgmPlayer.Stop();
+        soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
         //Debug.Log(player.drunkGauge);
     }
 }

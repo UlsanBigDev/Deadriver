@@ -95,7 +95,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
         }
-        StartCoroutine(DamageDelay(carDamage, 1f));
+        StartCoroutine(DamageDelay(carDamage, 0.5f));
     }
     private void OnCollisionEnter(Collision collision) // 충돌이 일어나자 마자
     {
@@ -141,6 +141,4 @@ public abstract class AbstractCar : MonoBehaviour, Car
         yield return new WaitForSeconds(delay); // 딜레이를 걸어줌
         delayedDamage = false;
     }
-
-    
 }
