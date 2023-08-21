@@ -232,7 +232,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -549,6 +549,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 0}
   BGM: {fileID: 0}
+  uISoundManager: {fileID: 0}
 --- !u!1 &357503986
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +579,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -843,6 +844,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 1000060704}
   BGM: {fileID: 0}
+  uISoundManager: {fileID: 0}
 --- !u!1 &578415788
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +901,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 0}
   BGM: {fileID: 909314636}
+  uISoundManager: {fileID: 0}
 --- !u!114 &578415791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,7 +1105,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1605,6 +1608,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 0}
   BGM: {fileID: 909314636}
+  uISoundManager: {fileID: 0}
 --- !u!1 &1019097358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1759,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 0}
   BGM: {fileID: 0}
+  uISoundManager: {fileID: 0}
 --- !u!1 &1066314596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2112,7 @@ MonoBehaviour:
   start: {fileID: 0}
   configuration: {fileID: 0}
   BGM: {fileID: 0}
+  uISoundManager: {fileID: 0}
 --- !u!1 &1377447364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2142,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 341b50d7e1e37534da721cc6da9d6247, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2666,7 +2672,7 @@ MonoBehaviour:
   - {fileID: 636982659}
   - {fileID: 357503987}
   sfxClip:
-  - {fileID: 8300000, guid: 8343b0315d2698c459ce1e864d52af2e, type: 3}
+  - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
 --- !u!4 &2031405894
 Transform:
   m_ObjectHideFlags: 0
