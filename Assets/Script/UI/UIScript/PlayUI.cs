@@ -28,26 +28,27 @@ public class PlayUI : MonoBehaviour
 
     public void SetLevel() //난이도별로 UI의 text, color를 변경함
     {
+        colorLevel.text = Player.GetPlayer().ToString();
         if (level == DrunkLevel.GREEN)
         {
             Debug.Log("GREEN 색깔");
-            colorLevel.text = "0 ~ 29";
+            //colorLevel.text = "0 ~ 29";
             colorLevel.color = Color.green;
         }else if(level == DrunkLevel.YELLOW)
         {
             Debug.Log("YELLOW 색깔");
-            colorLevel.text = "30 ~ 79";
+            //colorLevel.text = "30 ~ 79";
             colorLevel.color = Color.yellow;
         }else if(level == DrunkLevel.ORANGE)
         {
             Debug.Log("ORANGE 색깔");
-            str = "<color=#FF4500>" + "80 ~ 99" + "</color>";
+            //str = "<color=#FF4500>" + "80 ~ 99" + "</color>";
             colorLevel.text = str;            
         }
         else if(level == DrunkLevel.RED)
         {
             Debug.Log("RED 색깔");
-            colorLevel.text = "100 ~ ";
+            //colorLevel.text = "100 ~ ";
             colorLevel.color = Color.red;
         }
     }
