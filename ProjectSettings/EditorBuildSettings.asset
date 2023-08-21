@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/car_drive_develop.unity
     guid: 217c0b21b5b3f2a4aae45611065b09d6
+  - enabled: 1
+    path: Assets/Scenes/StoryLine_Developer.unity
+    guid: fed432c89c9ce4954bf4dcd8e1cbfcc2
   m_configObjects: {}

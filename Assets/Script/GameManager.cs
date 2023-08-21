@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public Image panel;
     public GameObject drag;
+    public int i = 613;
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
