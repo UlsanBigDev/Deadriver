@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SightEvent : DrunkEvent
+public class SightEvent : DrunkEvent //Panel의 투명도를 이용해서 시야 방해 디버프를 만듬
 {
     public Image image;
     DrunkLevel level = Player.GetPlayer().drunkLevel;
@@ -17,6 +17,7 @@ public class SightEvent : DrunkEvent
     {
         Debug.Log("시야방해 디버프");
 
+        //난이도별로 투명도를 증가시켜서 더 흐리게 만듬
         if (level == DrunkLevel.GREEN)
         {
            image.color = new Color(255, 255, 255);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationEvent : DrunkEvent
+public class RotationEvent : DrunkEvent //회전속도 증가 디버프
 {
     DrunkLevel level = Player.GetPlayer().drunkLevel;
 

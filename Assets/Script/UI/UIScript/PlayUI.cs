@@ -26,7 +26,7 @@ public class PlayUI : MonoBehaviour
         SetAlcohol();
     }
 
-    public void SetLevel()
+    public void SetLevel() //난이도별로 UI의 text, color를 변경함
     {
         if (level == DrunkLevel.GREEN)
         {

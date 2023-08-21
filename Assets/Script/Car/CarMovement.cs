@@ -15,13 +15,13 @@ public class CarMovement
         currentTransform = transform;
         rb = transform.GetComponent<Rigidbody>();
     }
-    private void UpCurrentSpeed()
+    private void UpCurrentSpeed() //앞으로 갈 때 속도가 점점 증가
     {
         currentSpeed += Car.playerAccelSpeed * Time.deltaTime;
         currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed);
     }
 
-    private void DownCurrentSpeed()
+    private void DownCurrentSpeed() //뒤로 갈 때 속도 감소
     {
         currentSpeed -= decelSpeed * Time.deltaTime;
         currentSpeed = Mathf.Max(currentSpeed, 0f); // decelSpeed 로 currentSpeed 값 감소를 최대 0f 까지만 감소하게 함
@@ -34,11 +34,11 @@ public class CarMovement
 
         /*Debug.Log(rb.transform.forward);*/
         /*rb.AddForce(currentTransform.forward, ForceMode.Force);*/
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)) //W키를 눌러서 앞으로 이동
         {
             rb.AddForce(currentTransform.forward * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange );
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S)) //S키를 눌러서 뒤로 이동
         {
             rb.AddForce(currentTransform.forward * -1 * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange);
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RashEvent : DrunkEvent
+public class RashEvent : DrunkEvent //가속도 디버프 
 { 
     DrunkLevel level = Player.GetPlayer().drunkLevel;
     

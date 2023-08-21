@@ -50,7 +50,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         carMovement.Update();
     }
 
-    public void CarDamage(int carDamage)
+    public void CarDamage(int carDamage) 
     {
         Car.carHp -= carDamage;
         Debug.Log("차의 HP가 -10 감소되었습니다.");
@@ -72,7 +72,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     /// <summary>
     /// Enemy 와 충돌 햇을때 호
     /// </summary>
-    protected void OnEnemyCrash(Enemy enemy)
+    protected void OnEnemyCrash(Enemy enemy) //부딪힌 객체에 따라서 HP 감소 - 부딪히는 객체에 따라서 carDamage의 값을 변경해주는 코드
     {
         if (delayedDamage) return;
         if (enemy is Building)
@@ -91,7 +91,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     }
     private void OnCollisionEnter(Collision collision) // 충돌이 일어나자 마자
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
             OnEnemyCrash(collision.gameObject.GetComponent<Enemy>());
         }
