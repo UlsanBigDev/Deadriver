@@ -7,6 +7,8 @@ TagManager:
   - building
   - CarDrag
   - Person
+  - EnemyCar
+  - Enemy
   layers:
   - Default
   - TransparentFX
