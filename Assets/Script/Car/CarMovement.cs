@@ -9,6 +9,7 @@ public class CarMovement
     private float maxSpeed = 50f;    
     public static Rigidbody rb;
     public static Transform currentTransform;
+    public SoundManager soundManager;
 
     public CarMovement(Transform transform)
     {
