@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - building
+  - CarDrag
+  - Person
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 장애물 생성 디버프 클레스
+/// </summary>
 public class ObstacleEvent : DrunkEvent
 {
     private GameObject dragPrefab;
