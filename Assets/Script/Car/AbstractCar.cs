@@ -56,8 +56,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public void CarDamage(int carDamage) 
     {
         Car.carHp -= carDamage;
-        Debug.Log("차의 HP가 -10 감소되었습니다.");
-        Debug.Log("현재 차량의 hp = " + Car.carHp);
         if (Car.carHp <= 0)
         {
             Debug.Log("님 차 터짐 ㅅㄱㅃ2");
@@ -80,14 +78,23 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (delayedDamage) return;
         if (enemy is Building)
         {
+            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -5 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 5;
         }
         else if (enemy is EnemyCar)
         {
+            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -3 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
         }
         else if (enemy is Person)
         {
+            soundManager.SfxPlay(SoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -1 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
         }
         StartCoroutine(DamageDelay(carDamage, 1f));

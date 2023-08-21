@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -706,7 +706,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ad3727b44c3ebd646bb25f36330edb68, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8cc263df4443c24bbbc64824229bf2f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1833,6 +1833,7 @@ MonoBehaviour:
   YELLOWArray: []
   ORANGEArray: []
   REDArray: []
+  panel: {fileID: 0}
   drag: {fileID: 0}
 --- !u!4 &1679047598
 Transform:
@@ -1898,8 +1899,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmPlayer: {fileID: 746963653}
-  sfxPlayer: []
-  sfxClip: []
+  sfxPlayer:
+  - {fileID: 804711746}
+  - {fileID: 1218783466}
+  - {fileID: 1435953832}
+  sfxClip:
+  - {fileID: 8300000, guid: 4d7fb794a152416419dddc5933e0b417, type: 3}
+  - {fileID: 8300000, guid: 69d4db7ec5082a448b3d7dd6c59dbf1f, type: 3}
+  - {fileID: 8300000, guid: ef11ad0071dc8f641a80e02e5ac6e871, type: 3}
+  - {fileID: 8300000, guid: 8044dad80a04d6e45be051e6ad9bac04, type: 3}
+  - {fileID: 8300000, guid: a2f382329cd24b24b911f9db3b35407e, type: 3}
+  - {fileID: 8300000, guid: dc842f70ec59df241a7a7b82878c9768, type: 3}
+  - {fileID: 8300000, guid: 7219a8031a23c58459b315a15b338bb2, type: 3}
+  - {fileID: 8300000, guid: 1448908891c79dd41ab577451818e968, type: 3}
+  - {fileID: 8300000, guid: c31f9b593e615154385ad7efde428719, type: 3}
+  - {fileID: 8300000, guid: 744640457933bac4ebb4a96d91ba9e09, type: 3}
+  - {fileID: 8300000, guid: ef8b6de2288f5ed4489ab3b5b06140f3, type: 3}
+  - {fileID: 8300000, guid: e113f85f496562f42b41b3da14c901a9, type: 3}
+  - {fileID: 8300000, guid: e9839304d631d3949b810291fe1d203e, type: 3}
+  - {fileID: 8300000, guid: 80253c134ec25bd4f8808158545c4675, type: 3}
+  - {fileID: 8300000, guid: 2fc8e3c20776e8c47bfceaf02acf27aa, type: 3}
+  - {fileID: 8300000, guid: ce36657c6df408b48a414e167c59b689, type: 3}
+  - {fileID: 8300000, guid: 396037f0f4adbc4478202784fbedac12, type: 3}
+  - {fileID: 8300000, guid: a249e4ff3c1bf804ab674d7d9811a101, type: 3}
+  - {fileID: 8300000, guid: ac7077074e469a541b82ecb9f963992f, type: 3}
+  - {fileID: 8300000, guid: 509b38b9d744ebb4388d6a378ceb2fc1, type: 3}
+  - {fileID: 8300000, guid: dcd8268b465fa714099440f5399bb011, type: 3}
+  - {fileID: 8300000, guid: f623c6d752047864e9748939b0b68071, type: 3}
+  - {fileID: 8300000, guid: 9f9e0cb4431ffd5429a9303f5bbedb1b, type: 3}
+  - {fileID: 8300000, guid: 417a7df4041b88b478e881cf983bc1e3, type: 3}
+  - {fileID: 8300000, guid: 207deceb866dd314eb220a5d60a31da8, type: 3}
+  - {fileID: 8300000, guid: d68628b81ae08e1488e2b08d8b0b6ec8, type: 3}
+  - {fileID: 8300000, guid: d3d454ca38e91f849a55b9ff3f54aca0, type: 3}
+  - {fileID: 8300000, guid: ad3727b44c3ebd646bb25f36330edb68, type: 3}
+  - {fileID: 8300000, guid: d8cc263df4443c24bbbc64824229bf2f, type: 3}
+  - {fileID: 8300000, guid: ccf153d08d32e374c98f265c1aab9a7c, type: 3}
+  - {fileID: 8300000, guid: a332a3204f350a040b6e6e889aadd4d2, type: 3}
 --- !u!1 &1875242632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,11 +1999,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4d48f696374364fa721a4d82b541c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carDamage: 10
+  soundManager: {fileID: 0}
   carNavigation:
     target: {fileID: 1246103230}
     agent: {fileID: 1977417798}
     line: {fileID: 1977417797}
-  carDamage: 10
+  gameObjects: []
+  currentPosition: []
 --- !u!54 &1875242636
 Rigidbody:
   m_ObjectHideFlags: 0

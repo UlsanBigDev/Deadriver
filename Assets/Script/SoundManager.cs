@@ -22,13 +22,13 @@ public class SoundManager : MonoBehaviour
                 sfxPlayer[sfxCursor].clip = sfxClip[Random.Range(0, 3)];
                 break;
             case Sfx.crashBots:
-                sfxPlayer[sfxCursor].clip = sfxClip[16];
+                sfxPlayer[sfxCursor].clip = sfxClip[11];
                 break;
             case Sfx.crashBuiling:
-                sfxPlayer[sfxCursor].clip = sfxClip[41];
+                sfxPlayer[sfxCursor].clip = sfxClip[20];
                 break;
             case Sfx.over:
-                sfxPlayer[sfxCursor].clip = sfxClip[32];
+                sfxPlayer[sfxCursor].clip = sfxClip[16];
                 break;
         }
         sfxPlayer[sfxCursor].Play();
