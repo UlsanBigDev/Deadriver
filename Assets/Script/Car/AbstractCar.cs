@@ -18,6 +18,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
     [SerializeField]
     private CarNavigation carNavigation;
 
+    public Transform[] gameObjects;
+    public Vector3[] currentPosition;
+
     private void Awake()
     {
         Car.Level = 1; 
@@ -133,4 +136,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
         yield return new WaitForSeconds(delay); // 딜레이를 걸어줌
         delayedDamage = false;
     }
+
+    
 }

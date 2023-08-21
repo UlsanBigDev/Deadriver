@@ -16,7 +16,6 @@ public class ObstacleEvent : DrunkEvent
     DrunkLevel level = Player.GetPlayer().drunkLevel; //난이도 받아옴
 
     float plus = 0.1f;
-    bool move = true;
 
     public ObstacleEvent(Transform[] pointArray,GameObject drag) { 
         this.gameObjectGroup = pointArray;
@@ -32,12 +31,11 @@ public class ObstacleEvent : DrunkEvent
             //Debug.Log(gameObjectGroup.Length);
             Object.Instantiate(dragPrefab, gameObjectGroup[i].transform);
         }
- 
     }
 
-    void OnTrigger(Collider other)
+    void OnTrigger(Collider other) //여기 있으면 실행이 안되서 위치 옮겨줘야함
     {
-        while (move)
+        while (true)
         {
             for (int i = 0; i < gameObjectGroup.Length; i++)
             {
