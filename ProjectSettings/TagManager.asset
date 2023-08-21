@@ -4,9 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - building
   - CarDrag
   - Person
+=======
+  - Undefined
+  - Building
+>>>>>>> 0b4d1aadfbdbe5d0b9659476f0670b186b78bf76
   - Enemy
   layers:
   - Default

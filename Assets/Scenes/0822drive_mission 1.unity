@@ -137,11 +137,7 @@ GameObject:
   - component: {fileID: 48967970}
   m_Layer: 0
   m_Name: Building (2)
-<<<<<<< HEAD
   m_TagString: Enemy
-=======
-  m_TagString: Undefined
->>>>>>> 7900a1356488eb09fdfe4fa926db3f4ed2ef5271
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -238,11 +234,7 @@ GameObject:
   - component: {fileID: 56982367}
   m_Layer: 0
   m_Name: Building (3)
-<<<<<<< HEAD
   m_TagString: Enemy
-=======
-  m_TagString: Undefined
->>>>>>> 7900a1356488eb09fdfe4fa926db3f4ed2ef5271
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -339,11 +331,7 @@ GameObject:
   - component: {fileID: 398420757}
   m_Layer: 0
   m_Name: Building (4)
-<<<<<<< HEAD
   m_TagString: Enemy
-=======
-  m_TagString: Undefined
->>>>>>> 7900a1356488eb09fdfe4fa926db3f4ed2ef5271
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -606,11 +594,7 @@ GameObject:
   - component: {fileID: 1014885383}
   m_Layer: 0
   m_Name: Building (1)
-<<<<<<< HEAD
   m_TagString: Enemy
-=======
-  m_TagString: Undefined
->>>>>>> 7900a1356488eb09fdfe4fa926db3f4ed2ef5271
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -898,11 +882,7 @@ GameObject:
   - component: {fileID: 1349965655}
   m_Layer: 0
   m_Name: Building
-<<<<<<< HEAD
   m_TagString: Enemy
-=======
-  m_TagString: Undefined
->>>>>>> 7900a1356488eb09fdfe4fa926db3f4ed2ef5271
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
