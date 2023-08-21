@@ -10,17 +10,6 @@ public class StartUI : MonoBehaviour
     public Button configuration;
     public Image BGM;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void clickconfiguration()
     {
         Debug.Log("환경설정 클릭");

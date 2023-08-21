@@ -55,6 +55,6 @@ public class PlayUI : MonoBehaviour
     public void SetAlcohol()
     {
         //Debug.Log("차량 손상도 UI"); 
-        CarDamage.text = "차량 손상도 :" + Car.carHp.ToString();
+        CarDamage.text = "차량 손상도 : " + Car.carHp.ToString();
     }
 }

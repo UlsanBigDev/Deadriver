@@ -38,6 +38,8 @@ public class CarMovement
         {
             rb.AddForce(currentTransform.forward * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange );
         }
+
+
         if (Input.GetKey(KeyCode.S)) //S키를 눌러서 뒤로 이동
         {
             rb.AddForce(currentTransform.forward * -1 * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange);
