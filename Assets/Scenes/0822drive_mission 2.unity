@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3605,6 +3605,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: car
+      value: 
+      objectReference: {fileID: 1735314500}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: person
+      value: 
+      objectReference: {fileID: 728308176}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: building
+      value: 
+      objectReference: {fileID: 214078229}
     - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
       propertyPath: carNavigation.target
       value: 

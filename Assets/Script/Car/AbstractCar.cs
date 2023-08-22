@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,10 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public int carHp { get; set; }
     public int carDamage;
     private bool delayedDamage = false;
+    public int carint, personint, buildingint;
+    public TextMeshProUGUI person;
+    public TextMeshProUGUI building;
+    public TextMeshProUGUI car;
 
     public DriveSceneSoundManager driveSceneSoundManager;
     private CarMovement carMovement;
@@ -31,6 +36,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
         carMovement = new CarMovement(transform);
         carNavigation.Init();
         driveSceneSoundManager = FindObjectOfType<DriveSceneSoundManager>();
+        carint = 0;
+        personint = 0;
+        buildingint = 0;
     }
  
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
@@ -49,6 +57,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         carMovement.Update();
     }
+
 
     public void CarDamage(int carDamage) 
     {
@@ -80,6 +89,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("차의 HP가 -5 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 5;
+            buildingint++;
+            building.text = "빌딩 충돌 " + buildingint;
         }
         else if (enemy is EnemyCar)
         {
@@ -87,6 +98,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("차의 HP가 -3 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
+            carint++;
+            car.text = "차량 충돌 " + carint;
         }
         else if (enemy is Person)
         {
@@ -94,6 +107,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("차의 HP가 -1 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
+            personint++;
+            person.text = "보행자 충돌 " + personint;
         }
         StartCoroutine(DamageDelay(carDamage, 0.5f));
     }
