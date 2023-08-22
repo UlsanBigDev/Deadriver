@@ -15,7 +15,7 @@ public class ObstacleEvent : DrunkEvent
 
     DrunkLevel level = Player.GetPlayer().drunkLevel; //난이도 받아옴
 
-    float plus = 0.1f;
+    //float plus = 0.1f;
 
     public ObstacleEvent(Transform[] pointArray,GameObject drag) { 
         this.gameObjectGroup = pointArray;
@@ -33,26 +33,26 @@ public class ObstacleEvent : DrunkEvent
         }
     }
 
-    void OnTrigger(Collider other) //여기 있으면 실행이 안되서 위치 옮겨줘야함
-    {
-        while (true)
-        {
-            for (int i = 0; i < gameObjectGroup.Length; i++)
-            {
-                currentPosition[i] = gameObjectGroup[i].transform.position;
-                float newXPosition = gameObjectGroup[i].transform.position.x + plus;
-                float newYPosition = gameObjectGroup[i].transform.position.y;
-                float newZPosition = gameObjectGroup[i].transform.position.z;
+    //void OnTrigger(Collider other) //여기 있으면 실행이 안되서 위치 옮겨줘야함
+    //{
+    //    while (true)
+    //    {
+    //        for (int i = 0; i < gameObjectGroup.Length; i++)
+    //        {
+    //            currentPosition[i] = gameObjectGroup[i].transform.position;
+    //            float newXPosition = gameObjectGroup[i].transform.position.x + plus;
+    //            float newYPosition = gameObjectGroup[i].transform.position.y;
+    //            float newZPosition = gameObjectGroup[i].transform.position.z;
 
-                gameObjectGroup[i].transform.position = new Vector3(newXPosition, newYPosition, newZPosition);
+    //            gameObjectGroup[i].transform.position = new Vector3(newXPosition, newYPosition, newZPosition);
 
-                if (other.tag == "building" || other.tag == "CarDrag" || other.tag == "Person")
-                {
-                    gameObjectGroup[i].transform.position = new Vector3(currentPosition[i].x, currentPosition[i].y, currentPosition[i].z);
-                }
-            }
-        }
-    }
+    //            if (other.tag == "building" || other.tag == "CarDrag" || other.tag == "Person")
+    //            {
+    //                gameObjectGroup[i].transform.position = new Vector3(currentPosition[i].x, currentPosition[i].y, currentPosition[i].z);
+    //            }
+    //        }
+    //    }
+    //}
 
     public override void Run()
     {

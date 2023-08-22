@@ -81,8 +81,8 @@ public class StoryManager : MonoBehaviour
                 },
                 () => {
                     Player player = Player.GetPlayer();
-                    player.SetDrunkGauge(player.drunkGauge + 13);
-                    SceneManager.LoadScene("car_drive_develop");
+                    player.SetDrunkGauge(player.drunkGauge + 31);
+                    SceneManager.LoadScene("0822drive_mission 2");
                 }
             )
         );

@@ -9,6 +9,7 @@ public class CarMovement
     private float maxSpeed = 50f;    
     public static Rigidbody rb;
     public static Transform currentTransform;
+    public SoundManager soundManager;
 
     public CarMovement(Transform transform)
     {
@@ -38,6 +39,8 @@ public class CarMovement
         {
             rb.AddForce(currentTransform.forward * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange );
         }
+
+
         if (Input.GetKey(KeyCode.S)) //S키를 눌러서 뒤로 이동
         {
             rb.AddForce(currentTransform.forward * -1 * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange);

@@ -12,14 +12,11 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public int carDamage;
     private bool delayedDamage = false;
 
-    public SoundManager soundManager;
+    public DriveSceneSoundManager driveSceneSoundManager;
     private CarMovement carMovement;
 
     [SerializeField]
     private CarNavigation carNavigation;
-
-    public Transform[] gameObjects;
-    public Vector3[] currentPosition;
 
     private void Awake()
     {
@@ -33,7 +30,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         Car.rotationSpeed = 100f;
         carMovement = new CarMovement(transform);
         carNavigation.Init();
-        soundManager = FindObjectOfType<SoundManager>();
+        driveSceneSoundManager = FindObjectOfType<DriveSceneSoundManager>();
     }
  
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
@@ -56,13 +53,12 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public void CarDamage(int carDamage) 
     {
         Car.carHp -= carDamage;
-        Debug.Log("차의 HP가 -10 감소되었습니다.");
         Debug.Log("현재 차량의 hp = " + Car.carHp);
         if (Car.carHp <= 0)
         {
             Debug.Log("님 차 터짐 ㅅㄱㅃ2");
-            soundManager.bgmPlayer.Stop();
-            soundManager.SfxPlay(SoundManager.Sfx.over);
+            driveSceneSoundManager.bgmPlayer.Stop();
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.over);
             DestroyCar();
         }
     }
@@ -80,17 +76,33 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (delayedDamage) return;
         if (enemy is Building)
         {
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -5 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 5;
         }
         else if (enemy is EnemyCar)
         {
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -3 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
         }
         else if (enemy is Person)
         {
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
+            Debug.Log("차의 HP가 -1 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
         }
-        StartCoroutine(DamageDelay(carDamage, 1f));
+        StartCoroutine(DamageDelay(carDamage, 0.5f));
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
+        {
+            GameManager.GameEnd();
+        }
     }
     private void OnCollisionEnter(Collision collision) // 충돌이 일어나자 마자
     {
@@ -136,6 +148,4 @@ public abstract class AbstractCar : MonoBehaviour, Car
         yield return new WaitForSeconds(delay); // 딜레이를 걸어줌
         delayedDamage = false;
     }
-
-    
 }

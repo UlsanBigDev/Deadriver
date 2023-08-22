@@ -18,8 +18,20 @@ public class GameManager : MonoBehaviour
     public Image panel;
     public GameObject drag;
 
+    public AudioSource bgmPlayer;
+    public SoundManager soundManager;
+
+    public int i = 613;
+
+    [SerializeField]
+    GameObject finishBoard;
+
+    private static GameObject _finishBoard;
+
+
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
+        _finishBoard = finishBoard;
         //난이도 받아옴
         DrunkLevel level = Player.GetPlayer().drunkLevel;
         //Start로 하면 AbstractCar 스크립트에서의 Start에서 foreach문으로 리스트의 Run을 호출하는거랑
@@ -66,6 +78,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()    
     {
+        //bgmPlayer.Stop();
+        //soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
         //Debug.Log(player.drunkGauge);
+    }
+
+    public static void GameEnd()
+    {
+        Time.timeScale = 0;
+        _finishBoard.SetActive(true);
     }
 }
