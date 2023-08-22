@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,9 +29,9 @@ public class DriveMissionUI : MonoBehaviour
 
     public void SetLevel() //난이도별로 UI의 text, color를 변경함
     {
-
         // @민욱 여기서 혈중 알콜 농도 0.3~ 에서 어쩌구 식으로 변경하게
-        alcoholText.text = Player.GetPlayer().drunkGauge.ToString();
+        alcoholText.text = "알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
+        Debug.Log(alcoholText.text);
         if (level == DrunkLevel.GREEN)
         {
             Debug.Log("GREEN 색깔");

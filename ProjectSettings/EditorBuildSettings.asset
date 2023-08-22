@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/asy/UI.unity
     guid: 220e985ccead7544690aa59034305691
   - enabled: 0
-    path: Assets/Scenes/car_drive_develop.unity
-    guid: 217c0b21b5b3f2a4aae45611065b09d6
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/0822drive_mission 2.unity
+    guid: 92a15c1d8f0664938b19e834bf30df1c
+  - enabled: 0
     path: Assets/Scenes/0822drive_mission 1.unity
     guid: 391ee68c42d3769499cb83156ee56016
   - enabled: 1
