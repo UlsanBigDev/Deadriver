@@ -40,6 +40,7 @@ public class StartUI : MonoBehaviour
     public void clickOn()
     {
         Debug.Log("BGM ON");
+        GlobalSoundManager.isSound = true;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
         if(!uISoundManager.bgmPlayer.isPlaying)
         {
@@ -49,6 +50,7 @@ public class StartUI : MonoBehaviour
     public void clickOFF()
     {
         Debug.Log("BGM OFF");
+        GlobalSoundManager.isSound=false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
         uISoundManager.bgmPlayer.Stop();
     }
