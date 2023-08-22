@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayUI : MonoBehaviour
+public class DriveMissionUI : MonoBehaviour
 {
-    DrunkLevel level = Player.GetPlayer().drunkLevel;
-    public Text colorLevel;
+    DrunkLevel level;
+    public Text alcoholText;
     public Text CarDamage;
     public string str;
 
@@ -28,34 +28,36 @@ public class PlayUI : MonoBehaviour
 
     public void SetLevel() //난이도별로 UI의 text, color를 변경함
     {
-        colorLevel.text = Player.GetPlayer().ToString();
+
+        // @민욱 여기서 혈중 알콜 농도 0.3~ 에서 어쩌구 식으로 변경하게
+        alcoholText.text = Player.GetPlayer().drunkGauge.ToString();
         if (level == DrunkLevel.GREEN)
         {
             Debug.Log("GREEN 색깔");
             //colorLevel.text = "0 ~ 29";
-            colorLevel.color = Color.green;
+            alcoholText.color = Color.green;
         }else if(level == DrunkLevel.YELLOW)
         {
             Debug.Log("YELLOW 색깔");
             //colorLevel.text = "30 ~ 79";
-            colorLevel.color = Color.yellow;
+            alcoholText.color = Color.yellow;
         }else if(level == DrunkLevel.ORANGE)
         {
             Debug.Log("ORANGE 색깔");
             //str = "<color=#FF4500>" + "80 ~ 99" + "</color>";
-            colorLevel.text = str;            
+            alcoholText.text = str;            
         }
         else if(level == DrunkLevel.RED)
         {
             Debug.Log("RED 색깔");
             //colorLevel.text = "100 ~ ";
-            colorLevel.color = Color.red;
+            alcoholText.color = Color.red;
         }
     }
 
     public void SetAlcohol()
     {
         //Debug.Log("차량 손상도 UI"); 
-        CarDamage.text = "차량 손상도 : " + Car.carHp.ToString();
+        CarDamage.text = Car.carHp.ToString(); // NNN%   // @장민욱 여기서 고치면됨여
     }
 }
