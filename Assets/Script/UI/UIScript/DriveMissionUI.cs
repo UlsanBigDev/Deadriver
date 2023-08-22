@@ -13,7 +13,7 @@ public class DriveMissionUI : MonoBehaviour
 
     private void Awake()
     {
-        level = DrunkLevel.GREEN;
+        level = Player.GetPlayer().drunkLevel;
         SetLevel();
     }
 
