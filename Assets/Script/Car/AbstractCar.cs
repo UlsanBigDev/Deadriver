@@ -18,7 +18,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public TextMeshProUGUI building;
     public TextMeshProUGUI car;
     public Image informaitionPanel;
-    public Animator anim;
+    //public Animator anim;
 
     public DriveSceneSoundManager driveSceneSoundManager;
     private CarMovement carMovement;
@@ -42,7 +42,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         carint = 0;
         personint = 0;
         buildingint = 0;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
     }
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
     {
@@ -123,7 +123,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
-            anim.SetBool("Result", true);
+            //anim.SetBool("Result", true);
             informaitionPanel.gameObject.SetActive(false);
             GameManager.GameEnd();          
             Debug.Log("결과창 나옴");
