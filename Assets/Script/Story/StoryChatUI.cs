@@ -8,6 +8,9 @@ using TMPro;
 public class StoryChatUI
 {
     [SerializeField]
+    StoryLineSoundManager storyLineSoundManager;
+
+    [SerializeField]
     TMP_Text storyChatText;
 
     [SerializeField]
@@ -64,6 +67,8 @@ public class StoryChatUI
         storyButton2.onClick.RemoveAllListeners();
 
         storyButton1.onClick.AddListener(() => {
+            Debug.Log("선택지 클릭됨");
+            SoundClick();
             StoryManager.instance.ChangeStory(story1.id);
             DisablePannel();
         });
@@ -72,5 +77,8 @@ public class StoryChatUI
             DisablePannel();
         });
     }
+    public void SoundClick()
+    {
+        storyLineSoundManager.SfxPlay(StoryLineSoundManager.Sfx.click); ////// 오류는 아닌데 콘솔에서 여기로 찝어줌 인스턴스 할당이 null 뭐시기 이해불가
+    }
 }
-    
