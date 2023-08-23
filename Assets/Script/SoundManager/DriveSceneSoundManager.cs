@@ -11,7 +11,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     int sfxCursor;
     void Start()
     {
-        if (GlobalSoundManager.isSound)
+        if (GlobalSoundManager.isBgmSound)
         {
             bgmPlayer.Play();
             Debug.Log("브금ON");

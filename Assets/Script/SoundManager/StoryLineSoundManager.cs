@@ -11,7 +11,12 @@ public class StoryLineSoundManager : MonoBehaviour
     int sfxCursor;
     void Start()
     {
-        if (GlobalSoundManager.isSound)
+        if (GlobalSoundManager.isBgmSound)
+        {
+            bgmPlayer.Play();
+            Debug.Log("브금ON");
+        }
+        if (GlobalSoundManager.isSfxSound)
         {
             bgmPlayer.Play();
             Debug.Log("브금ON");
