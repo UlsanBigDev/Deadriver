@@ -39,7 +39,7 @@ public class StartUI : MonoBehaviour
 
     public void clickBgmOn()
     {
-        Debug.Log("BGM ON");
+        Debug.Log("Bgm ON");
         GlobalSoundManager.isBgmSound = true;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
         if(!uISoundManager.bgmPlayer.isPlaying)
@@ -57,14 +57,14 @@ public class StartUI : MonoBehaviour
 
     public void clickSfxOn()
     {
-        Debug.Log("효과음 ON");
+        Debug.Log("SFX ON");
         GlobalSoundManager.isSfxSound = true;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
     public void clickSfxOff()
     {
-        Debug.Log("효과음 OFF");
+        Debug.Log("SFX OFF");
         GlobalSoundManager.isSfxSound = false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }

@@ -7,42 +7,29 @@ public class StoryLineSoundManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashPersonWomen, over, pressAccel, drivingNormal};
+    public enum Sfx { click };
     int sfxCursor;
     void Start()
     {
         if (GlobalSoundManager.isBgmSound)
         {
             bgmPlayer.Play();
-            Debug.Log("브금ON");
-        }
-        if (GlobalSoundManager.isSfxSound)
-        {
-            bgmPlayer.Play();
-            Debug.Log("브금ON");
+            Debug.Log("BGM-Deadriver-ON");
         }
     }
     public void SfxPlay(Sfx type)
     {
-        switch (type)
+        if (GlobalSoundManager.isSfxSound)
         {
-            case Sfx.crashBuiling:
-                sfxPlayer[sfxCursor].clip = sfxClip[0];
-                break;
-            case Sfx.crashPersonWomen:
-                sfxPlayer[sfxCursor].clip = sfxClip[1];
-                break;
-            case Sfx.pressAccel:
-                sfxPlayer[sfxCursor].clip = sfxClip[2];
-                break;
-            case Sfx.over:
-                sfxPlayer[sfxCursor].clip = sfxClip[3];
-                break;
-            case Sfx.drivingNormal:
-                sfxPlayer[sfxCursor].clip = sfxClip[4];
-                break;
+            switch (type)
+            {
+                case Sfx.click:
+                    sfxPlayer[sfxCursor].clip = sfxClip[0];
+                    break;
+            }
+            sfxPlayer[sfxCursor].Play();
+            sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
         }
-        sfxPlayer[sfxCursor].Play();
-        sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
+        
     }
 }

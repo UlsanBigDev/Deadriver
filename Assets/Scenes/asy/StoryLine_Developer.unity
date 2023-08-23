@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyChatUI:
+    storyLineSoundManager: {fileID: 1595023115}
     storyChatText: {fileID: 1575752648}
     storySelectPanel: {fileID: 325838178}
     storyButton1: {fileID: 1459774333}
@@ -1361,7 +1362,8 @@ MonoBehaviour:
   - {fileID: 2035792437}
   - {fileID: 1425757647}
   - {fileID: 1624620841}
-  sfxClip: []
+  sfxClip:
+  - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
 --- !u!4 &1595023116
 Transform:
   m_ObjectHideFlags: 0

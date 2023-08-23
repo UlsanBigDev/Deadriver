@@ -146,7 +146,6 @@ public class StoryManager : MonoBehaviour
 
     public void ChangeStory(int id)
     {
-        
         try
         {
             SetCurrentStory(storyMap[id]);
@@ -164,9 +163,7 @@ public class StoryManager : MonoBehaviour
                     player.SetDrunkGauge(player.drunkGauge + 0);
                     SceneManager.LoadScene("0822drive_mission 2");
                 })
-                
             ));
         }
-
     }
 }

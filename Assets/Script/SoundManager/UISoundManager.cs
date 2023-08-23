@@ -12,7 +12,7 @@ public class UISoundManager : MonoBehaviour
     void Start()
     {
         bgmPlayer.Play();
-        Debug.Log("브금ON");
+        Debug.Log("BGM-BellBass-ON");
     }
     public void SfxPlay(Sfx type)
     {
