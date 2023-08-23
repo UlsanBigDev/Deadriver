@@ -119,7 +119,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         StartCoroutine(DamageDelay(carDamage, 0.5f));
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
@@ -129,6 +129,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("결과창 나옴");
         }
     }
+
+
     private void OnCollisionEnter(Collision collision) // 충돌이 일어나자 마자
     {
         if (collision.gameObject.CompareTag("Enemy")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
