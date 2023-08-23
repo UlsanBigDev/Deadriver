@@ -123,9 +123,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
+            informaitionPanel.gameObject.SetActive(false);
             GameManager.GameEnd();
             //anim.SetBool("Result", true);
-            //informaitionPanel.gameObject.SetActive(false);
             //GameManager.GameEnd();          
             //Debug.Log("결과창 나옴");
 
