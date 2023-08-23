@@ -79,7 +79,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
     }
 
     private void DestroyCar()
-    {
+    { 
         Destroy(this);
     }
 
@@ -123,19 +123,12 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
-<<<<<<< HEAD
-            //anim.SetBool("Result", true);
-            informaitionPanel.gameObject.SetActive(false);
-            GameManager.GameEnd();          
-            Debug.Log("결과창 나옴");
-=======
-
             GameManager.GameEnd();
             //anim.SetBool("Result", true);
             //informaitionPanel.gameObject.SetActive(false);
             //GameManager.GameEnd();          
             //Debug.Log("결과창 나옴");
->>>>>>> 2ee13464f114af3c9a5d88c6676ce7feb10a9b08
+
         }
     }
 
