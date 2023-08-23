@@ -27,12 +27,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject finishBoard;
 
+    
+    private static Animator finishBoardAnimator;
+
     private static GameObject _finishBoard;
 
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
         _finishBoard = finishBoard;
+        finishBoardAnimator = finishBoard.GetComponent<Animator>();
         //난이도 받아옴
         DrunkLevel level = Player.GetPlayer().drunkLevel;
         //Start로 하면 AbstractCar 스크립트에서의 Start에서 foreach문으로 리스트의 Run을 호출하는거랑
@@ -86,6 +90,8 @@ public class GameManager : MonoBehaviour
 
     public static void GameEnd()
     {
-        Time.timeScale = 0;
+        finishBoardAnimator.SetBool("Result", true);
+        Debug.Log("결과창 출력!");
+        //Time.timeScale = 0;
     }
 }
