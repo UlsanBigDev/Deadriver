@@ -4,8 +4,31 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+public interface StartListener
+{
+    public void OnStart();
+}
+
+public interface UpdateListener
+{
+    public void OnUpdate();
+}
+
 public class GameManager : MonoBehaviour
 {
+    
+    private static List<StartListener> startListeners;
+    public static void AddStartListener(StartListener listener)
+    {
+        startListeners.Add(listener);
+    }
+    private static List<UpdateListener> updateListeners;
+    public static void AddUpdateListener(UpdateListener listener)
+    {
+        updateListeners.Add(listener);
+    }
+
+
     public Transform[] GreenArray;
     public Transform[] YELLOWArray;
     public Transform[] ORANGEArray;
@@ -79,17 +102,41 @@ public class GameManager : MonoBehaviour
             Car.AddDrunkEvent(obstacleEvent);
             this.obstacleEvent = obstacleEvent;
         }
+        // PTK Missiion 기능 테스트 코드
+        startListeners = new List<StartListener>();
+        updateListeners = new List<UpdateListener>();
+        Player.missionList.Add(new TimeMission(10f));
+        Player.missionList.Add(new TimeMission(15f));
+        Player.missionList.Add(new TimeMission(20f));
+        ///
     }
 
     private void Start()    
     {
+        foreach (StartListener listener in startListeners)
+        {
+            listener.OnStart();
+        }
         //bgmPlayer.Stop();
         //soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
         //Debug.Log(player.drunkGauge);
     }
-
+    private void Update()
+    {
+        foreach (UpdateListener listener in updateListeners)
+        {
+            listener.OnUpdate();
+        }
+    }
     public static void GameEnd()
     {
+        int count = 0;
+        foreach (Mission mission in Player.missionList) {
+            if (mission.isSuccess) count++;
+        }
+
+        Debug.Log("성공한 미션 갯수 " + count);
+
         finishBoardAnimator.SetBool("Result", true);
         Debug.Log("결과창 출력!");
         //Time.timeScale = 0;
