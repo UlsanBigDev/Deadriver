@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyChatUI:
+    storyLineSoundManager: {fileID: 1595023115}
     storyChatText: {fileID: 1575752648}
     storySelectPanel: {fileID: 325838178}
     storyButton1: {fileID: 1459774333}
@@ -1001,7 +1002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 2d21c30b339384325bebc7f7845822c2, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1351,7 +1352,8 @@ MonoBehaviour:
   - {fileID: 2035792437}
   - {fileID: 1425757647}
   - {fileID: 1624620841}
-  sfxClip: []
+  sfxClip:
+  - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
 --- !u!4 &1595023116
 Transform:
   m_ObjectHideFlags: 0
