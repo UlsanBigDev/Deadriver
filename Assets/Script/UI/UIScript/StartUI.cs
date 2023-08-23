@@ -37,7 +37,7 @@ public class StartUI : MonoBehaviour
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
-    public void clickOn()
+    public void clickBgmOn()
     {
         Debug.Log("BGM ON");
         GlobalSoundManager.isBgmSound = true;
@@ -47,7 +47,7 @@ public class StartUI : MonoBehaviour
             uISoundManager.bgmPlayer.Play();
         }
     }
-    public void clickOFF()
+    public void clickBgmOff()
     {
         Debug.Log("BGM OFF");
         GlobalSoundManager.isBgmSound=false;
@@ -55,13 +55,22 @@ public class StartUI : MonoBehaviour
         uISoundManager.bgmPlayer.Stop();
     }
 
-    public void clickEffectOn()
+    public void clickSfxOn()
     {
         Debug.Log("효과음 ON");
+        GlobalSoundManager.isSfxSound = true;
+        uISoundManager.SfxPlay(UISoundManager.Sfx.click);
+        if (!uISoundManager.bgmPlayer.isPlaying)
+        {
+            uISoundManager.bgmPlayer.Play();
+        }
     }
 
-    public void clickEffectOff()
+    public void clickSfxOff()
     {
         Debug.Log("효과음 OFF");
+        GlobalSoundManager.isSfxSound = false;
+        uISoundManager.SfxPlay(UISoundManager.Sfx.click);
+        uISoundManager.bgmPlayer.Stop();
     }
 }
