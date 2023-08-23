@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     ObstacleEvent obstacleEvent;
     SightEvent sightEvent;
 
+
     public Image panel;
     public GameObject drag;
 
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject finishBoard;
+
+    
 
     private static GameObject _finishBoard;
 
@@ -44,6 +47,8 @@ public class GameManager : MonoBehaviour
         //Debug.Log(panel);
         //Car.AddDrunkEvent(new SightEvent(panel));
         //sightEvent = new SightEvent(panel);
+
+        
 
         /* 장애물 생성 코드*/
         //난이도마다 배열을 만들고 그 배열에 객체를 넣고 그 객체를 넘겨줌
@@ -86,6 +91,5 @@ public class GameManager : MonoBehaviour
     public static void GameEnd()
     {
         Time.timeScale = 0;
-        _finishBoard.SetActive(true);
     }
 }

@@ -54,4 +54,14 @@ public class StartUI : MonoBehaviour
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
         uISoundManager.bgmPlayer.Stop();
     }
+
+    public void clickEffectOn()
+    {
+        Debug.Log("효과음 ON");
+    }
+
+    public void clickEffectOff()
+    {
+        Debug.Log("효과음 OFF");
+    }
 }
