@@ -60,10 +60,6 @@ public class StartUI : MonoBehaviour
         Debug.Log("효과음 ON");
         GlobalSoundManager.isSfxSound = true;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
-        if (!uISoundManager.bgmPlayer.isPlaying)
-        {
-            uISoundManager.bgmPlayer.Play();
-        }
     }
 
     public void clickSfxOff()
@@ -71,6 +67,5 @@ public class StartUI : MonoBehaviour
         Debug.Log("효과음 OFF");
         GlobalSoundManager.isSfxSound = false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
-        uISoundManager.bgmPlayer.Stop();
     }
 }

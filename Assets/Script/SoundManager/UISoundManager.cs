@@ -16,13 +16,16 @@ public class UISoundManager : MonoBehaviour
     }
     public void SfxPlay(Sfx type)
     {
-        switch (type)
+        if (GlobalSoundManager.isSfxSound)
         {
-            case Sfx.click:
-                sfxPlayer[sfxCursor].clip = sfxClip[0];
-                break;
+            switch (type)
+            {
+                case Sfx.click:
+                    sfxPlayer[sfxCursor].clip = sfxClip[0];
+                    break;
+            }
+            sfxPlayer[sfxCursor].Play();
+            sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
         }
-        sfxPlayer[sfxCursor].Play();
-        sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
     }
 }
