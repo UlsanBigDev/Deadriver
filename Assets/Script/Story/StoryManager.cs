@@ -81,14 +81,27 @@ public class StoryManager : MonoBehaviour
                 },
                 () => {
                     Player player = Player.GetPlayer();
-                    player.SetDrunkGauge(player.drunkGauge + 13);
-                    SceneManager.LoadScene("car_drive_develop");
+                    player.SetDrunkGauge(player.drunkGauge + 70);
+                    SceneManager.LoadScene("0822drive_mission 2");
                 }
             )
         );
 
+        // 최소 문자열 스크립트가 두줄 이여야함
         // 고등학교 친구를 만나서 술 거절 이벤트 - 1
-        /*storyMap.Add(1120,)*/
+        storyMap.Add(1120,
+            new StorySelect(
+                new List<string>()
+                {
+                    "진짜 안마실 꺼야?",
+                    "나 삐진다?"
+                },
+                (
+                    new StoryTitle("마신다", 1110),
+                    new StoryTitle("안마신다", 1130)
+                )
+            )
+        );;
     }
 
     private void Start()
@@ -133,6 +146,27 @@ public class StoryManager : MonoBehaviour
 
     public void ChangeStory(int id)
     {
-        SetCurrentStory(storyMap[id]);
+        
+        try
+        {
+            SetCurrentStory(storyMap[id]);
+        }
+        catch(System.Exception e)
+        {
+
+            SetCurrentStory(new StoryChain(
+                new List<string>()
+                {
+                    "미구현 선택지 드라이브 미션으로 이동",
+                },
+                new Story(new List<string>() { "as" }, () => {
+                    Player player = Player.GetPlayer();
+                    player.SetDrunkGauge(player.drunkGauge + 0);
+                    SceneManager.LoadScene("0822drive_mission 2");
+                })
+                
+            ));
+        }
+
     }
 }

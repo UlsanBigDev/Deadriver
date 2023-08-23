@@ -9,7 +9,7 @@ public interface Car
     static float playerAccelSpeed { set; get; }
     static float rotationSpeed { set; get; }
     static int carHp { set; get; }
-    
+
     static List<GameObject> obstacleObject = new List<GameObject>();
     static void AddObstacle(GameObject obstacle)
     {
