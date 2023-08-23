@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadyAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("ㅎㅇ");
-    }
+    [SerializeField]
+    Image fadeIn;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        fadeIn.transform.SetAsLastSibling();
     }
 }
