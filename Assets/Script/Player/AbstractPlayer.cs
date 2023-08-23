@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AbstractPlayer : Player
 {
-
     public int drunkGauge { get; set; }
     public bool isDrunk { get; set; }
     public DrunkLevel drunkLevel { get; set; }
