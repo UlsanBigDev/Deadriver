@@ -10,6 +10,6 @@ public class ReadyAnimation : MonoBehaviour
 
     private void Start()
     {
-        fadeIn.transform.SetAsLastSibling();
+        //fadeIn.transform.SetAsLastSibling();
     }
 }
