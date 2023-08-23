@@ -45,7 +45,10 @@ public abstract class AbstractCar : MonoBehaviour, Car
     {
         foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
             drunkEvent.Run();
-        }        
+        }
+        person.text = "보행자 충돌 " + personint;
+        car.text = "차량 충돌 " + carint;
+        building.text = "빌딩 충돌 " + buildingint;
     }
 
     private void Update()
