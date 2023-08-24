@@ -12,6 +12,7 @@ public class CrashMission : AbstractMission, CrashListener
     private CrashType crashType;
     public CrashMission(int count)
     {
+        listeners = new List<MissionCompleteListener>();
         this.count = count;
         isSuccess = true;
         Car.AddCrashListener(this);
