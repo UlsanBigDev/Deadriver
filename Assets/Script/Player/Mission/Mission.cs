@@ -12,4 +12,8 @@ public interface Mission
     public bool isSuccess { set; get; }
     public List<MissionCompleteListener> listeners { get; set; }
     public void AddMissionCompleteListener(MissionCompleteListener listener);
+    /// <summary>
+    /// 미션 클리어 했는지 안했는지
+    /// </summary>
+    public bool GetState();
 }

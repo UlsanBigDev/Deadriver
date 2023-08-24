@@ -10,4 +10,9 @@ public abstract class AbstractMission : Mission
     {
         listeners.Add(listener);
     }
+
+    public virtual bool GetState()
+    {
+        return isSuccess;
+    }
 }
