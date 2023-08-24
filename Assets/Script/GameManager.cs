@@ -105,9 +105,10 @@ public class GameManager : MonoBehaviour
         // PTK Missiion 기능 테스트 코드
         startListeners = new List<StartListener>();
         updateListeners = new List<UpdateListener>();
-        Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
-        Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
-        Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
+        // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
+        // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
+        // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3) }));
         ///
     }
 
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         int count = 0;
         foreach (Mission mission in Player.missionList) {
-            if (mission.isSuccess) count++;
+            if (mission.GetState()) count++;
         }
 
         Debug.Log("성공한 미션 갯수 " + count);

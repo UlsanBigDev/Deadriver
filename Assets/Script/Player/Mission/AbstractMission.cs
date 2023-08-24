@@ -5,4 +5,14 @@ using UnityEngine;
 public abstract class AbstractMission : Mission
 {
     public bool isSuccess { get; set; }
+    public List<MissionCompleteListener> listeners { get; set; }
+    public void AddMissionCompleteListener(MissionCompleteListener listener)
+    {
+        listeners.Add(listener);
+    }
+
+    public virtual bool GetState()
+    {
+        return isSuccess;
+    }
 }
