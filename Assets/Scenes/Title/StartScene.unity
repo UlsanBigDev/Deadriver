@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -261,6 +261,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!114 &117816555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!1 &357503986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1356,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!114 &447777425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,6 +1576,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!1 &560125851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1715,7 @@ MonoBehaviour:
   BGM: {fileID: 909314636}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!114 &578415791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,7 +1762,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 578415790}
         m_TargetAssemblyTypeName: StartUI, Assembly-CSharp
-        m_MethodName: clickClose
+        m_MethodName: ClickClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2490,6 +2495,7 @@ GameObject:
   - component: {fileID: 1000060706}
   - component: {fileID: 1000060705}
   - component: {fileID: 1000060704}
+  - component: {fileID: 1000060707}
   m_Layer: 5
   m_Name: Configuration
   m_TagString: Untagged
@@ -2562,9 +2568,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1000060707}
         m_TargetAssemblyTypeName: StartUI, Assembly-CSharp
-        m_MethodName: clickconfiguration
+        m_MethodName: Clickconfiguration
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2612,6 +2618,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000060702}
   m_CullTransparentMesh: 1
+--- !u!114 &1000060707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000060702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967873470f3bf8c419817f90fd60562e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  configuration: {fileID: 0}
+  BGM: {fileID: 0}
+  uISoundManager: {fileID: 0}
+  bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!1 &1019097358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,6 +2788,7 @@ MonoBehaviour:
   BGM: {fileID: 0}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
+  bgmScrollbar: {fileID: 0}
 --- !u!1 &1066314596
 GameObject:
   m_ObjectHideFlags: 0
