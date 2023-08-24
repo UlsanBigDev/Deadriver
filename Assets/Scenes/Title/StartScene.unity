@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 0}
   configuration: {fileID: 0}
-  BGM: {fileID: 0}
+  BGM: {fileID: 909314636}
   uISoundManager: {fileID: 0}
   bgmPlayer: {fileID: 0}
   bgmScrollbar: {fileID: 0}
