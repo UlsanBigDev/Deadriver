@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,12 +31,15 @@ public class UISoundManager : MonoBehaviour
     }
     public void SetBgmVolume(float bgmVolume)
     {
+        GlobalSoundManager.bgmVolume = bgmVolume;
         bgmPlayer.volume = bgmVolume;
     }
     public void SetSfxVolume(float sfxVolume)
     {
-        sfxPlayer[0].volume = sfxVolume;
-        sfxPlayer[1].volume = sfxVolume;
-        sfxPlayer[2].volume = sfxVolume;
+        GlobalSoundManager.sfxVolume = sfxVolume;
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.volume = sfxVolume;
+        }
     }
 }

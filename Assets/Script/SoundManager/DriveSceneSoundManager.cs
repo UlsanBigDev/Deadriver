@@ -11,6 +11,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     int sfxCursor;
     void Start()
     {
+        bgmPlayer.volume = GlobalSoundManager.bgmVolume;
         if (GlobalSoundManager.isBgmSound)
         {
             bgmPlayer.Play();
