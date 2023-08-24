@@ -21,6 +21,12 @@ public interface Car
         drunkEvents.Add(drunkEvent);
     }
 
+    public static List<CrashListener> crashListeners = new List<CrashListener>();
+    public static void AddCrashListener(CrashListener listener)
+    {
+        crashListeners.Add(listener);
+    }
+
     void CarDamage(int carDamage);
     bool isPlayer { set; get; }
     float speed { set; get; }

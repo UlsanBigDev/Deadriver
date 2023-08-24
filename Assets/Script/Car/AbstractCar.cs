@@ -4,9 +4,14 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+public interface CrashListener
+{
+    public void OnCrash(Enemy enemey);
+}
 public abstract class AbstractCar : MonoBehaviour, Car
 {
+    
+
     public bool isPlayer { get; set; }
     public float speed { get; set; }
     public float rotation { get; set; }
@@ -89,6 +94,10 @@ public abstract class AbstractCar : MonoBehaviour, Car
     protected void OnEnemyCrash(Enemy enemy) //부딪힌 객체에 따라서 HP 감소 - 부딪히는 객체에 따라서 carDamage의 값을 변경해주는 코드
     {
         if (delayedDamage) return;
+        foreach (CrashListener listener in Car.crashListeners)
+        {
+            listener.OnCrash(enemy);
+        }
         if (enemy is Building)
         {
             driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);

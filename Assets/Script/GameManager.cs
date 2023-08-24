@@ -105,9 +105,8 @@ public class GameManager : MonoBehaviour
         // PTK Missiion 기능 테스트 코드
         startListeners = new List<StartListener>();
         updateListeners = new List<UpdateListener>();
-        Player.missionList.Add(new TimeMission(10f));
-        Player.missionList.Add(new TimeMission(15f));
-        Player.missionList.Add(new TimeMission(20f));
+        Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
+        Player.missionList.Add(new CrashMission(3)); // 제한 충돌 미션 3회 미션 생성
         ///
     }
 
