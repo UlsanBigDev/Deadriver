@@ -16,9 +16,9 @@ public class StartUI : MonoBehaviour
     void Awake()
     {
         uISoundManager = FindObjectOfType<UISoundManager>();
-        bgmScrollbar.onValueChanged.AddListener((value) => {
-            Debug.Log(value);
-        });
+        //bgmScrollbar.onValueChanged.AddListener((value) => {
+        //    Debug.Log(value);
+        //});
     }
     public void Clickconfiguration()
     {
