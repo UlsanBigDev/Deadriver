@@ -4,18 +4,6 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour, Enemy
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         /* 빌딩, 다른 자동차, 보행자가 Player랑 부딪혔을 때 동작될 코드? */
