@@ -11,14 +11,10 @@ public class StartUI : MonoBehaviour
     public Image BGM;
     public UISoundManager uISoundManager;
     public AudioSource bgmPlayer;
-    public Scrollbar bgmScrollbar;
 
     void Awake()
     {
         uISoundManager = FindObjectOfType<UISoundManager>();
-        //bgmScrollbar.onValueChanged.AddListener((value) => {
-        //    Debug.Log(value);
-        //});
     }
     public void Clickconfiguration()
     {
@@ -71,12 +67,5 @@ public class StartUI : MonoBehaviour
         Debug.Log("SFX OFF");
         GlobalSoundManager.isSfxSound = false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
-    }
-
-    public void BgmScroll()
-    {
-        float bgmScrollValue = bgmScrollbar.value;
-        Debug.Log("스크롤바 값 : " + bgmScrollValue);
-        bgmPlayer.volume = bgmScrollValue;
     }
 }
