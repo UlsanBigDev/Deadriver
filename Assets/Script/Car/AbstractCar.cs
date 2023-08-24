@@ -109,7 +109,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         }
         else if (enemy is EnemyCar)
         {
-            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashCar);
             Debug.Log("차의 HP가 -3 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
@@ -118,7 +118,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         }
         else if (enemy is Person)
         {
-            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashBuiling);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashPersonWomen);
             Debug.Log("차의 HP가 -1 감소되었습니다.");
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
