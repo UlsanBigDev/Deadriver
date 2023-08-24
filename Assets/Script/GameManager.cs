@@ -106,7 +106,8 @@ public class GameManager : MonoBehaviour
         startListeners = new List<StartListener>();
         updateListeners = new List<UpdateListener>();
         Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
-        Player.missionList.Add(new CrashMission(3)); // 제한 충돌 미션 3회 미션 생성
+        Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
+        Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
         ///
     }
 
