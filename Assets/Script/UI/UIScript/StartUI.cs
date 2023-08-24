@@ -11,33 +11,37 @@ public class StartUI : MonoBehaviour
     public Image BGM;
     public UISoundManager uISoundManager;
     public AudioSource bgmPlayer;
+    public Scrollbar bgmScrollbar;
 
     void Awake()
     {
         uISoundManager = FindObjectOfType<UISoundManager>();
+        bgmScrollbar.onValueChanged.AddListener((value) => {
+            Debug.Log(value);
+        });
     }
-    public void clickconfiguration()
+    public void Clickconfiguration()
     {
         Debug.Log("환경설정 클릭");
         BGM.gameObject.SetActive(true);
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
-    public void clickClose()
+    public void ClickClose()
     {
         Debug.Log("환경설정 창 닫기");
         BGM.gameObject.SetActive(false);
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
-    public void clickStart()
+    public void ClickStart()
     {
         Debug.Log("Story Scene으로 전환");
         SceneManager.LoadScene("StoryLine_Developer");
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
-    public void clickBgmOn()
+    public void ClickBgmOn()
     {
         Debug.Log("Bgm ON");
         GlobalSoundManager.isBgmSound = true;
@@ -47,7 +51,7 @@ public class StartUI : MonoBehaviour
             uISoundManager.bgmPlayer.Play();
         }
     }
-    public void clickBgmOff()
+    public void ClickBgmOff()
     {
         Debug.Log("BGM OFF");
         GlobalSoundManager.isBgmSound=false;
@@ -55,17 +59,24 @@ public class StartUI : MonoBehaviour
         uISoundManager.bgmPlayer.Stop();
     }
 
-    public void clickSfxOn()
+    public void ClickSfxOn()
     {
         Debug.Log("SFX ON");
         GlobalSoundManager.isSfxSound = true;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
-    public void clickSfxOff()
+    public void ClickSfxOff()
     {
         Debug.Log("SFX OFF");
         GlobalSoundManager.isSfxSound = false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
+    }
+
+    public void BgmScroll()
+    {
+        float bgmScrollValue = bgmScrollbar.value;
+        Debug.Log("스크롤바 값 : " + bgmScrollValue);
+        bgmPlayer.volume = bgmScrollValue;
     }
 }
