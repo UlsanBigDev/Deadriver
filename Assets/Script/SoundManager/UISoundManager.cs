@@ -28,4 +28,14 @@ public class UISoundManager : MonoBehaviour
             sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
         }
     }
+    public void SetBgmVolume(float bgmVolume)
+    {
+        bgmPlayer.volume = bgmVolume;
+    }
+    public void SetSfxVolume(float sfxVolume)
+    {
+        sfxPlayer[0].volume = sfxVolume;
+        sfxPlayer[1].volume = sfxVolume;
+        sfxPlayer[2].volume = sfxVolume;
+    }
 }
