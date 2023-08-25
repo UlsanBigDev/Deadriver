@@ -49,6 +49,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
         buildingint = 0;
         //anim = GetComponent<Animator>();
     }
+
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
     {
         foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
@@ -137,7 +138,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
             //anim.SetBool("Result", true);
             //GameManager.GameEnd();          
             //Debug.Log("결과창 나옴");
-
         }
     }
 
