@@ -9,6 +9,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     public AudioClip[] sfxClip;
     public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, drivingNormal};
     int sfxCursor;
+    public static bool driveSoundEnabled = true;
     void Start()
     {
         bgmPlayer.volume = GlobalSoundManager.bgmVolume;
@@ -40,5 +41,18 @@ public class DriveSceneSoundManager : MonoBehaviour
         }
         sfxPlayer[sfxCursor].Play();
         sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;
+    }
+    void Update()
+    {
+        if (driveSoundEnabled == false)
+        {
+            Debug.Log("driveSoundEnabled = false");
+            EndGame();
+        }
+    }
+    public void EndGame()
+    {
+        Debug.Log("Destroy");
+        Destroy(this);
     }
 }
