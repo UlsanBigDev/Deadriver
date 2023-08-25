@@ -12,6 +12,11 @@ public class TimeMission : AbstractMission, UpdateListener
         GameManager.AddUpdateListener(this);
     }
 
+    public TimeMission(float time, string title) : this(time)
+    {
+        this.title = title;
+    }
+
     public void OnUpdate()
     {
         if (!isSuccess) return;

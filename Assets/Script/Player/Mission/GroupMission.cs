@@ -12,6 +12,11 @@ public class GroupMission : AbstractMission
         missionList = missions;
     }
 
+    public GroupMission(List<Mission> missions, string title) : this(missions)
+    {
+        this.title = title;
+    }
+
     public override bool GetState()
     {
         foreach (Mission mission in missionList)
