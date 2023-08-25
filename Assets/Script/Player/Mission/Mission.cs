@@ -10,6 +10,7 @@ public interface MissionCompleteListener
 public interface Mission
 {
     public bool isSuccess { set; get; }
+    public string title { get; set; }
     public List<MissionCompleteListener> listeners { get; set; }
     public void AddMissionCompleteListener(MissionCompleteListener listener);
     /// <summary>
