@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject finishBoard;
-    
+
     private static Animator finishBoardAnimator;
 
     private static GameObject _finishBoard;
@@ -106,10 +106,10 @@ public class GameManager : MonoBehaviour
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
         // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
         // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
-        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3)}));
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3) }));
     }
 
-    private void Start()    
+    private void Start()
     {
         foreach (StartListener listener in startListeners)
         {
@@ -131,17 +131,17 @@ public class GameManager : MonoBehaviour
     public static void GameEnd()
     {
         int count = 0;
-        foreach (Mission mission in Player.missionList) {
+        foreach (Mission mission in Player.missionList)
+        {
             if (mission.GetState()) count++;
         }
 
         Debug.Log("성공한 미션 갯수 " + count);
-
         finishBoardAnimator.SetBool("Result", true);
         Debug.Log("결과창 출력!");
         DriveSceneSoundManager.driveSoundEnabled = false;
         Debug.Log("driveSoundEnabled = false in GameManager");
-        if(finishBoardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Result") && finishBoardAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime == 1f)
+        if (finishBoardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Result") && finishBoardAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime == 1f)
         {
             Debug.Log("애니메이션 끝");
             //Time.timeScale = 0;

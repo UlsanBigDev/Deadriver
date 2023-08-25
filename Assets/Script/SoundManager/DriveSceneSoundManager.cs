@@ -7,7 +7,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, drivingNormal};
+    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, drivingNormal };
     int sfxCursor;
     public static bool driveSoundEnabled = true;
     void Start()
@@ -16,7 +16,6 @@ public class DriveSceneSoundManager : MonoBehaviour
         if (GlobalSoundManager.isBgmSound)
         {
             bgmPlayer.Play();
-            Debug.Log("브금ON");
         }
     }
     public void SfxPlay(Sfx type)
@@ -46,13 +45,13 @@ public class DriveSceneSoundManager : MonoBehaviour
     {
         if (driveSoundEnabled == false)
         {
-            Debug.Log("driveSoundEnabled = false");
-            EndGame();
+            Debug.Log("사운드종료");
+            DestroySounds();
         }
     }
-    public void EndGame()
+    public void DestroySounds()
     {
-        Debug.Log("Destroy");
-        Destroy(this);
+        Destroy(this.bgmPlayer);
+        Destroy(sfxPlayer[sfxCursor]);
     }
 }
