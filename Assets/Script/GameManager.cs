@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public SoundManager soundManager;
 
-    public int i = 613;
+    public static int count;
 
     [SerializeField]
     GameObject finishBoard;
@@ -106,7 +106,9 @@ public class GameManager : MonoBehaviour
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
         // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
         // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
-        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3) }));
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문"));
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(240f), new CrashMission(6) }, "5분 내로 오면 5만원"));
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(300f), new CrashMission(9) }, "상사 호출"));
     }
 
     private void Start()
@@ -130,7 +132,7 @@ public class GameManager : MonoBehaviour
 
     public static void GameEnd()
     {
-        int count = 0;
+        count = 0;
         foreach (Mission mission in Player.missionList)
         {
             if (mission.GetState()) count++;
