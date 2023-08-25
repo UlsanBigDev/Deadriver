@@ -23,6 +23,11 @@ public class CrashMission : AbstractMission, CrashListener
         crashType = type;
     }
 
+    public CrashMission(int count, CrashType type, string title) : this(count, type)
+    {
+        this.title = title;
+    }
+
     public virtual void OnCrash(Enemy enemy)
     {
         if (!isSuccess) return;

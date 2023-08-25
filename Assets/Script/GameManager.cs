@@ -16,18 +16,19 @@ public interface UpdateListener
 
 public class GameManager : MonoBehaviour
 {
-    
     private static List<StartListener> startListeners;
+
     public static void AddStartListener(StartListener listener)
     {
         startListeners.Add(listener);
     }
+
     private static List<UpdateListener> updateListeners;
+
     public static void AddUpdateListener(UpdateListener listener)
     {
         updateListeners.Add(listener);
     }
-
 
     public Transform[] GreenArray;
     public Transform[] YELLOWArray;
@@ -37,7 +38,6 @@ public class GameManager : MonoBehaviour
     Player player;
     ObstacleEvent obstacleEvent;
     SightEvent sightEvent;
-
 
     public Image panel;
     public GameObject drag;
@@ -49,12 +49,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject finishBoard;
-
     
     private static Animator finishBoardAnimator;
 
     private static GameObject _finishBoard;
-
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
@@ -108,8 +106,7 @@ public class GameManager : MonoBehaviour
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
         // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
         // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
-        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3) }));
-        ///
+        Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(60f), new CrashMission(3)}));
     }
 
     private void Start()    
@@ -122,6 +119,7 @@ public class GameManager : MonoBehaviour
         //soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
         //Debug.Log(player.drunkGauge);
     }
+
     private void Update()
     {
         foreach (UpdateListener listener in updateListeners)
@@ -129,6 +127,7 @@ public class GameManager : MonoBehaviour
             listener.OnUpdate();
         }
     }
+
     public static void GameEnd()
     {
         int count = 0;
@@ -153,5 +152,4 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
     }
-
 }
