@@ -3655,11 +3655,6 @@ MonoBehaviour:
   missionText: {fileID: 258553085}
   timeText: {fileID: 918030017}
   crashText: {fileID: 2093746343}
-  carDamageText: {fileID: 1469611420}
-  alcoholText: {fileID: 209047857}
-  crimeText: {fileID: 228277126}
-  resultMissionText: {fileID: 301560920}
-  scoreText: {fileID: 451413557}
 --- !u!1 &1506563901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,6 +3850,7 @@ MonoBehaviour:
   bgmPlayer: {fileID: 0}
   soundManager: {fileID: 0}
   finishBoard: {fileID: 286871455}
+  resultMission: {fileID: 301560920}
 --- !u!4 &1679047598
 Transform:
   m_ObjectHideFlags: 0
