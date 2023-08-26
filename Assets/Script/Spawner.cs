@@ -74,6 +74,7 @@ public class Spawner : MonoBehaviour
         while (isEnable)
         {
             Spawn();
+            InitializeCoolTime();
             yield return new WaitForSeconds(coolTime);
         }
     }

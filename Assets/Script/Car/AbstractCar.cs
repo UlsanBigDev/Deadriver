@@ -36,13 +36,23 @@ public abstract class AbstractCar : MonoBehaviour, Car
 
     private void Awake()
     {
-        Car.Level = 1; 
-        Car.carHp = 100; //초기Hp 100으로 초기화
-        /*
-          5f로 해야 문제없이 후진까지 가능함
-          23.08.15 전진 후진 가속도 이슈 수정이후 5f는 너무 느려서 값
-        */
-        Car.playerAccelSpeed = 10f; 
+        InitializeVariable();
+        DrunkEventRun();
+    }
+
+    private void DrunkEventRun()
+    {
+        foreach (DrunkEvent drunkEvent in Car.drunkEvents)
+        {   
+            drunkEvent.Run();
+        }
+    }
+
+    private void InitializeVariable()
+    {
+        Car.Level = 1;
+        Car.carHp = 100;
+        Car.playerAccelSpeed = 10f;
         Car.rotationSpeed = 100f;
         carMovement = new CarMovement(transform);
         carNavigation.Init();
@@ -50,14 +60,10 @@ public abstract class AbstractCar : MonoBehaviour, Car
         carint = 0;
         personint = 0;
         buildingint = 0;
-        //anim = GetComponent<Animator>();
     }
 
     private void Start() //foreach문으로 Car.drunkEvents 리스트에서 각각 해당하는 Run을 실행시킴
-    {
-        foreach (DrunkEvent drunkEvent in Car.drunkEvents) {
-            drunkEvent.Run();
-        }
+    {   
         person.text = "보행자 충돌 " + personint;
         car.text = "차량 충돌 " + carint;
         building.text = "빌딩 충돌 " + buildingint;
