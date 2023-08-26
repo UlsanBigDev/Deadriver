@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     int i;
-    public Text missionText, timeText, crashText, carDamageText, alcoholText, crimeText, resultMissionText, scoreText;
+    public Text missionText, timeText, crashText;
     public List<Mission> missions = Player.missionList;
 
     void Start()
@@ -33,9 +33,9 @@ public class UIManager : MonoBehaviour
                 break;
         }
 
-        carDamageText.text = "차량 손상도 : " + Car.carHp;
-        crimeText.text = "총 사고 이력 : " + GameManager.count + "번";
-        alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
+        //carDamageText.text = "차량 손상도 : " + Car.carHp;
+        //crimeText.text = "총 사고 이력 : " + total + "번";
+        //alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
     }
 
     void Update()

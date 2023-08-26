@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 public interface CrashListener
 {
@@ -17,12 +18,14 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public float rotation { get; set; }
     public int carHp { get; set; }
     public int carDamage;
+    public int total;
     private bool delayedDamage = false;
-    public int carint, personint, buildingint;
+    public static int carint, personint, buildingint;
     public TextMeshProUGUI person;
     public TextMeshProUGUI building;
     public TextMeshProUGUI car;
     public Image informaitionPanel;
+    public Text carDamageText, alcoholText, crimeText, scoreText;
     //public Animator anim;
 
     public DriveSceneSoundManager driveSceneSoundManager;
@@ -106,6 +109,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 5;
             buildingint++;
+            total++;
             building.text = "빌딩 충돌 " + buildingint;
         }
         else if (enemy is EnemyCar)
@@ -115,6 +119,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 3;
             carint++;
+            total++;
             car.text = "차량 충돌 " + carint;
         }
         else if (enemy is Person)
@@ -124,6 +129,7 @@ public abstract class AbstractCar : MonoBehaviour, Car
             Debug.Log("현재 차량의 hp = " + Car.carHp);
             carDamage = 1;
             personint++;
+            total++;
             person.text = "보행자 충돌 " + personint;
         }
         StartCoroutine(DamageDelay(carDamage, 0.5f));
@@ -134,6 +140,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
             informaitionPanel.gameObject.SetActive(false);
+            carDamageText.text = "차량 손상도 : " + Car.carHp;
+            crimeText.text = "총 사고 이력 : " + total + "번";
+            alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
             GameManager.GameEnd();
             //anim.SetBool("Result", true);
             //GameManager.GameEnd();          
