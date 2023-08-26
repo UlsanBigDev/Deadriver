@@ -4135,6 +4135,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 214078229}
     - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: crimeText
+      value: 
+      objectReference: {fileID: 228277126}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 451413557}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: alcoholText
+      value: 
+      objectReference: {fileID: 209047857}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
+      propertyPath: carDamageText
+      value: 
+      objectReference: {fileID: 1469611420}
+    - target: {fileID: 3093707400183702738, guid: 9888df7158d990346ab0fd678f434418, type: 3}
       propertyPath: informaitionPanel
       value: 
       objectReference: {fileID: 2133318595}

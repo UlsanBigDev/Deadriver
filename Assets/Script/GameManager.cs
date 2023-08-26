@@ -53,13 +53,9 @@ public class GameManager : MonoBehaviour
 
     private static GameObject _finishBoard;
 
-    public Text resultMission;
-    public static Text resultMissionText;
-
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
-        resultMissionText = resultMission.GetComponent<Text>();
         _finishBoard = finishBoard;
         finishBoardAnimator = finishBoard.GetComponent<Animator>();
         //난이도 받아옴
@@ -143,7 +139,6 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("성공한 미션 갯수 " + count);
-        resultMissionText.text = "성공한 미션 갯수 : " + count;
         finishBoardAnimator.SetBool("Result", true);
         Debug.Log("결과창 출력!");
         DriveSceneSoundManager.driveSoundEnabled = false;

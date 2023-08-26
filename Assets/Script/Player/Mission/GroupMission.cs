@@ -25,6 +25,4 @@ public class GroupMission : AbstractMission
         }
         return true;
     }
-
-
 }

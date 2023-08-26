@@ -82,7 +82,7 @@ public class StoryManager : MonoBehaviour
                 () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 70);
-                    SceneManager.LoadScene("0822drive_mission 2");
+                    SceneManager.LoadScene("Drive");
                 }
             )
         );
