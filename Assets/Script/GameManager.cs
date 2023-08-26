@@ -16,8 +16,9 @@ public interface UpdateListener
 
 public class GameManager : MonoBehaviour
 {
+    public static float personSpawnCoolTime = 5f;
+    public static float enemyCarSpawnCoolTime = 10f;
     private static List<StartListener> startListeners;
-
     public static void AddStartListener(StartListener listener)
     {
         startListeners.Add(listener);
