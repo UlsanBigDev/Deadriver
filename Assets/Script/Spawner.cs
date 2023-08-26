@@ -43,6 +43,8 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward);
+        /*if (Input.GetKeyDown(KeyCode.Alpha1)) StartSpawn();
+        if (Input.GetKeyDown(KeyCode.Alpha2)) StopSpawn();*/
     }
 
     private void Start()
