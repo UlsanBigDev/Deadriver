@@ -16,7 +16,6 @@ public class PoolManager : MonoBehaviour
         {
             poolMap.Add(i, new List<GameObject>());
         }
-        Debug.Log("초기화 완료!");
     }
 
     public GameObject Get(int id)
