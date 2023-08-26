@@ -3838,6 +3838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolManager: {fileID: 973494824}
+  type: 0
+  isEnable: 0
 --- !u!4 &2054796795
 Transform:
   m_ObjectHideFlags: 0
