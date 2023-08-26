@@ -56,7 +56,7 @@ public class ObstacleEvent : DrunkEvent
 
     public override void Run()
     {
-        obstacle();
+        // obstacle(); // 23-08-27 PTK주석처리
     }
 }
 
