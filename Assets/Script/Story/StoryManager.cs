@@ -161,7 +161,7 @@ public class StoryManager : MonoBehaviour
                 new Story(new List<string>() { "as" }, () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 0);
-                    SceneManager.LoadScene("0822drive_mission 2");
+                    SceneManager.LoadScene("Drive");
                 })
             ));
         }
