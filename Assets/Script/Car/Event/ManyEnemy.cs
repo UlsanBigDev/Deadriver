@@ -14,7 +14,6 @@ public class ManyEnemy : DrunkEvent
     private void InitializeVariable()
     {
         level = Player.GetPlayer().drunkLevel;
-        level = DrunkLevel.RED;
     }
 
     private void SetEnemyCoolTime()
