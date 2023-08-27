@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class GroupMission : AbstractMission
 {
-<<<<<<< HEAD
-    private List<Mission> missionList;
-     
-=======
     public List<Mission> missionList;
 
->>>>>>> 2959f8ee7bdee502c308cfa7f0d8dc6c0216618f
     public GroupMission(List<Mission> missions)
     {
         isSuccess = false;
