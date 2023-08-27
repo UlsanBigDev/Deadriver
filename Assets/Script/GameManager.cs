@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour
         List<Mission> misssion2List = mission2.missionList;
         List<Mission> misssion3List = mission3.missionList;
 
+        
         missionText.text = missions[i].title;
         if (i == 0) //i 값은 선택된 미션을 의미
         {

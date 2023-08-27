@@ -6,14 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Text carDamageText, alcoholText, crimeText, scoreText, resultMissionText;
+    public Text carDamageText, alcoholText, crimeText,resultMissionText;
     public List<Mission> missions = Player.missionList;
-    public static bool state;
-    public int total, crashScore, carScore,drunkScore,missionScore;
-    public int scoreTotal;
-
-
-    DrunkLevel drunkLevel;
+    public int total;
     GroupMission groupMission;
     // LoadingAnimation loadingAnimation;
 
@@ -23,8 +18,7 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
-        groupMission = new GroupMission(Player.missionList);
-        drunkLevel = Player.GetPlayer().drunkLevel;       
+        groupMission = new GroupMission(Player.missionList);      
         // loadingAnimation = GetComponent<LoadingAnimation>();
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1743,8 +1743,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBE4C\uB529\uCDA9\uB3CC        1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4074,8 +4074,9 @@ GameObject:
   - component: {fileID: 598728885}
   - component: {fileID: 598728887}
   - component: {fileID: 598728886}
+  - component: {fileID: 598728888}
   m_Layer: 5
-  m_Name: ScoreImage
+  m_Name: AScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4139,6 +4140,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598728884}
   m_CullTransparentMesh: 1
+--- !u!114 &598728888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598728884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb840d1be0ad3e4c9d256c94875ca78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BScore: {fileID: 21300000, guid: 373e33fa684d0d2458d326ce0b9e41bb, type: 3}
+  CScore: {fileID: 21300000, guid: 95e03b0ad7c2d584e9419ea934f11074, type: 3}
+  DScore: {fileID: 21300000, guid: 23d3625fa8a920d4fb64ecb73a05e7ca, type: 3}
+  FScore: {fileID: 21300000, guid: 87784a28a0a3a5f4f9941d168c4e0cec, type: 3}
+  crashScore: 0
+  carScore: 0
+  drunkScore: 0
+  missionScore: 0
+  scoreTotal: 0
+  total: 0
 --- !u!1 &605167492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,8 +5120,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBCF4\uD589\uC790 \uCDA9\uB3CC   1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8353,8 +8376,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC0AC\uACE0 \uC774\uB825"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10190,14 +10213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a3b73d7db5cbc43aa92b734941e27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionText: {fileID: 258553085}
-  timeText: {fileID: 918030017}
-  crashText: {fileID: 2093746343}
-  resultMissionText: {fileID: 0}
   carDamageText: {fileID: 1469611420}
   alcoholText: {fileID: 209047857}
   crimeText: {fileID: 228277126}
-  scoreText: {fileID: 451413557}
+  resultMissionText: {fileID: 301560920}
+  total: 0
 --- !u!1 &1491619576
 GameObject:
   m_ObjectHideFlags: 0
@@ -11720,6 +11740,9 @@ MonoBehaviour:
   soundManager: {fileID: 0}
   finishBoard: {fileID: 286871455}
   sightPanel: {fileID: 1500660914}
+  missionText: {fileID: 258553085}
+  timeText: {fileID: 918030017}
+  crashText: {fileID: 2093746343}
 --- !u!4 &1679047598
 Transform:
   m_ObjectHideFlags: 0
@@ -12015,8 +12038,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uCC28\uB7C9 \uCDA9\uB3CC       1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
