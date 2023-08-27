@@ -19,12 +19,15 @@ public class StoryManager : MonoBehaviour
     static Story current;
     bool isChatting;
 
+    GameObject imageGroup;
+
 
     private void Awake()
     {
         instance = this;
         isChatting = true;
         InitializeStoryData();
+        imageGroup = GameObject.Find("ImageGroup");
     }
 
     private void Start()
@@ -148,34 +151,40 @@ public class StoryManager : MonoBehaviour
             new StorySelect(
                 new List<StoryScript>()
                 {
-                    new StoryScript("민광 : 사장님 삼겹살 4인분에 소주 두병이요~"),
+                    new StoryScript("안지욱 : 사장님 삼겹살 4인분에 소주 두병이요~"),
                     new StoryScript("나 : 나는 차몰고 와서 소주는 못 마실것 같은데 콜라나 마실게"),
-                    new StoryScript("민광 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만"),
-                    new StoryScript("민광 : 어차피 이 동네 단속도 잘 안떠~"),
+                    new StoryScript("안지욱 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만"),
+                    new StoryScript("안지욱 : 어차피 이 동네 단속도 잘 안떠~", ()=>{
+                        if (imageGroup != null)
+                            imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(true);
+                    } ),
                     new StoryScript("나 : 쓰읍 단속이 문제가 아닌데...")
                 },
                 (
-                    new StoryTitle("마신다", 1110),
-                    new StoryTitle("안마신다", 1120)
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 111, false)
                 )
             )
         );
 
         // 고등학교 친구를 만나서 술까지 마시는 이벤트 - 1
-        storyMap.Add(1110,
+        storyMap.Add(12,
             new Story(
                 new List<StoryScript>()
                 {
-                    new StoryScript("(알딸딸한게 취기가 올라온다)"),
-                    new StoryScript("민광 : 야 재미있었다~ 내일 보자~"),
-                    new StoryScript("나 : 어~ 그래 잘들어가고 언젠가 보자"),
-                    new StoryScript("하아.. 별로 안 취한것 같은데 운전이나 해야겠다")
+                    new StoryScript("(뭐 별 문제야 생기겠어??)"),
+                    new StoryScript("그래 한 잔 따라줘봐라"),
+                    new StoryScript("안지욱 : 자 받아라 이 형님이 따라주는거다!", ()=>{
+                        Debug.Log("소주 잔 이미지 활성화");
+                        if (imageGroup != null)
+                            imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
+                    }),
                 },
                 () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 70);
                     LoadingManager.sceneName = "Drive";
-                    SceneManager.LoadScene("LoadingScene");
+                    SceneManager.LoadScene("LoadingScene"); 
                 }
             )
         );

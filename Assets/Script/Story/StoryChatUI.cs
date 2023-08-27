@@ -37,6 +37,9 @@ public class StoryChatUI
     StoryTitle story1;
     StoryTitle story2;
 
+    public Image alchorEventBottle;
+    public Image alchorEventHand;
+
     public void PrintPhoneText(string message)
     {
         phoneBoard.gameObject.SetActive(true);
