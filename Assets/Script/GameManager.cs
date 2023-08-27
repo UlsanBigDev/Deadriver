@@ -150,8 +150,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void GameEnd1()
+    public static void GamePause()
     {
         Time.timeScale = 0;
     }
+
+    public static void GameResume()
+    {
+        Time.timeScale = 1;
+    }
+    
 }
