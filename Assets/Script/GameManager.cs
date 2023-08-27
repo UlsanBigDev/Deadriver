@@ -1,8 +1,10 @@
+using Palmmedia.ReportGenerator.Core.Reporting.Builders;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public interface StartListener
 {
@@ -196,7 +198,6 @@ public class GameManager : MonoBehaviour
             //Time.timeScale = 0;
         }
     }
-
     public static void GamePause()
     {
         Time.timeScale = 0;
