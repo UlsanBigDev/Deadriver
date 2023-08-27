@@ -82,17 +82,17 @@ public class GameManager : MonoBehaviour
         //TimeMission timeMission = (TimeMission) mission1;
         //Debug.Log(timeMission.originTime);
 
-        GroupMission mission1 = new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문");
-        List<Mission> misssion1List = mission1.missionList;
-        foreach (Mission mis in misssion1List)
-        {
-            if (mis is TimeMission)
-            {
+        //GroupMission mission1 = new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문");
+        //List<Mission> misssion1List = mission1.missionList;
+        //foreach (Mission mis in misssion1List)
+        //{
+        //    if (mis is TimeMission)
+        //    {
 
-            } else if (mis is CrashMission) {
-            }
+        //    } else if (mis is CrashMission) {
+        //    }
 
-        }
+        //}
     }
 
     private void Start()
