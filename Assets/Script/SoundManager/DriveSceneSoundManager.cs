@@ -85,4 +85,20 @@ public class DriveSceneSoundManager : MonoBehaviour
         }
         Destroy(sfxPlayer[sfxCursor]);
     }
+    public void SetBgmVolume(float bgmVolume)
+    {
+        GlobalSoundManager.bgmVolume = bgmVolume;
+        bgmPlayerGreen.volume = bgmVolume;
+        bgmPlayerYellow.volume = bgmVolume;
+        bgmPlayerOrange.volume = bgmVolume;
+        bgmPlayerRed.volume = bgmVolume;
+    }
+    public void SetSfxVolume(float sfxVolume)
+    {
+        GlobalSoundManager.sfxVolume = sfxVolume;
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.volume = sfxVolume;
+        }
+    }
 }
