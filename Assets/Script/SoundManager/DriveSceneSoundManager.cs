@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DriveSceneSoundManager : MonoBehaviour
 {
-    public AudioSource bgmPlayer;
+    public AudioSource bgmPlayerGreen;
+    public AudioSource bgmPlayerYellow;
+    public AudioSource bgmPlayerOrange;
+    public AudioSource bgmPlayerRed;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
     public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, drivingNormal };
@@ -12,10 +15,28 @@ public class DriveSceneSoundManager : MonoBehaviour
     public static bool driveSoundEnabled = true;
     void Start()
     {
-        bgmPlayer.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerYellow.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerOrange.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerRed.volume = GlobalSoundManager.bgmVolume;
         if (GlobalSoundManager.isBgmSound)
         {
-            bgmPlayer.Play();
+            if (Player.GetPlayer().drunkLevel == DrunkLevel.GREEN)
+            {
+                bgmPlayerGreen.Play();
+            }
+            if (Player.GetPlayer().drunkLevel == DrunkLevel.YELLOW)
+            {
+                bgmPlayerYellow.Play();
+            }
+            if (Player.GetPlayer().drunkLevel == DrunkLevel.ORANGE)
+            {
+                bgmPlayerOrange.Play();
+            }
+            if (Player.GetPlayer().drunkLevel == DrunkLevel.RED)
+            {
+                bgmPlayerRed.Play();
+            }
         }
     }
     public void SfxPlay(Sfx type)
@@ -51,7 +72,17 @@ public class DriveSceneSoundManager : MonoBehaviour
     }
     public void DestroySounds()
     {
-        Destroy(this.bgmPlayer);
+        switch (Player.GetPlayer().drunkLevel)
+        {
+            case DrunkLevel.GREEN:
+                Destroy(bgmPlayerGreen); break;
+            case DrunkLevel.YELLOW:
+                Destroy(bgmPlayerYellow); break;
+            case DrunkLevel.ORANGE:
+                Destroy(bgmPlayerOrange); break;
+            case DrunkLevel.RED:
+                Destroy(bgmPlayerRed); break;
+        }
         Destroy(sfxPlayer[sfxCursor]);
     }
 }
