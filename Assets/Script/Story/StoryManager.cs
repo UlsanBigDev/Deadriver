@@ -19,12 +19,15 @@ public class StoryManager : MonoBehaviour
     static Story current;
     bool isChatting;
 
+    GameObject imageGroup;
+
 
     private void Awake()
     {
         instance = this;
         isChatting = true;
         InitializeStoryData();
+        imageGroup = GameObject.Find("ImageGroup");
     }
 
     private void Start()
@@ -143,39 +146,91 @@ public class StoryManager : MonoBehaviour
             )
         );
 
-        // 고등학교 친구를 만나서 밥 먹는 이벤트
+        // 고등학교 친구를 만나서 술 권유 이벤트 1
         storyMap.Add(11,
             new StorySelect(
                 new List<StoryScript>()
                 {
-                    new StoryScript("민광 : 사장님 삼겹살 4인분에 소주 두병이요~"),
+                    new StoryScript("안지욱 : 사장님 삼겹살 4인분에 소주 두병이요~"),
                     new StoryScript("나 : 나는 차몰고 와서 소주는 못 마실것 같은데 콜라나 마실게"),
-                    new StoryScript("민광 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만"),
-                    new StoryScript("민광 : 어차피 이 동네 단속도 잘 안떠~"),
+                    new StoryScript("안지욱 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만"),
+                    new StoryScript("안지욱 : 어차피 이 동네 단속도 잘 안떠~", ()=>{
+                        if (imageGroup != null)
+                            imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(true);
+                    } ),
                     new StoryScript("나 : 쓰읍 단속이 문제가 아닌데...")
                 },
                 (
-                    new StoryTitle("마신다", 1110),
-                    new StoryTitle("안마신다", 1120)
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 111, false)
                 )
             )
         );
 
-        // 고등학교 친구를 만나서 술까지 마시는 이벤트 - 1
-        storyMap.Add(1110,
+        // 고등학교 친구를 만나서 술 권유 이벤트 2
+        storyMap.Add(111,
+            new StorySelect(
+                new List<StoryScript>()
+                {
+                    new StoryScript("안지욱 : 어허 팔 떨어지겠다 어서 받아"),
+                    new StoryScript("나 : 아니 나는 자동차를 몰고 집에 가야한다니까 ????"),
+                    new StoryScript("안지욱 : 나아~는 그런 거는 모르겠고! 술이나 받아라 이말이야!"),
+                },
+                (
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 1111, false)
+                )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 권유 이벤트 3
+        storyMap.Add(1111,
+            new StorySelect(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 지욱아 선은 넘지말자"),
+                    new StoryScript("안지욱 : 이걸참아? 이걸참아? 이걸참아?"),
+                },
+                (
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 11111, false)
+                )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 권유 이벤트 3
+        storyMap.Add(11111,
             new Story(
                 new List<StoryScript>()
                 {
-                    new StoryScript("(알딸딸한게 취기가 올라온다)"),
-                    new StoryScript("민광 : 야 재미있었다~ 내일 보자~"),
-                    new StoryScript("나 : 어~ 그래 잘들어가고 언젠가 보자"),
-                    new StoryScript("하아.. 별로 안 취한것 같은데 운전이나 해야겠다")
+                    new StoryScript("안지욱 : 쓰읍 알겠다 나 혼자 마시지 뭐 사장님 콜라 한명 주세요!", ()=>{
+                        if (imageGroup != null) imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(false);
+                    }),
+                    new StoryScript("나 : 그래 다음에는 꼭 같이 함마시자"),
+                }, () => {
+                    SceneManager.LoadScene("Mission");
+                }
+            )
+        );
+
+        // 고등학교 친구를 만나서 술까지 마시는 이벤트 - 1
+        storyMap.Add(12,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("(뭐 별 문제야 생기겠어??)"),
+                    new StoryScript("그래 한 잔 따라줘봐라"),
+                    new StoryScript("안지욱 : 자 받아라 이 형님이 따라주는거다!", ()=>{
+                        Debug.Log("소주 잔 이미지 활성화");
+                        if (imageGroup != null)
+                            imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
+                    }),
                 },
                 () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 70);
                     LoadingManager.sceneName = "Drive";
-                    SceneManager.LoadScene("LoadingScene");
+                    SceneManager.LoadScene("LoadingScene"); 
                 }
             )
         );

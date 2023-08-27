@@ -32,7 +32,7 @@ public class StartUI : MonoBehaviour
 
     public void ClickStart()
     {
-        LoadingManager.sceneName = "StoryLine_Developer";
+        LoadingManager.sceneName = "Story0";
         SceneManager.LoadScene("LoadingScene");
         //loadingAnimation.changeScene("");
         //Debug.Log("LoadingScene으로 전환");
