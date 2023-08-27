@@ -87,6 +87,7 @@ public class StoryManager : MonoBehaviour
                 () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 70);
+                    LoadingManager.sceneName = "Drive";
                     SceneManager.LoadScene("LoadingScene");
                 }
             )
@@ -160,9 +161,10 @@ public class StoryManager : MonoBehaviour
                     new List<StoryScript>() {
                         new StoryScript("미구현 드라이브 미션으로 이동합니다"),
                         new StoryScript("", () => {
-                        Player player = Player.GetPlayer();
-                        player.SetDrunkGauge(player.drunkGauge + 0);
-                        SceneManager.LoadScene("Drive");
+                            Player player = Player.GetPlayer();
+                            player.SetDrunkGauge(player.drunkGauge + 0);
+                            LoadingManager.sceneName = "Drive";
+                            SceneManager.LoadScene("LoadingScene");
                         })
                     }
                 )   
