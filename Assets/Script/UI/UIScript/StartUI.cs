@@ -11,9 +11,11 @@ public class StartUI : MonoBehaviour
     public Image BGM;
     public UISoundManager uISoundManager;
     public AudioSource bgmPlayer;
+    LoadingAnimation loadingAnimation;
 
     void Awake()
     {
+        loadingAnimation = GetComponent<LoadingAnimation>();
         uISoundManager = FindObjectOfType<UISoundManager>();
     }
     public void Clickconfiguration()
@@ -32,8 +34,9 @@ public class StartUI : MonoBehaviour
 
     public void ClickStart()
     {
-        Debug.Log("Story Scene으로 전환");
-        SceneManager.LoadScene("StoryLine_Developer");
+        loadingAnimation.changeScene("StoryLine_Developer");
+        Debug.Log("LoadingScene으로 전환");
+        SceneManager.LoadScene("LoadingScene");
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 

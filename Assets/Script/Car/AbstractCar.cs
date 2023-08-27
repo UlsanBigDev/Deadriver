@@ -25,7 +25,6 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public TextMeshProUGUI building;
     public TextMeshProUGUI car;
     public Image informaitionPanel;
-    public Text carDamageText, alcoholText, crimeText, scoreText;
     //public Animator anim;
 
     public DriveSceneSoundManager driveSceneSoundManager;

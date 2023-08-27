@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroupMission : AbstractMission
 {
     private List<Mission> missionList;
-
+     
     public GroupMission(List<Mission> missions)
     {
         isSuccess = false;
