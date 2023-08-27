@@ -58,6 +58,9 @@ public class DriveSceneSoundManager : MonoBehaviour
             case Sfx.over:
                 sfxPlayer[sfxCursor].clip = sfxClip[4];
                 break;
+            case Sfx.click:
+                sfxPlayer[sfxCursor].clip = sfxClip[5];
+                break;
         }
         sfxPlayer[sfxCursor].Play();
         sfxCursor = (sfxCursor + 1) % sfxPlayer.Length;

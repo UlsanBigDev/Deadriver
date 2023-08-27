@@ -142,6 +142,9 @@ public class StoryManager : MonoBehaviour
                 new List<StoryScript>()
                 {
                     new StoryScript("(음 오늘은 별로 가고 싶지 않은걸? 거절 해야겠다.)")
+                }, () => {
+                    LoadingManager.sceneName = "Mission";
+                    SceneManager.LoadScene("LoadingScene");
                 }
             )
         );

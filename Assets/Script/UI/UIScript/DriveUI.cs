@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DriveUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeLoading()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Time.timeScale = 1;
+        LoadingManager.sceneName = "StartScene";
+        SceneManager.LoadScene("LoadingScene");
     }
 }

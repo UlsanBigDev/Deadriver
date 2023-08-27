@@ -30,6 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryLine/Story11.unity
     guid: 8502736dff9fe45b986655b27c950cd0
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/StoryLine/Story3.unity
     guid: 6b6d47df46117486c825051bcc9f2ab6
+=======
+    path: Assets/Scenes/Title/StartScene.unity
+    guid: f56dfbe2813d4734f99679634942216c
+>>>>>>> origin/main
   m_configObjects: {}

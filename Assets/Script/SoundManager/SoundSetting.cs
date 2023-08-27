@@ -17,21 +17,21 @@ public class SoundSetting : MonoBehaviour
     }
     public void Clickconfiguration()
     {
-        Debug.Log("환경설정 클릭");
+        Debug.Log("소리설정 클릭");
         BGM.gameObject.SetActive(true);
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
 
     public void ClickClose()
     {
-        Debug.Log("환경설정 창 닫기"); 
+        Debug.Log("소리설정 닫기"); 
         BGM.gameObject.SetActive(false);
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
 
     public void ClickBgmOn()
     {
-        Debug.Log("Bgm ON");
+        Debug.Log("소리설정 브금 ON");
         GlobalSoundManager.isBgmSound = true;
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
         if (!driveSceneSoundManager.bgmPlayerGreen.isPlaying && Player.GetPlayer().drunkLevel == DrunkLevel.GREEN)
@@ -53,7 +53,7 @@ public class SoundSetting : MonoBehaviour
     }
     public void ClickBgmOff()
     {
-        Debug.Log("BGM OFF");
+        Debug.Log("소리설정 브금 OFF");
         GlobalSoundManager.isBgmSound = false;
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
         driveSceneSoundManager.bgmPlayerGreen.Stop();
@@ -64,14 +64,14 @@ public class SoundSetting : MonoBehaviour
 
     public void ClickSfxOn()
     {
-        Debug.Log("SFX ON");
+        Debug.Log("소리설정 효과음 ON");
         GlobalSoundManager.isSfxSound = true;
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
 
     public void ClickSfxOff()
     {
-        Debug.Log("SFX OFF");
+        Debug.Log("소리설정 효과음  OFF");
         GlobalSoundManager.isSfxSound = false;
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
