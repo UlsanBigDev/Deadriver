@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
         Car.AddDrunkEvent(new ManyEnemy());
         Car.AddDrunkEvent(new SightEvent(sightPanel));
         /// 
-
         /// 기타 상황 맞게 초기화 하는 구간
         if (Car.isSight)
         {
