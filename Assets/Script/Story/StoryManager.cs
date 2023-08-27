@@ -142,6 +142,9 @@ public class StoryManager : MonoBehaviour
                 new List<StoryScript>()
                 {
                     new StoryScript("(음 오늘은 별로 가고 싶지 않은걸? 거절 해야겠다.)")
+                }, () => {
+                    LoadingManager.sceneName = "Mission";
+                    SceneManager.LoadScene("LoadingScene");
                 }
             )
         );
@@ -152,34 +155,88 @@ public class StoryManager : MonoBehaviour
                 new List<StoryScript>()
                 {
                     new StoryScript("안지욱 : 사장님 삼겹살 4인분에 소주 두병이요~"),
-                    new StoryScript("나 : 나는 차몰고 와서 소주는 못 마실것 같은데 콜라나 마실게"),
-                    new StoryScript("안지욱 : 에헤이~ 뭔 콜라여 쪼~끔만 마시자 쬐끔만"),
-                    new StoryScript("안지욱 : 어차피 이 동네 단속도 잘 안떠~", ()=>{
+                    new StoryScript("나 : 뭐야 너는 차 안 끌고 왔어?"),
+                    new StoryScript("안지욱 : 어 내일 주말이라 피시방에서 밤샘이나 할라고"),
+                    new StoryScript("안지욱 : 니도 한잔 마셔야지", ()=>{
                         if (imageGroup != null)
                             imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(true);
                     } ),
-                    new StoryScript("나 : 쓰읍 단속이 문제가 아닌데...")
+                    new StoryScript("나 : 흐음...")
                 },
                 (
                     new StoryTitle("마신다", 12, false),
-                    new StoryTitle("안마신다", 111, false)
+                    new StoryTitle("안마신다", 13, false)
                 )
             )
         );
 
-        // 고등학교 친구를 만나서 술 권유 이벤트 2
+        storyMap.Add(12,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 안 마실 이유가 없지 함 줘봐라"),
+                    new StoryScript("안지욱 : 역시 소광이 아주 상남자여", ()=>{
+                        if (imageGroup != null) imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
+                    } ),
+                }, () => {
+                    SetCurrentStory(storyMap[111]);
+                }
+            )
+        );
+
+        storyMap.Add(13,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 흐음 별로 안 땡기는걸 니 혼자 마셔라"),
+                    new StoryScript("안지욱 : 삼겹살에는 소주인데 이걸 참아?"),
+                }, () => {
+                    SetCurrentStory(storyMap[111]);
+                }
+            )
+        );
+
         storyMap.Add(111,
             new StorySelect(
                 new List<StoryScript>()
                 {
-                    new StoryScript("안지욱 : 어허 팔 떨어지겠다 어서 받아"),
-                    new StoryScript("나 : 아니 나는 자동차를 몰고 집에 가야한다니까 ????"),
-                    new StoryScript("안지욱 : 나아~는 그런 거는 모르겠고! 술이나 받아라 이말이야!"),
+                    new StoryScript("안지욱 : 자 내일 주말 이니까 한잔 받아라"),
+                    new StoryScript("나 : 흐음.... 이게 맞는 짓인가", ()=>{
+                    if (imageGroup != null) imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(false);
+                    } )
                 },
                 (
-                    new StoryTitle("마신다", 12, false),
-                    new StoryTitle("안마신다", 1111, false)
+                    new StoryTitle("마신다", 112, false),
+                    new StoryTitle("안마신다", 113, false)
                 )
+            )
+        );
+
+        storyMap.Add(112,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("안지욱 : 야야 소광아 팔 떨어지겠다 빨리 받아라 ㅋㅋㅋ"),
+                    new StoryScript("나 : 그래 어디 함 따라 봐바라 얼마나 잘 따르는지 보자"),
+                },
+                () =>
+                {
+                    SetCurrentStory(storyMap[1111]);
+                }
+            )
+        );
+        storyMap.Add(113,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 됐다 별로 마시고 싶지 않네 니 다 마셔라 "),
+                    new StoryScript("안지욱 : 아글나? 와글노? 마실라면 언제든 말해라"),
+
+                },
+                () =>
+                {
+                    SetCurrentStory(storyMap[1111]);
+                }
             )
         );
 
@@ -188,67 +245,67 @@ public class StoryManager : MonoBehaviour
             new StorySelect(
                 new List<StoryScript>()
                 {
-                    new StoryScript("나 : 지욱아 선은 넘지말자"),
-                    new StoryScript("안지욱 : 이걸참아? 이걸참아? 이걸참아?"),
-                },
-                (
-                    new StoryTitle("마신다", 12, false),
-                    new StoryTitle("안마신다", 11111, false)
-                )
-            )
-        );
-
-        // 고등학교 친구를 만나서 술 권유 이벤트 3
-        storyMap.Add(11111,
-            new Story(
-                new List<StoryScript>()
-                {
-                    new StoryScript("안지욱 : 쓰읍 알겠다 나 혼자 마시지 뭐 사장님 콜라 한명 주세요!", ()=>{
+                    new StoryScript("안지욱 : 너 뭐 딴거는 안먹냐", ()=>{
                         if (imageGroup != null) imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(false);
                     }),
-                    new StoryScript("나 : 그래 다음에는 꼭 같이 함마시자"),
-                }, () => {
-                    SceneManager.LoadScene("Mission");
-                }
+                    new StoryScript("나 : 딱히? 별로 생각 없는데?"),
+                    new StoryScript("안지욱 : 그래? 그럼 이것만 마시고 드가자~~~", ()=>{
+                        if (imageGroup != null) imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(true);
+                    } ),
+                },
+                (
+                    new StoryTitle("마신다", 1112, false),
+                    new StoryTitle("안마신다", 1113, false)
+                )
             )
         );
 
-        // 고등학교 친구를 만나서 술까지 마시는 이벤트 - 1
-        storyMap.Add(12,
+        storyMap.Add(1112,
             new Story(
                 new List<StoryScript>()
                 {
-                    new StoryScript("(뭐 별 문제야 생기겠어??)"),
-                    new StoryScript("그래 한 잔 따라줘봐라"),
-                    new StoryScript("안지욱 : 자 받아라 이 형님이 따라주는거다!", ()=>{
-                        Debug.Log("소주 잔 이미지 활성화");
-                        if (imageGroup != null)
-                            imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
-                    }),
+                    new StoryScript("나 : 자~~ 드가자~", () => {
+                        if (imageGroup != null) imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
+                    } ),
+                    new StoryScript("안지욱 : 위하여~~"),
+                    new StoryScript("나 : 위하여~~"),
                 },
-                () => {
-                    Player player = Player.GetPlayer();
-                    player.SetDrunkGauge(player.drunkGauge + 70);
-                    LoadingManager.sceneName = "Drive";
-                    SceneManager.LoadScene("LoadingScene"); 
+                () =>
+                {
+                    ChangeStoryById(3);
                 }
             )
         );
 
-        // 최소 문자열 스크립트가 두줄 이여야함
-        // 고등학교 친구를 만나서 술 거절 이벤트 - 1
-        storyMap.Add(1120,
-            new StorySelect(
+        storyMap.Add(1113,
+            new Story(
                 new List<StoryScript>()
                 {
-                    new StoryScript("진짜 안마실 꺼야?"),
-                    new StoryScript("나 삐진다?")
+                    new StoryScript("나 : 나는 여기까지 할란다"),
+                    new StoryScript("안지욱 : 뭐야 재미없구로"),
+                    new StoryScript("나 : 다음에는 재밌게 놀아 줄게"),
+                    new StoryScript("안지욱 : 그래 다음에는 꼭이다"),
                 },
-                (
-                    new StoryTitle("마신다", 1110),
-                    new StoryTitle("안마신다", 1130)
-                )
+                () =>
+                {
+                    ChangeStoryById(3);
+                }
             )
-        ); ;
+        );
+        storyMap.Add(3,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 기사님 동구에 화정동으로 가주세요"),
+                    new StoryScript("안지욱 : 으어어어억 아우야 내 먼저 들어가마"),
+                    new StoryScript("나 : ㅋㅋ 취한거 봐라 꼭 살아서 집들어가라~"),
+                    new StoryScript("나 : 그럼 슬슬 나도 집으로 들어가볼까"),
+                }, () =>
+                {
+                    LoadingManager.sceneName = "Mission";
+                    SceneManager.LoadScene("LoadingScene");
+                }  
+            )
+        );
     }
 }
