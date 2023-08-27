@@ -34,10 +34,12 @@ public class StartUI : MonoBehaviour
 
     public void ClickStart()
     {
-        loadingAnimation.changeScene("StoryLine_Developer");
-        Debug.Log("LoadingScene으로 전환");
+        LoadingManager.sceneName = "Drive";
         SceneManager.LoadScene("LoadingScene");
-        uISoundManager.SfxPlay(UISoundManager.Sfx.click);
+        //loadingAnimation.changeScene("");
+        //Debug.Log("LoadingScene으로 전환");
+        //SceneManager.LoadScene("LoadingScene");
+        //uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
 
     public void ClickBgmOn()
