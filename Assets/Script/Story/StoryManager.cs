@@ -125,18 +125,15 @@ public class StoryManager : MonoBehaviour
             storyChatUI.PrintStoryChatText(current.Now());
             if (current.isLast) {
                 if (current is StorySelect) {
-                    /*Debug.Log("선택지 출력...");*/
                     storyChatUI.PrintStorySelectButton(current as StorySelect);
+                    return;
+                } else if (current is StoryChain) {
+                    StoryChain sn = current as StoryChain;
+                    SetCurrentStory(sn.next);
                     return;
                 }
             }
             return;
-        } else {            
-            if (current is StoryChain) {
-                StoryChain sn = current as StoryChain;
-                SetCurrentStory(sn.next);
-                return;
-            }
         }
 
         
@@ -158,21 +155,18 @@ public class StoryManager : MonoBehaviour
         catch(System.Exception e)
         {
 
-            SetCurrentStory(new StoryChain(
-                new List<StoryScript>()
-                {
-                    new StoryScript("미구현 선택지 드라이브 미션으로 이동"),
-                },
+            SetCurrentStory(
                 new Story(
                     new List<StoryScript>() {
-                        new StoryScript("as")
-                    },
-                    () => {
-                    Player player = Player.GetPlayer();
-                    player.SetDrunkGauge(player.drunkGauge + 0);
-                    SceneManager.LoadScene("Drive");
-                })
-            ));
+                        new StoryScript("미구현 드라이브 미션으로 이동합니다"),
+                        new StoryScript("", () => {
+                        Player player = Player.GetPlayer();
+                        player.SetDrunkGauge(player.drunkGauge + 0);
+                        SceneManager.LoadScene("Drive");
+                        })
+                    }
+                )   
+            );
         }
     }
 }

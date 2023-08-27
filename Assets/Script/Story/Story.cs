@@ -62,9 +62,8 @@ public class Story
     /// </summary>
     public string Now()
     {   
-        StoryScript script = this.scripts[index];
-        if (index == scripts.Count) isLast = true;
-        else index++;
+        StoryScript script = this.scripts[index++];
+        if (index == scripts.Count) isLast = true;        
         script.action?.Invoke();
         return script.message;
         /*string message = messages[index++];
