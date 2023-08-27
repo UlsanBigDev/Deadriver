@@ -23,7 +23,7 @@ public class TimeMission : AbstractMission, UpdateListener
     {
         if (!isSuccess) return;
         // Debug.Log("남은시간 : " + completeTime);
-        completeTime -= Time.deltaTime;
+
         if (completeTime <= 0) isSuccess = false;
 
     }
