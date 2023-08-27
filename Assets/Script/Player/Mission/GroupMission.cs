@@ -6,7 +6,10 @@ public class GroupMission : AbstractMission
 {
     public List<Mission> missionList;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa613bd76ccbe2b891c48d4e57b755664317d43d
     public GroupMission(List<Mission> missions)
     {
         isSuccess = false;
