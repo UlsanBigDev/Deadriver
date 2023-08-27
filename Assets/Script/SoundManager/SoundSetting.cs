@@ -66,6 +66,7 @@ public class SoundSetting : MonoBehaviour
     {
         Debug.Log("소리설정 효과음 ON");
         GlobalSoundManager.isSfxSound = true;
+        Debug.Log("소리설정 ON 딸깍");
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
 
@@ -73,6 +74,7 @@ public class SoundSetting : MonoBehaviour
     {
         Debug.Log("소리설정 효과음  OFF");
         GlobalSoundManager.isSfxSound = false;
+        Debug.Log("소리설정 OFF 딸깍");
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
 }
