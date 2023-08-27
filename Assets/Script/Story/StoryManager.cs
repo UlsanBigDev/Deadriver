@@ -146,7 +146,7 @@ public class StoryManager : MonoBehaviour
             )
         );
 
-        // 고등학교 친구를 만나서 밥 먹는 이벤트
+        // 고등학교 친구를 만나서 술 권유 이벤트 1
         storyMap.Add(11,
             new StorySelect(
                 new List<StoryScript>()
@@ -164,6 +164,52 @@ public class StoryManager : MonoBehaviour
                     new StoryTitle("마신다", 12, false),
                     new StoryTitle("안마신다", 111, false)
                 )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 권유 이벤트 2
+        storyMap.Add(111,
+            new StorySelect(
+                new List<StoryScript>()
+                {
+                    new StoryScript("안지욱 : 어허 팔 떨어지겠다 어서 받아"),
+                    new StoryScript("나 : 아니 나는 자동차를 몰고 집에 가야한다니까 ????"),
+                    new StoryScript("안지욱 : 나아~는 그런 거는 모르겠고! 술이나 받아라 이말이야!"),
+                },
+                (
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 1111, false)
+                )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 권유 이벤트 3
+        storyMap.Add(1111,
+            new StorySelect(
+                new List<StoryScript>()
+                {
+                    new StoryScript("나 : 지욱아 선은 넘지말자"),
+                    new StoryScript("안지욱 : 이걸참아? 이걸참아? 이걸참아?"),
+                },
+                (
+                    new StoryTitle("마신다", 12, false),
+                    new StoryTitle("안마신다", 11111, false)
+                )
+            )
+        );
+
+        // 고등학교 친구를 만나서 술 권유 이벤트 3
+        storyMap.Add(11111,
+            new Story(
+                new List<StoryScript>()
+                {
+                    new StoryScript("안지욱 : 쓰읍 알겠다 나 혼자 마시지 뭐 사장님 콜라 한명 주세요!", ()=>{
+                        if (imageGroup != null) imageGroup.transform.Find("alchorEventBottle").gameObject.SetActive(false);
+                    }),
+                    new StoryScript("나 : 그래 다음에는 꼭 같이 함마시자"),
+                }, () => {
+                    SceneManager.LoadScene("Mission");
+                }
             )
         );
 
