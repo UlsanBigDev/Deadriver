@@ -71,7 +71,7 @@ public class SoundSetting : MonoBehaviour
 
     public void ClickSfxOff()
     {
-        Debug.Log("소리설정 효과음 OFF");
+        Debug.Log("소리설정 효과음  OFF");
         GlobalSoundManager.isSfxSound = false;
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
