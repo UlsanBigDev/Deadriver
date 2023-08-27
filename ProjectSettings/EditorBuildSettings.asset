@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryLine/Story11.unity
     guid: 8502736dff9fe45b986655b27c950cd0
+  - enabled: 1
+    path: Assets/Scenes/Title/StartScene.unity
+    guid: f56dfbe2813d4734f99679634942216c
   m_configObjects: {}

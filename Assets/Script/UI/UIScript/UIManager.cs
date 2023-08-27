@@ -31,17 +31,13 @@ public class UIManager : MonoBehaviour
 
         if(groupMission.GetState() == true)
         {
+            Debug.Log(groupMission.GetState()); 
             resultMissionText.text = "미션 : 성공";
         }
-        else
+        else if(groupMission.GetState() == false)
         {
+            Debug.Log(groupMission.GetState());
             resultMissionText.text = "미션 : 실패";
         }
-    }
-
-    public void clickBack()
-    {
-        // loadingAnimation.changeScene("StartScene");
-        SceneManager.LoadScene("LoadingScene");
     }
 }

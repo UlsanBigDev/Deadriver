@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
 
         
         missionText.text = missions[i].title;
-        if (i == 0) //i 값은 선택된 미션을 의미
+        if (i == 0) //i 값은 선택된 미션을 의미 -> 휴대폰 씬에서 선택된 미션의 번호를 받아와야함
         {
             foreach (Mission mis in misssion1List)
             {

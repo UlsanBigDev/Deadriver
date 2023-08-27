@@ -20,7 +20,7 @@ public class GroupMission : AbstractMission
     {
         foreach (Mission mission in missionList)
         {
-            if (!mission.isSuccess) return false;
+            if (mission.isSuccess) return false;
         }
         return true;
     }

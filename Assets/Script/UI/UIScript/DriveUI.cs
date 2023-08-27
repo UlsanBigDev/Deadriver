@@ -7,6 +7,8 @@ public class DriveUI : MonoBehaviour
 {
     public void ChangeLoading()
     {
+        Time.timeScale = 1;
+        LoadingManager.sceneName = "StartScene";
         SceneManager.LoadScene("LoadingScene");
     }
 }
