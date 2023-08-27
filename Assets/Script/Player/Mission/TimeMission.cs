@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TimeMission : AbstractMission, UpdateListener
 {
+    public float originTime;
     private float completeTime;
     public TimeMission(float time)
     {
+        originTime = time;
         this.completeTime = time;
         isSuccess = true;
         GameManager.AddUpdateListener(this);

@@ -28,7 +28,6 @@ public abstract class AbstractEnemy : MonoBehaviour, Enemy
     protected virtual void OnCrash()
     {
         Disable();
-        Debug.Log("Player 말고 다른거랑 부딪");
     }
 
     private void Disable()

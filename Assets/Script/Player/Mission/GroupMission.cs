@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GroupMission : AbstractMission
 {
-    private List<Mission> missionList;
-
+    public List<Mission> missionList;
     public GroupMission(List<Mission> missions)
     {
         isSuccess = false;
@@ -25,6 +24,4 @@ public class GroupMission : AbstractMission
         }
         return true;
     }
-
-
 }
