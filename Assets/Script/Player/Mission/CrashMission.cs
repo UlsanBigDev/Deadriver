@@ -8,10 +8,12 @@ public enum CrashType
 }
 public class CrashMission : AbstractMission, CrashListener
 {
+    public int originCount;
     private int count;
     private CrashType crashType;
     public CrashMission(int count)
     {
+        originCount = count;
         listeners = new List<MissionCompleteListener>();
         this.count = count;
         isSuccess = true;
