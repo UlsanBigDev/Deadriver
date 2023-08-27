@@ -28,19 +28,13 @@ public class StorySelect : Story
     /// <summary>
     /// 생성자
     /// </summary>
-    /// <param name="message">
-    ///    출력할 대화 스크립트로 Story 랑 똑같음
-    /// </param>
-    /// <param name="storys">
-    ///     귀찮으니까 튜플로 한번에 데이터 받아
-    /// </param>
-    public StorySelect(List<string> message, (StoryTitle, StoryTitle) storys) : base(message)
+    public StorySelect(List<StoryScript> scripts, (StoryTitle, StoryTitle) storys) : base(scripts)
     {
         s1 = storys.Item1;
         s2 = storys.Item2;
     }
 
-    public StorySelect(List<string> message, (StoryTitle, StoryTitle) storys, System.Action action) : this(message, storys)
+    public StorySelect(List<StoryScript> scripts, (StoryTitle, StoryTitle) storys, System.Action action) : this(scripts, storys)
     {
         OnLoad = action;
     }

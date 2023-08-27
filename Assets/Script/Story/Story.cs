@@ -1,6 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+public struct StoryScript
+{
+    public string message;
+    public System.Action action;
+
+    public StoryScript(string message)
+    {
+        this.message = message;
+        this.action = null;
+    }
+
+    public StoryScript(string message, System.Action callback) : this (message)
+    {   
+        this.action = callback;
+    }
+
+
+}
+
 /// <summary>
 /// 스토리 클레스로 스토리 미션중 플레이어가 NPC와 대화할때 스크립트를 다룸
 /// </summary>
@@ -9,7 +30,7 @@ public class Story
     /// <summary>
     /// 스크립트 대화 리스트로 0 ~ N 번째 순으로 SPACE바로 다음 대화가 읽힘
     /// </summary>
-    protected List<string> messages;
+    protected List<StoryScript> scripts;
     /// <summary>
     /// 현재 Story messages의 인데스
     /// </summary>
@@ -24,14 +45,14 @@ public class Story
     /// </summary>
     protected System.Action OnLoad;
 
-    public Story(List<string> messages)
+    public Story(List<StoryScript> scripts)
     {
-        this.messages = messages;
+        this.scripts = scripts;
         index = 0;
         isLast = false;
     }
 
-    public Story(List<string> messages, System.Action action) : this(messages)
+    public Story(List<StoryScript> scripts, System.Action action) : this(scripts)
     {
         this.OnLoad = action;
     } 
@@ -40,10 +61,15 @@ public class Story
     /// 현재 스토리의 인덱스의 대화를 리턴함
     /// </summary>
     public string Now()
-    {
-        string message = messages[index++];
+    {   
+        StoryScript script = this.scripts[index];
+        if (index == scripts.Count) isLast = true;
+        else index++;
+        script.action?.Invoke();
+        return script.message;
+        /*string message = messages[index++];
         if (index == messages.Count) isLast = true;
-        return message;
+        return message;*/
     }
 
     /// <summary>
