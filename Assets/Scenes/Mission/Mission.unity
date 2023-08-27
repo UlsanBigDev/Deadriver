@@ -988,8 +988,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD655\uC778"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 5433513882200482986, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b82d2f970fc014e478bbcf7577b02ed0, type: 2}
+  m_sharedMaterial: {fileID: 5525339199889889278, guid: b82d2f970fc014e478bbcf7577b02ed0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

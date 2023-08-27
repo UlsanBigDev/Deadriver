@@ -1,5 +1,5 @@
-Font: Noto Sans KR  Style: Regular
-Point Size: 704   SP/PD Ratio: 0.7%
+Font: DungGeunMo  Style: ???
+Point Size: 898   SP/PD Ratio: 0.6%
 
 Characters included: 98/99
 Missing characters: 1
@@ -7,7 +7,7 @@ Excluded characters: 0
 
 Characters missing from font file:
 ----------------------------------------
-ID: 8203	Hex: 200B	Char [​]
+ID: 9633	Hex: 25A1	Char [□]
 
 Characters excluded from packing:
 ----------------------------------------
