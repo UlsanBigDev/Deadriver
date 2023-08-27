@@ -20,7 +20,7 @@ public class StoryManager : MonoBehaviour
         instance = this;
         isChatting = true;
         InitializeStoryData();
-        loadingAnimation = GetComponent<LoadingAnimation>();
+        loadingAnimation = new LoadingAnimation();
     }
     private void Test()
     {   

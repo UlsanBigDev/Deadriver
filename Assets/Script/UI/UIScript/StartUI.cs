@@ -15,7 +15,7 @@ public class StartUI : MonoBehaviour
 
     void Awake()
     {
-        loadingAnimation = GetComponent<LoadingAnimation>();
+        loadingAnimation = new LoadingAnimation();
         uISoundManager = FindObjectOfType<UISoundManager>();
     }
     public void Clickconfiguration()
