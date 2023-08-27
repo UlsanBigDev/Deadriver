@@ -12,7 +12,6 @@ public class StoryManager : MonoBehaviour
     static Story current;
     bool isChatting;
     private int testValue = 0;
-    LoadingAnimation loadingAnimation;
 
 
     private void Awake()
@@ -20,7 +19,6 @@ public class StoryManager : MonoBehaviour
         instance = this;
         isChatting = true;
         InitializeStoryData();
-        loadingAnimation = new LoadingAnimation();
     }
     private void Test()
     {   
@@ -89,7 +87,6 @@ public class StoryManager : MonoBehaviour
                 () => {
                     Player player = Player.GetPlayer();
                     player.SetDrunkGauge(player.drunkGauge + 70);
-                    loadingAnimation.changeScene("Drive");
                     SceneManager.LoadScene("LoadingScene");
                 }
             )

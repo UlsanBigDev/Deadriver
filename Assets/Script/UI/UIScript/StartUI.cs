@@ -11,11 +11,9 @@ public class StartUI : MonoBehaviour
     public Image BGM;
     public UISoundManager uISoundManager;
     public AudioSource bgmPlayer;
-    LoadingAnimation loadingAnimation;
 
     void Awake()
     {
-        loadingAnimation = new LoadingAnimation();
         uISoundManager = FindObjectOfType<UISoundManager>();
     }
     public void Clickconfiguration()

@@ -9,6 +9,11 @@ public class LoadingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene(LoadingManager.sceneName);
+        StartCoroutine(LoadingCoroutine());
+    }
+    private IEnumerator LoadingCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(6f);
+        SceneManager.LoadScene(sceneName);
     }
 }
