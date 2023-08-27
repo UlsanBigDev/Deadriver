@@ -58,9 +58,16 @@ public class GameManager : MonoBehaviour
         Car.AddDrunkEvent(new ManyEnemy());
         Car.AddDrunkEvent(new SightEvent(sightPanel));
         /// 
-        
 
-        // PTK Missiion 기능 테스트 코드
+        /// 기타 상황 맞게 초기화 하는 구간
+        if (Car.isSight)
+        {
+            sightPanel.gameObject.SetActive(true);
+        }
+        ///
+
+
+            // PTK Missiion 기능 테스트 코드
         startListeners = new List<StartListener>();
         updateListeners = new List<UpdateListener>();
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 

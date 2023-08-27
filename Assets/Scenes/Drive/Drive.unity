@@ -3408,7 +3408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1500660913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   bgmPlayer: {fileID: 0}
   soundManager: {fileID: 0}
   finishBoard: {fileID: 286871455}
-  sightPanel: {fileID: 0}
+  sightPanel: {fileID: 1500660914}
 --- !u!4 &1679047598
 Transform:
   m_ObjectHideFlags: 0

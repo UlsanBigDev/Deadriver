@@ -12,12 +12,15 @@ public class SightEvent : DrunkEvent //Panel의 투명도를 이용해서 시야
     public SightEvent(Image panel)
     {
         this.image = panel;
-        level = Player.GetPlayer().drunkLevel;
+        anim = image.GetComponent<Animator>();
     }
 
     public override void Run()
     {
         /*Sight();*/
+        level = Player.GetPlayer().drunkLevel;
+        /*level = DrunkLevel.RED;*/
+        anim.SetInteger("sight", (int) level);
     }
 
     private void Sighting()
