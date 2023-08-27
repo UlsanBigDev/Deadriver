@@ -18,13 +18,13 @@ public class GameManager : MonoBehaviour
 {
     public static float personSpawnCoolTime = 5f;
     public static float enemyCarSpawnCoolTime = 10f;
-    private static List<StartListener> startListeners;
+    private static List<StartListener> startListeners = new List<StartListener>();
     public static void AddStartListener(StartListener listener)
     {
         startListeners.Add(listener);
     }
 
-    private static List<UpdateListener> updateListeners;
+    private static List<UpdateListener> updateListeners = new List<UpdateListener>();
 
     public static void AddUpdateListener(UpdateListener listener)
     {
@@ -68,8 +68,8 @@ public class GameManager : MonoBehaviour
 
 
             // PTK Missiion 기능 테스트 코드
-        startListeners = new List<StartListener>();
-        updateListeners = new List<UpdateListener>();
+        // startListeners = new List<StartListener>();
+        // updateListeners = new List<UpdateListener>();
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
         // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
         // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성

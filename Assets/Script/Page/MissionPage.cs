@@ -5,10 +5,13 @@ using UnityEngine;
 public class MissionPage : MonoBehaviour
 {
     private Dictionary<int, Mission> missionMap;
+    private Mission mission;
 
     private void Awake()
     {
         InitializeMission();
+        SetRandomMission();
+        Debug.Log("랜덤 미션!" + mission.title);
     }
 
     private void InitializeMission()
@@ -45,5 +48,10 @@ public class MissionPage : MonoBehaviour
                 , "상사 호출"
             )
         );
+    }
+
+    private void SetRandomMission()
+    {
+        mission = missionMap[Random.Range(0, 3)];
     }
 }
