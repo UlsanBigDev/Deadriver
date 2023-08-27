@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryLine/StoryLine_Developer.unity
     guid: fed432c89c9ce4954bf4dcd8e1cbfcc2
   - enabled: 1
+    path: Assets/Scenes/Mission/Mission.unity
+    guid: f2ec3d3ba256f4100802d0ea5f4113de
+  - enabled: 1
     path: Assets/Scenes/Loading/LoadingScene.unity
     guid: 4ae1bd5483d1d894684f7f9223d75f84
   - enabled: 1
@@ -26,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryLine/Story11.unity
     guid: 8502736dff9fe45b986655b27c950cd0
+  - enabled: 1
+    path: Assets/Scenes/StoryLine/Story3.unity
+    guid: 6b6d47df46117486c825051bcc9f2ab6
   m_configObjects: {}
