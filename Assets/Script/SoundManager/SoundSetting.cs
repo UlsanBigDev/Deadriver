@@ -24,7 +24,7 @@ public class SoundSetting : MonoBehaviour
 
     public void ClickClose()
     {
-        Debug.Log("환경설정 창 닫기");
+        Debug.Log("환경설정 창 닫기"); 
         BGM.gameObject.SetActive(false);
         driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.click);
     }
