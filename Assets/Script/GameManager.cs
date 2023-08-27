@@ -67,17 +67,12 @@ public class GameManager : MonoBehaviour
         ///
 
 
-            // PTK Missiion 기능 테스트 코드
+        // PTK Missiion 기능 테스트 코드
         // startListeners = new List<StartListener>();
         // updateListeners = new List<UpdateListener>();
         // Player.missionList.Add(new TimeMission(10f)); // 제한시간 미션 10초 미션 생성 
         // Player.missionList.Add(new CrashMission(3)); // 제한 빌딩, 사람, 자동차 상관없이 충돌 미션 3회 미만 미션 생성
         // Player.missionList.Add(new CrashMission(3, CrashType.BUILDING)); // 제한 빌딩 충돌 미션 3회 미만 미션 생성
-<<<<<<< HEAD
-        GroupMission mission2 = new GroupMission(new List<Mission>() { new TimeMission(240f), new CrashMission(6) }, "5분 내로 오면 5만원");
-        GroupMission mission3 = new GroupMission(new List<Mission>() { new TimeMission(300f), new CrashMission(9) }, "상사 호출");
-       
-=======
         GroupMission mission1 = new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문");
         GroupMission mission2 = new GroupMission(new List<Mission>() { new TimeMission(240f), new CrashMission(6) }, "5분 내로 오면 5만원");
         GroupMission mission3 = new GroupMission(new List<Mission>() { new TimeMission(300f), new CrashMission(9) }, "상사 호출");
@@ -86,7 +81,7 @@ public class GameManager : MonoBehaviour
         //{
         //    if(mis is TimeMission)
         //    {
-                
+
         //    }else if(mis is Crah)
         //}
         Player.missionList.Add(mission1);
@@ -96,7 +91,6 @@ public class GameManager : MonoBehaviour
         //Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(240f), new CrashMission(6) }, "5분 내로 오면 5만원"));
         //Player.missionList.Add(new GroupMission(new List<Mission>() { new TimeMission(300f), new CrashMission(9) }, "상사 호출"));
 
->>>>>>> aa613bd76ccbe2b891c48d4e57b755664317d43d
 
         //Mission mission1 = new TimeMission(10f);
         //TimeMission timeMission = (TimeMission) mission1;
@@ -109,25 +103,12 @@ public class GameManager : MonoBehaviour
         //    if (mis is TimeMission)
         //    {
 
-<<<<<<< HEAD
-            }
-            else if (mis is CrashMission)
-            {
-
-            }
-
-        }
-        Player.missionList.Add(mission1);
-        Player.missionList.Add(mission2);
-        Player.missionList.Add(mission3);
-=======
         //    } else if (mis is CrashMission) {
         //    }
 
         //}
-        
 
->>>>>>> aa613bd76ccbe2b891c48d4e57b755664317d43d
+
     }
 
     private void Start()
@@ -178,5 +159,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-    
+
 }
