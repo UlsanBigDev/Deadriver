@@ -28,8 +28,28 @@ public class StoryChatUI
     [SerializeField]
     TMP_Text storyButtonText2;
 
+    [SerializeField]
+    Image phoneBoard;
+
+    [SerializeField]
+    TMP_Text phoneBoardText;
+
     StoryTitle story1;
     StoryTitle story2;
+
+    public Image alchorEventBottle;
+    public Image alchorEventHand;
+
+    public void PrintPhoneText(string message)
+    {
+        phoneBoard.gameObject.SetActive(true);
+        phoneBoardText.text = message;
+    }
+
+    public void ClosePhone()
+    {
+        phoneBoard.gameObject.SetActive(false);
+    }
 
     public void PrintStoryChatText(string message)
     {
@@ -68,12 +88,14 @@ public class StoryChatUI
 
         storyButton1.onClick.AddListener(() => {
             SoundClick();
-            StoryManager.instance.ChangeStory(story1.id);
+            if (story1.isSceneChange) StoryManager.ChangeStoryById(story1.id);
+            else StoryManager.instance.ChangeStory(story1.id);
             DisablePannel();
         });
         storyButton2.onClick.AddListener(() => {
             SoundClick();
-            StoryManager.instance.ChangeStory(story2.id);
+            if (story2.isSceneChange) StoryManager.ChangeStoryById(story2.id);
+            else StoryManager.instance.ChangeStory(story2.id);
             DisablePannel();
         });
     }
@@ -81,4 +103,7 @@ public class StoryChatUI
     {
         storyLineSoundManager.SfxPlay(StoryLineSoundManager.Sfx.click);
     }
+
+    
+
 }

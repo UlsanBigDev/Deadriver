@@ -10,7 +10,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     public AudioSource bgmPlayerRed;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, drivingNormal };
+    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, clicker };
     int sfxCursor;
     public static bool driveSoundEnabled = true;
     void Start()
@@ -55,8 +55,11 @@ public class DriveSceneSoundManager : MonoBehaviour
             case Sfx.pressAccel:
                 sfxPlayer[sfxCursor].clip = sfxClip[3];
                 break;
-            case Sfx.over:
+            case Sfx.click:
                 sfxPlayer[sfxCursor].clip = sfxClip[4];
+                break;
+            case Sfx.over:
+                sfxPlayer[sfxCursor].clip = sfxClip[5];
                 break;
         }
         sfxPlayer[sfxCursor].Play();
@@ -84,5 +87,21 @@ public class DriveSceneSoundManager : MonoBehaviour
                 Destroy(bgmPlayerRed); break;
         }
         Destroy(sfxPlayer[sfxCursor]);
+    }
+    public void SetBgmVolume(float bgmVolume)
+    {
+        GlobalSoundManager.bgmVolume = bgmVolume;
+        bgmPlayerGreen.volume = bgmVolume;
+        bgmPlayerYellow.volume = bgmVolume;
+        bgmPlayerOrange.volume = bgmVolume;
+        bgmPlayerRed.volume = bgmVolume;
+    }
+    public void SetSfxVolume(float sfxVolume)
+    {
+        GlobalSoundManager.sfxVolume = sfxVolume;
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.volume = sfxVolume;
+        }
     }
 }

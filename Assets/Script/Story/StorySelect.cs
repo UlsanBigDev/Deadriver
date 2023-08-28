@@ -10,10 +10,17 @@ public struct StoryTitle
 {
     public string title;
     public int id;
+    public bool isSceneChange;
     public StoryTitle(string title, int id)
     {
         this.title = title;
         this.id = id;
+        isSceneChange = true;
+    }
+
+    public StoryTitle(string title, int id, bool state) : this(title, id)
+    {
+        isSceneChange = state;
     }
 }
 
