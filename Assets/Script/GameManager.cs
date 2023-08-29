@@ -140,9 +140,6 @@ public class GameManager : MonoBehaviour
         {
             listener.OnStart();
         }
-        //bgmPlayer.Stop();
-        //soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
-        //Debug.Log(player.drunkGauge);
     }
 
     private void Update()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427176, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2838,10 +2838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &292725138
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,10 +3792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &451413555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,10 +5287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 471970836}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &644499889
 GameObject:
   m_ObjectHideFlags: 0
@@ -8829,7 +8817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &973494824
 MonoBehaviour:
@@ -9751,10 +9739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 471970836}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &1099535154
 GameObject:
   m_ObjectHideFlags: 0
@@ -10208,10 +10192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &1147766861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10751,7 +10731,7 @@ RectTransform:
   - {fileID: 637431934}
   - {fileID: 471970835}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11316,10 +11296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e43826d60608e4aa60b4d16b4d41b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  driveSceneSoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &1312974975
 GameObject:
   m_ObjectHideFlags: 0
@@ -11558,7 +11534,7 @@ Transform:
   - {fileID: 2074949396}
   - {fileID: 1559863684}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324349400
 GameObject:
@@ -12490,7 +12466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1491215824
 MonoBehaviour:
@@ -12777,11 +12753,11 @@ MonoBehaviour:
   - {fileID: 292725139}
   sfxClip:
   - {fileID: 8300000, guid: 8343b0315d2698c459ce1e864d52af2e, type: 3}
-  - {fileID: 8300000, guid: 18743f9de7f0d4746aa3e797bc142738, type: 3}
+  - {fileID: 8300000, guid: 8343b0315d2698c459ce1e864d52af2e, type: 3}
   - {fileID: 8300000, guid: ffbf805d6d9e8624aa002cb3e3da4255, type: 3}
   - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
   - {fileID: 8300000, guid: 717fd71bde5b16a41909af9663783a7e, type: 3}
-  - {fileID: 8300000, guid: 378efb8d4f1769c4e90453ec20ac19dd, type: 3}
+  - {fileID: 8300000, guid: 2ebaa38f940458d448b69c58038d9f1d, type: 3}
 --- !u!1 &1508402818
 GameObject:
   m_ObjectHideFlags: 0
