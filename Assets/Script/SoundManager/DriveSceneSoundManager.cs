@@ -13,7 +13,6 @@ public class DriveSceneSoundManager : MonoBehaviour
     public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, result, end};
     int sfxCursor;
     public static bool driveSoundEnabled = true;
-    private bool isSoundLoop = false;
     void Start()
     {
         bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;

@@ -535,6 +535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   person: {fileID: 5320845127922128385}
   speed: 1
+  Blood: {fileID: 0}
 --- !u!65 &7247470630126349701
 BoxCollider:
   m_ObjectHideFlags: 0
