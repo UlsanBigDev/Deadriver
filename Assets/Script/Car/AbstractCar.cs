@@ -90,18 +90,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
             driveSceneSoundManager.bgmPlayerYellow.Stop();
             driveSceneSoundManager.bgmPlayerOrange.Stop();
             driveSceneSoundManager.bgmPlayerRed.Stop();
-            /* 여기 밑에 차터지고 엔딩처리하고 버튼 누르기 전까지 반복되게 루프 넣어줄거임 버튼이 눌리면 DestoryCar() 호출
-             * 
-             * onClick 실행할때 -> DestoryCar() 이거 추가
-             * */
             driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.end);
-            DestroyCar();
+            GameManager.GameEnd();
         }
-    }
-
-    private void DestroyCar()
-    {
-        Destroy(this);
     }
 
     /// <summary>
