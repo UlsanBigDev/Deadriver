@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         }*/
 
         Mission selectMission;
-        if (Player.missionList[0] == null)
+        if (Player.missionList.Count == 0)
             selectMission = new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문");
         else
             selectMission = Player.missionList[0];
@@ -144,9 +144,6 @@ public class GameManager : MonoBehaviour
         {
             listener.OnStart();
         }
-        //bgmPlayer.Stop();
-        //soundManager.SfxPlay(SoundManager.Sfx.drivingNormal);
-        //Debug.Log(player.drunkGauge);
     }
 
     private void Update()
