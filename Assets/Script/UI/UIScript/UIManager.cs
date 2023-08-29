@@ -31,12 +31,12 @@ public class UIManager : MonoBehaviour
 
         if(groupMission.GetState() == true)
         {
-            Debug.Log(groupMission.GetState()); 
+            /*Debug.Log(groupMission.GetState()); */
             resultMissionText.text = "미션 : 성공";
         }
         else if(groupMission.GetState() == false)
         {
-            Debug.Log(groupMission.GetState());
+            /*Debug.Log(groupMission.GetState());*/
             resultMissionText.text = "미션 : 실패";
         }
     }

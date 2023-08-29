@@ -31,7 +31,7 @@ public class DriveMissionUI : MonoBehaviour
     {
         // @민욱 여기서 혈중 알콜 농도 0.3~ 에서 어쩌구 식으로 변경하게
         alcoholText.text = "알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
-        Debug.Log(alcoholText.text);
+        /*Debug.Log(alcoholText.text);*/
         if (level == DrunkLevel.GREEN)
         {
             Debug.Log("GREEN 색깔");
