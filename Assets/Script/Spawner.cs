@@ -68,6 +68,7 @@ public class Spawner : MonoBehaviour
     {
         GameObject obj = poolManager.Get((int) type);
         obj.transform.position = transform.position;
+        obj.transform.rotation = transform.rotation;
     }
     private IEnumerator SpawnCoroutine()
     {   

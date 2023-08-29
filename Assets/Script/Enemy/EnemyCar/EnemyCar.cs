@@ -7,7 +7,7 @@ public class EnemyCar : AbstractEnemy
     public float speed;
     private void Update()
     {
-        transform.position += transform.forward.normalized * Time.deltaTime * speed;
+        transform.position += transform.forward * Time.deltaTime * speed;
     }
     
     protected override void OnPlayerCrash(Player player)
