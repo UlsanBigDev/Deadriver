@@ -7,7 +7,7 @@ public class Person : AbstractEnemy
     public float speed;
     private void Update()
     {
-        transform.position += transform.forward.normalized * Time.deltaTime * speed;
+        transform.position += transform.forward * Time.deltaTime * speed;
     }
     /* 사람이랑 충돌됐는지 알려주는 코드 */
     //사람이랑 충돌되면 이 스크립트가 실행
