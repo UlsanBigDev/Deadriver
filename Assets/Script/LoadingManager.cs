@@ -13,7 +13,17 @@ public class LoadingManager : MonoBehaviour
     }
     private IEnumerator LoadingCoroutine()
     {
-        yield return new WaitForSecondsRealtime(6f);
-        SceneManager.LoadScene(sceneName);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        asyncOperation.allowSceneActivation = false;
+        while (!asyncOperation.isDone)
+        {
+            if (asyncOperation.progress >= 0.9f)
+            {
+                yield return new WaitForSeconds(6f);
+                asyncOperation.allowSceneActivation = true;
+            }
+            yield return null;
+        }
+
     }
 }
