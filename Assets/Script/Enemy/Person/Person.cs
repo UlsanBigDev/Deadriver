@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Person : AbstractEnemy
 {
@@ -9,7 +9,7 @@ public class Person : AbstractEnemy
     Animator anim;
     public float speed;
     private Rigidbody rigid;
-    public Image Blood;
+
 
     private void Awake()
     {
@@ -38,8 +38,5 @@ public class Person : AbstractEnemy
         gameObject.SetActive(false);
     }
 
-    public void PersonBlood()
-    {
-        Blood.gameObject.SetActive(true);
-    }
+    
 }
