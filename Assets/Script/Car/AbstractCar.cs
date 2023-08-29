@@ -152,6 +152,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
             informaitionPanel.gameObject.SetActive(false);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.result);
+            DriveSceneSoundManager.driveBgmSoundEnabled = false;
             //carDamageText.text = "차량 손상도 : " + Car.carHp;
             //crimeText.text = "총 사고 이력 : " + total + "번";
             //alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
