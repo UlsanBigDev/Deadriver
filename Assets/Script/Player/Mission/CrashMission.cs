@@ -35,7 +35,7 @@ public class CrashMission : AbstractMission, CrashListener
         if (!isSuccess) return;
         if (!CheckType(enemy)) return;
         if (--count <= 0) isSuccess = false;
-        Debug.Log("Crash Mission : " + enemy);
+        /*Debug.Log("Crash Mission : " + enemy);*/
     }
 
     private bool CheckType(Enemy enemy)
