@@ -13,7 +13,6 @@ public class DriveSceneSoundManager : MonoBehaviour
     public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, result, end};
     int sfxCursor;
     public static bool driveSoundEnabled = true;
-    private bool isSoundLoop = false;
     void Start()
     {
         bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;
@@ -71,24 +70,22 @@ public class DriveSceneSoundManager : MonoBehaviour
         if (driveSoundEnabled == false)
         {
             Debug.Log("사운드종료");
-            DestroySounds();
+            DisableSounds();
         }
     }
-    public void DestroySounds()
+    public void DisableSounds()
     {
-        switch (Player.GetPlayer().drunkLevel)
-        {
-            case DrunkLevel.GREEN:
-                Destroy(bgmPlayerGreen); break;
-            case DrunkLevel.YELLOW:
-                Destroy(bgmPlayerYellow); break;
-            case DrunkLevel.ORANGE:
-                Destroy(bgmPlayerOrange); break;
-            case DrunkLevel.RED:
-                Destroy(bgmPlayerRed); break;
-        }
         SfxPlay(Sfx.result);
-        Destroy(sfxPlayer[sfxCursor]);
+        bgmPlayerGreen.Stop();
+        bgmPlayerYellow.Stop();
+        bgmPlayerOrange.Stop();
+        bgmPlayerRed.Stop();
+
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.Stop();
+        }
+        driveSoundEnabled = true;
     }
     public void SetBgmVolume(float bgmVolume)
     {
