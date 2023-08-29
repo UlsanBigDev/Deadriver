@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
-
 
 public class Person : AbstractEnemy
 {
@@ -9,7 +9,7 @@ public class Person : AbstractEnemy
     Animator anim;
     public float speed;
     private Rigidbody rigid;
-
+    public GameObject Blood;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        anim.SetBool("Hit", true);
+        anim.SetBool("Hit", true);;
     }
     
     public void PersonFade()
@@ -38,5 +38,9 @@ public class Person : AbstractEnemy
         gameObject.SetActive(false);
     }
 
-    
+    public void ShowPersonBlood()
+    {
+        Debug.Log("피 보임");
+        Blood.gameObject.SetActive(true);
+    }
 }
