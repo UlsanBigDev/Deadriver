@@ -17933,6 +17933,7 @@ GameObject:
   - component: {fileID: 6284565999777204515}
   - component: {fileID: 4445335095343902686}
   - component: {fileID: 6600317253289284353}
+  - component: {fileID: 6600317253289284355}
   - component: {fileID: 6600317253289284354}
   m_Layer: 0
   m_Name: PersonBlood
@@ -18157,9 +18158,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 2240736616400893041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e716e64ead8a64944888576c7e9dd166, type: 3}
+  m_Script: {fileID: 11500000, guid: 655e6277b2036974ca1048c0c65c0156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 0}
-  speed: 0
-  Blood: {fileID: 2240736616400893041}
+  PersonBloodPanel: {fileID: 0}
+--- !u!95 &6600317253289284355
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240736616400893041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22371b7375bf77b4891336067ba1432b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
