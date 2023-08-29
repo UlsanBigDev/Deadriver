@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 87041843044877086, guid: 10132a02ee2b5b749a757c45ad19074d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 87041843044877086, guid: 10132a02ee2b5b749a757c45ad19074d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10698,9 +10698,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8343b0315d2698c459ce1e864d52af2e, type: 3}
   - {fileID: 8300000, guid: 8343b0315d2698c459ce1e864d52af2e, type: 3}
   - {fileID: 8300000, guid: ffbf805d6d9e8624aa002cb3e3da4255, type: 3}
-  - {fileID: 8300000, guid: 844b83f3e2b85d14eb293b204542e76d, type: 3}
   - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
-  - {fileID: 8300000, guid: ad98a2e50e70d1d4cbb59f0ea41363f4, type: 3}
+  - {fileID: 8300000, guid: 717fd71bde5b16a41909af9663783a7e, type: 3}
+  - {fileID: 8300000, guid: 378efb8d4f1769c4e90453ec20ac19dd, type: 3}
 --- !u!1 &1508402818
 GameObject:
   m_ObjectHideFlags: 0
@@ -15511,7 +15511,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3093707400183702736, guid: 9888df7158d990346ab0fd678f434418, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3093707400183702736, guid: 9888df7158d990346ab0fd678f434418, type: 3}
       propertyPath: m_LocalPosition.x
