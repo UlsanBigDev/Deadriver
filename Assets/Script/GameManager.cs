@@ -167,8 +167,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("성공한 미션 갯수 " + count);
         finishBoardAnimator.SetBool("Result", true);
         Debug.Log("결과창 출력!");
-        DriveSceneSoundManager.driveSoundEnabled = false;
-        Debug.Log("driveSoundEnabled = false in GameManager");
         if (finishBoardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Result") && finishBoardAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime == 1f)
         {
             Debug.Log("애니메이션 끝");

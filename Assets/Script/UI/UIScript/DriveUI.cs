@@ -7,6 +7,7 @@ public class DriveUI : MonoBehaviour
 {
     public void ChangeLoading()
     {
+        DriveSceneSoundManager.driveSfxSoundEnabled = false;
         Time.timeScale = 1;
         LoadingManager.sceneName = "StartScene";
         SceneManager.LoadScene("LoadingScene");
