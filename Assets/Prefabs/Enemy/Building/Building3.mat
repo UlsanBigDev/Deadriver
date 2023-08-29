@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Building2
+  m_Name: Building3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 77a02c8c75691084785cc79524d06da2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26b0b9f1aba6bb44f91d5dc98c50ff4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -44,11 +44,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a0348aab6a4b79a4e92dd58dd6f47679, type: 3}
+        m_Texture: {fileID: 2800000, guid: 98bcdea42e7638443a6637863397e18d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b6b30923940619242ac7c6f9b4b428b6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 37483b3f0fd857b4380fe126345d61ca, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -56,16 +56,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 77a02c8c75691084785cc79524d06da2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26b0b9f1aba6bb44f91d5dc98c50ff4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BumpScale: 0
+    - _BumpScale: 0.2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0.254
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
