@@ -9,6 +9,7 @@ public interface MissionCompleteListener
 
 public interface Mission
 {
+    public static int selectMissionIndex { set; get; }
     public bool isSuccess { set; get; }
     public string title { get; set; }
     public List<MissionCompleteListener> listeners { get; set; }
