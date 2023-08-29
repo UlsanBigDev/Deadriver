@@ -4,6 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
+  m_Scenes: []
+  m_configObjects: {}
+=======
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Mission/Mission.unity
@@ -30,3 +34,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Drive/Drive.unity
     guid: 29dbb3bbdb8102a43973bc5adea6465b
   m_configObjects: {}
+>>>>>>> ce4089b54ea97abc4eab5862b1579ab2e41d95ee
