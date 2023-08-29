@@ -10,7 +10,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     public AudioSource bgmPlayerRed;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, clicker };
+    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel};
     int sfxCursor;
     public static bool driveSoundEnabled = true;
     void Start()
