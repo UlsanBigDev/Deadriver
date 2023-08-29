@@ -7,7 +7,7 @@ public class StoryLineSoundManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click };
+    public enum Sfx { click, messeage };
     int sfxCursor;
     void Start()
     {
@@ -26,6 +26,9 @@ public class StoryLineSoundManager : MonoBehaviour
             {
                 case Sfx.click:
                     sfxPlayer[sfxCursor].clip = sfxClip[0];
+                    break;
+                case Sfx.messeage:
+                    sfxPlayer[sfxCursor].clip = sfxClip[1];
                     break;
             }
             sfxPlayer[sfxCursor].Play();

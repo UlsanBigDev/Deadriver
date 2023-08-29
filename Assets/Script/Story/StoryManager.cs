@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.UIElements.ToolbarMenu;
 
 public class StoryManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class StoryManager : MonoBehaviour
         SceneManager.LoadScene("Story" + id);
 
     }
+    public StoryLineSoundManager storyLineSoundManager;
     public static StoryManager instance;
     public Dictionary<int, Story> storyMap = new Dictionary<int, Story>();
     [SerializeField]
@@ -27,7 +29,13 @@ public class StoryManager : MonoBehaviour
         instance = this;
         isChatting = true;
         InitializeStoryData();
+        InitializeVariable();
         imageGroup = GameObject.Find("ImageGroup");
+    }
+
+    private void InitializeVariable()
+    {
+        storyLineSoundManager = FindObjectOfType<StoryLineSoundManager>();
     }
 
     private void Start()
@@ -120,6 +128,8 @@ public class StoryManager : MonoBehaviour
                 {
                     new StoryScript("오늘도 열심히 하자!"),
                     new StoryScript("(대충 전화 울리는 소리)", ()=>{
+                        // 민욱 여기에 휴대폰 알람소리
+                        storyLineSoundManager.SfxPlay(StoryLineSoundManager.Sfx.messeage);
                         Debug.Log("대충 문자 알람 소리");
                     }),
                     new StoryScript("", ()=>{
