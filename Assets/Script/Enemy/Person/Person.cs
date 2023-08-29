@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
+using UnityEngine.UI;
 
+[System.Serializable]
 public class Person : AbstractEnemy
 {
+
     public GameObject person;
     Animator anim;
     public float speed;
     private Rigidbody rigid;
-    public GameObject Blood;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class Person : AbstractEnemy
         transform.position += transform.forward * Time.deltaTime * speed;
         
     }
+
     private void OnEnable()
     {
         rigid.velocity = new Vector3(0, 0);
@@ -30,17 +33,7 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        anim.SetBool("Hit", true);;
-    }
-    
-    public void PersonFade()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void ShowPersonBlood()
-    {
-        Debug.Log("피 보임");
-        Blood.gameObject.SetActive(true);
+        PersonBlood.ShowBlood();
+        anim.SetBool("Hit", true);;  
     }
 }

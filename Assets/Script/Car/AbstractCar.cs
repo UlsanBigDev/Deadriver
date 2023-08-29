@@ -90,18 +90,9 @@ public abstract class AbstractCar : MonoBehaviour, Car
             driveSceneSoundManager.bgmPlayerYellow.Stop();
             driveSceneSoundManager.bgmPlayerOrange.Stop();
             driveSceneSoundManager.bgmPlayerRed.Stop();
-            /* 여기 밑에 차터지고 엔딩처리하고 버튼 누르기 전까지 반복되게 루프 넣어줄거임 버튼이 눌리면 DestoryCar() 호출
-             * 
-             * onClick 실행할때 -> DestoryCar() 이거 추가
-             * */
             driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.end);
-            DestroyCar();
+            GameManager.GameEnd();
         }
-    }
-
-    private void DestroyCar()
-    {
-        Destroy(this);
     }
 
     /// <summary>
@@ -152,6 +143,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
             informaitionPanel.gameObject.SetActive(false);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.result);
+            DriveSceneSoundManager.driveBgmSoundEnabled = false;
             //carDamageText.text = "차량 손상도 : " + Car.carHp;
             //crimeText.text = "총 사고 이력 : " + total + "번";
             //alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";
