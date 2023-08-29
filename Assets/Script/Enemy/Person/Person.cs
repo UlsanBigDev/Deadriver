@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Person : AbstractEnemy
 {
+    PersonBlood personBlood;
 
     public GameObject person;
     Animator anim;
@@ -15,6 +16,7 @@ public class Person : AbstractEnemy
 
     private void Awake()
     {
+        personBlood = new PersonBlood();
         anim = person.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
     }
@@ -33,7 +35,7 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        PersonBlood.ShowBlood();
+        personBlood.ShowBlood();
         anim.SetBool("Hit", true);;  
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class PersonBlood : MonoBehaviour
 {
-    public static Image PersonBloodPanel;
+    public Image PersonBloodPanel;
 
-    public static void ShowBlood()
+    public void ShowBlood()
     {
         Debug.Log(PersonBloodPanel);
         PersonBloodPanel.gameObject.SetActive(true);
