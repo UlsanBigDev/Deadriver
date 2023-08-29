@@ -19,7 +19,7 @@ public class LoadingManager : MonoBehaviour
         {
             if (asyncOperation.progress >= 0.9f)
             {
-                yield return new WaitForSeconds(6f);
+                /*yield return new WaitForSeconds(6f);*/
                 asyncOperation.allowSceneActivation = true;
             }
             yield return null;

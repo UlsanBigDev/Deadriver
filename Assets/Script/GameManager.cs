@@ -58,18 +58,6 @@ public class GameManager : MonoBehaviour
     {
         _finishBoard = finishBoard;
         finishBoardAnimator = finishBoard.GetComponent<Animator>();
-        /// 디버프 테스트 코드
-        Car.AddDrunkEvent(new ManyEnemy());
-        Car.AddDrunkEvent(new SightEvent(sightPanel));
-        /// 
-        /// 기타 상황 맞게 초기화 하는 구간
-        if (Car.isSight)
-        {
-            sightPanel.gameObject.SetActive(true);
-        }
-        ///
-
-
         // PTK Missiion 기능 테스트 코드
         // startListeners = new List<StartListener>();
         // updateListeners = new List<UpdateListener>();
@@ -181,6 +169,25 @@ public class GameManager : MonoBehaviour
     public static void GameResume()
     {
         Time.timeScale = 1;
+    }
+
+    private void OnEnable()
+    {
+        /// 디버프 테스트 코드
+        Car.AddDrunkEvent(new ManyEnemy());
+        Car.AddDrunkEvent(new SightEvent(sightPanel));
+        /// 
+        /// 기타 상황 맞게 초기화 하는 구간
+        if (Car.isSight)
+        {
+            sightPanel.gameObject.SetActive(true);
+        }
+        ///
+    }
+
+    private void OnDisable()
+    {
+        Car.isSight = false;
     }
 
 }
