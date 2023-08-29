@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Person : AbstractEnemy
 {
+    public GameObject person;
+    Animator anim;
     public float speed;
     private Rigidbody rigid;
+    public Image Blood;
+
     private void Awake()
     {
+        anim = person.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
     }
     private void Update()
@@ -24,8 +30,16 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        Debug.Log("안소영 위치");
+        anim.SetBool("Hit", true);
     }
     
+    public void PersonFade()
+    {
+        gameObject.SetActive(false);
+    }
 
+    public void PersonBlood()
+    {
+        Blood.gameObject.SetActive(true);
+    }
 }
