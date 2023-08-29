@@ -9,5 +9,6 @@ public class ConfigManager : MonoBehaviour
         int width = 1920;
         int height = 1080;
         Screen.SetResolution(width, height, true);
+        DontDestroyOnLoad(this);
     }
 }
