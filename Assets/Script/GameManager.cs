@@ -53,9 +53,12 @@ public class GameManager : MonoBehaviour
     public Text missionText, timeText, crashText;
     public List<Mission> missions = Player.missionList;
     int i;
+    Person person;
+    
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
+        person = new Person();
         _finishBoard = finishBoard;
         finishBoardAnimator = finishBoard.GetComponent<Animator>();
         /// 디버프 테스트 코드
@@ -152,6 +155,7 @@ public class GameManager : MonoBehaviour
         {
             listener.OnUpdate();
         }
+            
     }
 
     public static void GameEnd()
