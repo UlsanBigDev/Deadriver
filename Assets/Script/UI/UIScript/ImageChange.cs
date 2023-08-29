@@ -58,7 +58,6 @@ public class ImageChange : MonoBehaviour
             crashScore = 5;
         }
 
-        Debug.Log("asdasd" + Car.carHp);
         if (Car.carHp > 90 && Car.carHp <= 100)
         {
             carScore = 25;
