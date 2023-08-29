@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class PersonBlood : MonoBehaviour
 {
-    public GameObject PersonBloodPanel;
+    public static Image PersonBloodPanel;
 
-    public void ShowBlood()
+    public static void ShowBlood()
     {
-        PersonBloodPanel.SetActive(true);
+        Debug.Log(PersonBloodPanel);
+        PersonBloodPanel.gameObject.SetActive(true);
     }
 }

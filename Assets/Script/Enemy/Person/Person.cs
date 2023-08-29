@@ -7,8 +7,6 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Person : AbstractEnemy
 {
-    [SerializeField]
-    Image PersonBloodPanel;
 
     public GameObject person;
     Animator anim;
@@ -35,11 +33,7 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        anim.SetBool("Hit", true);;
-    }
-    
-    public void PersonFade()
-    {
-        gameObject.SetActive(false);
+        PersonBlood.ShowBlood();
+        anim.SetBool("Hit", true);;  
     }
 }
