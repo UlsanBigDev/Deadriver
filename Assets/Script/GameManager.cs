@@ -111,7 +111,11 @@ public class GameManager : MonoBehaviour
             }
         }*/
 
-        Mission selectMission = Player.missionList[0];
+        Mission selectMission;
+        if (Player.missionList[0] == null)
+            selectMission = new GroupMission(new List<Mission>() { new TimeMission(120f), new CrashMission(3) }, "어머니 급 가정방문");
+        else
+            selectMission = Player.missionList[0];
         missionText.text = selectMission.title;
         if (selectMission is GroupMission)
         {
