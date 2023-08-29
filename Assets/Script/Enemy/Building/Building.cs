@@ -13,6 +13,6 @@ public class Building : AbstractEnemy
     }
     protected override void OnCrash()
     {
-        Debug.Log("빌딩은 안사라짐");
+        /*Debug.Log("빌딩은 안사라짐");*/
     }
 }
