@@ -187,6 +187,7 @@ public class StoryManager : MonoBehaviour
                     new StoryScript("나 : 안 마실 이유가 없지 함 줘봐라"),
                     new StoryScript("안지욱 : 역시 소광이 아주 상남자여", ()=>{
                         if (imageGroup != null) imageGroup.transform.Find("alchorEventHand").gameObject.SetActive(true);
+                        Player.GetPlayer().SetDrunkGauge(Player.GetPlayer().drunkGauge + 40);
                     } ),
                 }, () => {
                     SetCurrentStory(storyMap[111]);
@@ -231,6 +232,7 @@ public class StoryManager : MonoBehaviour
                 },
                 () =>
                 {
+                    Player.GetPlayer().SetDrunkGauge(Player.GetPlayer().drunkGauge + 40);
                     SetCurrentStory(storyMap[1111]);
                 }
             )
@@ -282,6 +284,7 @@ public class StoryManager : MonoBehaviour
                 },
                 () =>
                 {
+                    Player.GetPlayer().SetDrunkGauge(Player.GetPlayer().drunkGauge + 40);
                     ChangeStoryById(3);
                 }
             )
