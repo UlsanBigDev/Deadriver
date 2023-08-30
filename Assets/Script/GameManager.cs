@@ -134,21 +134,31 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        /// 디버프 테스트 코드
-        Car.AddDrunkEvent(new ManyEnemy());
-        Car.AddDrunkEvent(new SightEvent(sightPanel));
-        /// 
-        /// 기타 상황 맞게 초기화 하는 구간
-        if (Car.isSight)
+        InitCarDeBuff();        
+        if (Car.isSight) sightPanel.gameObject.SetActive(true);
+    }
+
+    private void InitCarDeBuff()
+    {
+        DrunkLevel level = Player.GetPlayer().drunkLevel;
+        switch (level)
         {
-            sightPanel.gameObject.SetActive(true);
+            case DrunkLevel.YELLOW:
+            case DrunkLevel.ORANGE:
+            case DrunkLevel.RED:
+                Car.AddDrunkEvent(new ManyEnemy());
+                Car.AddDrunkEvent(new RashEvent());
+                Car.AddDrunkEvent(new RotationEvent());
+                Car.AddDrunkEvent(new SightEvent(sightPanel));
+                break;            
         }
-        ///
+        if (level == DrunkLevel.RED) Car.AddDrunkEvent(new ControlEvent());
     }
 
     private void OnDisable()
     {
         Car.isSight = false;
+        Car.isDirectionDragEvent = false;
     }
 
 }
