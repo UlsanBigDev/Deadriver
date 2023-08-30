@@ -3227,9 +3227,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1252210149}
         m_TargetAssemblyTypeName: ConfigManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeSceneByTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10144,7 +10144,7 @@ RectTransform:
   - {fileID: 591614708}
   - {fileID: 2100486916}
   m_Father: {fileID: 1209429250}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10842,9 +10842,9 @@ RectTransform:
   - {fileID: 2133318594}
   - {fileID: 286871456}
   - {fileID: 1717425007}
+  - {fileID: 1120155527}
   - {fileID: 804892454}
   - {fileID: 5375228691908935147}
-  - {fileID: 1120155527}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

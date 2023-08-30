@@ -104,4 +104,9 @@ public class ConfigManager : MonoBehaviour
     {
         GlobalSoundManager.sfxVolume = value;
     }
+
+    public void ChangeSceneByTitle()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 }
