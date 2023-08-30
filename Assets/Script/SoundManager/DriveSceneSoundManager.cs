@@ -16,10 +16,7 @@ public class DriveSceneSoundManager : MonoBehaviour
     public static bool driveSfxSoundEnabled = true;
     void Start()
     {
-        bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;
-        bgmPlayerYellow.volume = GlobalSoundManager.bgmVolume;
-        bgmPlayerOrange.volume = GlobalSoundManager.bgmVolume;
-        bgmPlayerRed.volume = GlobalSoundManager.bgmVolume;
+        
         if (GlobalSoundManager.isBgmSound)
         {
             if (Player.GetPlayer().drunkLevel == DrunkLevel.GREEN)
@@ -68,6 +65,14 @@ public class DriveSceneSoundManager : MonoBehaviour
     }
     void Update()
     {
+        bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerYellow.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerOrange.volume = GlobalSoundManager.bgmVolume;
+        bgmPlayerRed.volume = GlobalSoundManager.bgmVolume;
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.volume = GlobalSoundManager.sfxVolume;
+        }
         if (driveSfxSoundEnabled == false)
         {
             Debug.Log("Sfx종료");
