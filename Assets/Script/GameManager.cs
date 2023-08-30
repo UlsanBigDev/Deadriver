@@ -54,14 +54,11 @@ public class GameManager : MonoBehaviour
     public List<Mission> missions = Player.missionList;
     int i;
 
-    public Image PersonBlood;
-    public Person person;
-
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
         _finishBoard = finishBoard;
         finishBoardAnimator = finishBoard.GetComponent<Animator>();
-        person = new Person(PersonBlood);    
+         
         /// 디버프 테스트 코드
         Car.AddDrunkEvent(new ManyEnemy());
         Car.AddDrunkEvent(new SightEvent(sightPanel));

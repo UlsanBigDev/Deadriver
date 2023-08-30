@@ -1,23 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
 public class Person : AbstractEnemy
 {
-    public Image PersonBloodPanel;
-
+    public GameObject PersonBloodPanel;
     public GameObject person;
     Animator anim;
     public float speed;
     private Rigidbody rigid;
 
-    public Person(Image PersonBlood)
-    {
-        this.PersonBloodPanel = PersonBlood;
-    }
+    //public Person(GameObject PersonBlood)
+    //{
+    //    this.PersonBloodPanel = PersonBlood;
+    //}
 
     void Awake()
     {
@@ -38,13 +37,18 @@ public class Person : AbstractEnemy
     //사람이랑 충돌되면 이 스크립트가 실행
     protected override void OnPlayerCrash(Player player)
     {
-        Debug.Log("사람 충돌");
-        anim.SetBool("Hit", true);;  
+        Debug.Log("사람 충돌");   
+        anim.SetBool("Hit", true);
+    }
+
+    public void PersonFade()
+    {
+        gameObject.SetActive(false);
     }
 
     public void ShowBlood()
     {
         Debug.Log(PersonBloodPanel);
-        PersonBloodPanel.gameObject.SetActive(true);
+        Instantiate(PersonBloodPanel);
     }
 }

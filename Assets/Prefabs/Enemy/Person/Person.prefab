@@ -533,9 +533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e716e64ead8a64944888576c7e9dd166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PersonBloodPanel: {fileID: 1128605538448601853, guid: 280bb86ea3113da42a2fb9c91ec9c1d9, type: 3}
+  blood: {x: 0, y: 0, z: 0}
   person: {fileID: 5320845127922128385}
   speed: 1
-  Blood: {fileID: 0}
 --- !u!65 &7247470630126349701
 BoxCollider:
   m_ObjectHideFlags: 0
