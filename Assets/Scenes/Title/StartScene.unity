@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemPanel: {fileID: 1860123864}
-  soundSettingPanel: {fileID: 0}
+  soundSettingPanel: {fileID: 909314634}
 --- !u!4 &12886404
 Transform:
   m_ObjectHideFlags: 0
@@ -1825,7 +1825,6 @@ GameObject:
   - component: {fileID: 578415793}
   - component: {fileID: 578415792}
   - component: {fileID: 578415791}
-  - component: {fileID: 578415790}
   m_Layer: 5
   m_Name: X
   m_TagString: Untagged
@@ -1854,23 +1853,6 @@ RectTransform:
   m_AnchoredPosition: {x: 854, y: 689}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &578415790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578415788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 967873470f3bf8c419817f90fd60562e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  uISoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!114 &578415791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,9 +1897,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 578415790}
-        m_TargetAssemblyTypeName: StartUI, Assembly-CSharp
-        m_MethodName: ClickClose
+      - m_Target: {fileID: 12886403}
+        m_TargetAssemblyTypeName: ConfigManager, Assembly-CSharp
+        m_MethodName: CloseSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3172,7 +3154,6 @@ GameObject:
   - component: {fileID: 1000060706}
   - component: {fileID: 1000060705}
   - component: {fileID: 1000060704}
-  - component: {fileID: 1000060707}
   m_Layer: 5
   m_Name: Configuration
   m_TagString: Untagged
@@ -3245,9 +3226,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1000060707}
-        m_TargetAssemblyTypeName: StartUI, Assembly-CSharp
-        m_MethodName: Clickconfiguration
+      - m_Target: {fileID: 12886403}
+        m_TargetAssemblyTypeName: ConfigManager, Assembly-CSharp
+        m_MethodName: OpenSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3295,23 +3276,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000060702}
   m_CullTransparentMesh: 1
---- !u!114 &1000060707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000060702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 967873470f3bf8c419817f90fd60562e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  configuration: {fileID: 0}
-  BGM: {fileID: 0}
-  uISoundManager: {fileID: 0}
-  bgmPlayer: {fileID: 0}
 --- !u!1 &1019097358
 GameObject:
   m_ObjectHideFlags: 0

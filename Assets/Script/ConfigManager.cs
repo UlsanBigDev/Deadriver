@@ -13,7 +13,8 @@ public class ConfigManager : MonoBehaviour
     [SerializeField]
     private GameObject soundSettingPanel;
     public static bool isSystemPanel;
-    
+    public static bool isSoundPanel;
+
     private void Awake()
     {
         InitScreen();
@@ -62,5 +63,50 @@ public class ConfigManager : MonoBehaviour
     public void GameEnd()
     {
         Application.Quit();
+    }
+
+    public void OpenSoundPanel()
+    {
+        soundSettingPanel.SetActive(true);
+    }
+
+    public void CloseSoundPanel()
+    {
+        soundSettingPanel.SetActive(false);
+    }
+
+    public void ONBGM()
+    {
+        GlobalSoundManager.isBgmSound = true;
+    }
+
+    public void OFFBGM()
+    {
+        GlobalSoundManager.isBgmSound = false;
+    }
+
+    public void ONSFX()
+    {
+        GlobalSoundManager.isSfxSound = true;
+    }
+
+    public void OFFSFX()
+    {
+        GlobalSoundManager.isSfxSound = false;
+    }
+
+    public void SetBGMVolume(float value)
+    {
+        GlobalSoundManager.bgmVolume = value;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        GlobalSoundManager.sfxVolume = value;
+    }
+
+    public void ChangeSceneByTitle()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

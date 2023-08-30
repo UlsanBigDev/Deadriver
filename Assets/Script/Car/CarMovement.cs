@@ -36,13 +36,17 @@ public class CarMovement
         /*rb.AddForce(currentTransform.forward, ForceMode.Force);*/
         if (Input.GetKey(KeyCode.W)) //W키를 눌러서 앞으로 이동
         {
-            rb.AddForce(currentTransform.forward * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange );
+            Vector3 vec = currentTransform.forward * Car.playerAccelSpeed * Time.deltaTime;
+            if (Car.isDirectionDragEvent) vec *= -1;
+            rb.AddForce(vec, ForceMode.VelocityChange);
         }
 
 
         if (Input.GetKey(KeyCode.S)) //S키를 눌러서 뒤로 이동
         {
-            rb.AddForce(currentTransform.forward * -1 * Car.playerAccelSpeed * Time.deltaTime, ForceMode.VelocityChange);
+            Vector3 vec = currentTransform.forward * -1 * Car.playerAccelSpeed * Time.deltaTime;
+            if (Car.isDirectionDragEvent) vec *= -1;
+            rb.AddForce(vec, ForceMode.VelocityChange);
         }
 
 
@@ -101,6 +105,7 @@ public class CarMovement
         // 자동차 회전
         // 쿼터니언, 오일러각
         float rotation = h * Car.rotationSpeed * Time.deltaTime;
+        if (Car.isDirectionDragEvent) rotation *= -1;
         Quaternion deltaRotation = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * deltaRotation);
     }
