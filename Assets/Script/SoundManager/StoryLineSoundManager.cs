@@ -18,6 +18,14 @@ public class StoryLineSoundManager : MonoBehaviour
             Debug.Log("BGM-Deadriver-ON");
         }
     }
+    private void Update()
+    {   
+        bgmPlayer.volume = GlobalSoundManager.bgmVolume;
+        foreach (var sfx in sfxPlayer)
+        {
+            sfx.volume = GlobalSoundManager.sfxVolume;
+        }
+    }
     public void SfxPlay(Sfx type)
     {
         if (GlobalSoundManager.isSfxSound)
@@ -38,14 +46,9 @@ public class StoryLineSoundManager : MonoBehaviour
     public void SetBgmVolume(float bgmVolume)
     {
         GlobalSoundManager.bgmVolume = bgmVolume;
-        bgmPlayer.volume = bgmVolume;
     }
     public void SetSfxVolume(float sfxVolume)
     {
         GlobalSoundManager.sfxVolume = sfxVolume;
-        foreach (var sfx in sfxPlayer)
-        {
-            sfx.volume = sfxVolume;
-        }
     }
 }

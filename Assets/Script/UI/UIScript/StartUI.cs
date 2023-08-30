@@ -71,4 +71,6 @@ public class StartUI : MonoBehaviour
         GlobalSoundManager.isSfxSound = false;
         uISoundManager.SfxPlay(UISoundManager.Sfx.click);
     }
+
+    
 }

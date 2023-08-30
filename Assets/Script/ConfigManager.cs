@@ -74,4 +74,34 @@ public class ConfigManager : MonoBehaviour
     {
         soundSettingPanel.SetActive(false);
     }
+
+    public void ONBGM()
+    {
+        GlobalSoundManager.isBgmSound = true;
+    }
+
+    public void OFFBGM()
+    {
+        GlobalSoundManager.isBgmSound = false;
+    }
+
+    public void ONSFX()
+    {
+        GlobalSoundManager.isSfxSound = true;
+    }
+
+    public void OFFSFX()
+    {
+        GlobalSoundManager.isSfxSound = false;
+    }
+
+    public void SetBGMVolume(float value)
+    {
+        GlobalSoundManager.bgmVolume = value;
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        GlobalSoundManager.sfxVolume = value;
+    }
 }
