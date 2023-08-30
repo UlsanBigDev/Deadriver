@@ -49,6 +49,7 @@ public class StoryManager : MonoBehaviour
 
     private void Reading()
     {
+        if (ConfigManager.isSystemPanel) return;
         if (!Input.GetKeyDown(KeyCode.Space)) return;
         
         if (!current.isLast) {
