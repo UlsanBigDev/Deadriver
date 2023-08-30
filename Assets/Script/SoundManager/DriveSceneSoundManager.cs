@@ -10,9 +10,10 @@ public class DriveSceneSoundManager : MonoBehaviour
     public AudioSource bgmPlayerRed;
     public AudioSource[] sfxPlayer;
     public AudioClip[] sfxClip;
-    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, over, pressAccel, clicker };
+    public enum Sfx { click, crashBuiling, crashPersonWomen, crashCar, result, end};
     int sfxCursor;
-    public static bool driveSoundEnabled = true;
+    public static bool driveBgmSoundEnabled = true;
+    public static bool driveSfxSoundEnabled = true;
     void Start()
     {
         bgmPlayerGreen.volume = GlobalSoundManager.bgmVolume;
@@ -52,13 +53,13 @@ public class DriveSceneSoundManager : MonoBehaviour
             case Sfx.crashPersonWomen:
                 sfxPlayer[sfxCursor].clip = sfxClip[2];
                 break;
-            case Sfx.pressAccel:
+            case Sfx.click:
                 sfxPlayer[sfxCursor].clip = sfxClip[3];
                 break;
-            case Sfx.click:
+            case Sfx.end:
                 sfxPlayer[sfxCursor].clip = sfxClip[4];
                 break;
-            case Sfx.over:
+            case Sfx.result:
                 sfxPlayer[sfxCursor].clip = sfxClip[5];
                 break;
         }
@@ -67,26 +68,32 @@ public class DriveSceneSoundManager : MonoBehaviour
     }
     void Update()
     {
-        if (driveSoundEnabled == false)
+        if (driveSfxSoundEnabled == false)
         {
-            Debug.Log("사운드종료");
-            DestroySounds();
+            Debug.Log("Sfx종료");
+            DisableSfxPlayer();
+        }
+        if (driveBgmSoundEnabled == false)
+        {
+            Debug.Log("Bgm종료");
+            DisableBgmPlayer();
         }
     }
-    public void DestroySounds()
+    public void DisableBgmPlayer()
     {
-        switch (Player.GetPlayer().drunkLevel)
+        bgmPlayerGreen.Stop();
+        bgmPlayerYellow.Stop();
+        bgmPlayerOrange.Stop();
+        bgmPlayerRed.Stop();
+        driveBgmSoundEnabled = true;
+    }
+    public void DisableSfxPlayer()
+    {
+        foreach (var sfx in sfxPlayer)
         {
-            case DrunkLevel.GREEN:
-                Destroy(bgmPlayerGreen); break;
-            case DrunkLevel.YELLOW:
-                Destroy(bgmPlayerYellow); break;
-            case DrunkLevel.ORANGE:
-                Destroy(bgmPlayerOrange); break;
-            case DrunkLevel.RED:
-                Destroy(bgmPlayerRed); break;
+            sfx.Stop();
         }
-        Destroy(sfxPlayer[sfxCursor]);
+        driveSfxSoundEnabled = true;
     }
     public void SetBgmVolume(float bgmVolume)
     {

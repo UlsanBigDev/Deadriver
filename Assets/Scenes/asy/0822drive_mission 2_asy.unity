@@ -729,8 +729,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBE4C\uB529\uCDA9\uB3CC        1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1915,8 +1915,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uBCF4\uD589\uC790 \uCDA9\uB3CC   1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2687,8 +2687,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC0AC\uACE0 \uC774\uB825"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3652,9 +3652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a3b73d7db5cbc43aa92b734941e27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionText: {fileID: 258553085}
-  timeText: {fileID: 918030017}
-  crashText: {fileID: 2093746343}
+  carDamageText: {fileID: 0}
+  alcoholText: {fileID: 0}
+  crimeText: {fileID: 0}
+  resultMissionText: {fileID: 0}
+  total: 0
 --- !u!1 &1506563901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,7 +3705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab35039525746e44b38dc76b4c27356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmPlayer: {fileID: 647497781}
+  bgmPlayerGreen: {fileID: 0}
+  bgmPlayerYellow: {fileID: 0}
+  bgmPlayerOrange: {fileID: 0}
+  bgmPlayerRed: {fileID: 0}
   sfxPlayer:
   - {fileID: 492224797}
   - {fileID: 1025839448}
@@ -3840,17 +3845,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6f704a62f7fb2488c411c5cecd223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GreenArray:
-  - {fileID: 2114745447}
-  YELLOWArray: []
-  ORANGEArray: []
-  REDArray: []
   panel: {fileID: 0}
   drag: {fileID: 439334566514975779, guid: 09ede8fc53afc0040ae66f35c8103a07, type: 3}
   bgmPlayer: {fileID: 0}
   soundManager: {fileID: 0}
   finishBoard: {fileID: 286871455}
-  resultMission: {fileID: 301560920}
+  sightPanel: {fileID: 0}
+  missionText: {fileID: 0}
+  timeText: {fileID: 0}
+  crashText: {fileID: 0}
 --- !u!4 &1679047598
 Transform:
   m_ObjectHideFlags: 0
@@ -3926,8 +3929,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uCC28\uB7C9 \uCDA9\uB3CC       1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
-  m_sharedMaterial: {fileID: 1003725958112317829, guid: a31d83d7b6cae496e98d7f8cbf23a5ed, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

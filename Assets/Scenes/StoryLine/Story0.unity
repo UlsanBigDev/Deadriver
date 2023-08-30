@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d21c30b339384325bebc7f7845822c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storyLineSoundManager: {fileID: 0}
   storyChatUI:
     storyLineSoundManager: {fileID: 1595023115}
     storyChatText: {fileID: 1575752648}
@@ -225,6 +226,10 @@ MonoBehaviour:
     storyButtonText1: {fileID: 1380931076}
     storyButton2: {fileID: 2102656483}
     storyButtonText2: {fileID: 1169374879}
+    phoneBoard: {fileID: 0}
+    phoneBoardText: {fileID: 0}
+    alchorEventBottle: {fileID: 0}
+    alchorEventHand: {fileID: 0}
 --- !u!4 &568328005
 Transform:
   m_ObjectHideFlags: 0
@@ -1354,6 +1359,7 @@ MonoBehaviour:
   - {fileID: 1624620841}
   sfxClip:
   - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
+  - {fileID: 8300000, guid: 18743f9de7f0d4746aa3e797bc142738, type: 3}
 --- !u!4 &1595023116
 Transform:
   m_ObjectHideFlags: 0
@@ -1626,11 +1632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -2018,7 +2024,7 @@ GameObject:
   - component: {fileID: 2122530361}
   - component: {fileID: 2122530360}
   m_Layer: 0
-  m_Name: storyLine00
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2084,8 +2090,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122530359}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.019050598, y: 0.3023796, z: 0}
+  m_LocalScale: {x: 0.9576623, y: 1.024018, z: 0.899129}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public interface MissionCompleteListener
 {
     public void OnComplete();
@@ -9,6 +10,7 @@ public interface MissionCompleteListener
 
 public interface Mission
 {
+    public static int selectMissionIndex { set; get; }
     public bool isSuccess { set; get; }
     public string title { get; set; }
     public List<MissionCompleteListener> listeners { get; set; }

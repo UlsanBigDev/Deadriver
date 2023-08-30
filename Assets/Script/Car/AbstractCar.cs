@@ -82,22 +82,17 @@ public abstract class AbstractCar : MonoBehaviour, Car
     public void CarDamage(int carDamage) 
     {
         Car.carHp -= carDamage;
-        Debug.Log("현재 차량의 hp = " + Car.carHp);
+        /*Debug.Log("현재 차량의 hp = " + Car.carHp);*/
         if (Car.carHp <= 0)
         {
-            Debug.Log("님 차 터짐 ㅅㄱㅃ2");
+            /*Debug.Log("님 차 터짐 ㅅㄱㅃ2");*/
             driveSceneSoundManager.bgmPlayerGreen.Stop();
             driveSceneSoundManager.bgmPlayerYellow.Stop();
             driveSceneSoundManager.bgmPlayerOrange.Stop();
             driveSceneSoundManager.bgmPlayerRed.Stop();
-            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.over);
-            DestroyCar();
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.end);
+            GameManager.GameEnd();
         }
-    }
-
-    private void DestroyCar()
-    { 
-        Destroy(this);
     }
 
     /// <summary>
@@ -123,8 +118,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         else if (enemy is EnemyCar)
         {
             driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashCar);
-            Debug.Log("차의 HP가 -3 감소되었습니다.");
-            Debug.Log("현재 차량의 hp = " + Car.carHp);
+            /*Debug.Log("차의 HP가 -3 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);*/
             carDamage = 3;
             carint++;
             total++;
@@ -133,8 +128,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         else if (enemy is Person)
         {
             driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.crashPersonWomen);
-            Debug.Log("차의 HP가 -1 감소되었습니다.");
-            Debug.Log("현재 차량의 hp = " + Car.carHp);
+            /*Debug.Log("차의 HP가 -1 감소되었습니다.");
+            Debug.Log("현재 차량의 hp = " + Car.carHp);*/
             carDamage = 1;
             personint++;
             total++;
@@ -148,6 +143,8 @@ public abstract class AbstractCar : MonoBehaviour, Car
         if (other.gameObject.CompareTag("endPoint")) //OnEnemyCrash 함수로 부딪힌 객체가 어떤 객체인지 정보를 넘겨줌
         {
             informaitionPanel.gameObject.SetActive(false);
+            driveSceneSoundManager.SfxPlay(DriveSceneSoundManager.Sfx.result);
+            DriveSceneSoundManager.driveBgmSoundEnabled = false;
             //carDamageText.text = "차량 손상도 : " + Car.carHp;
             //crimeText.text = "총 사고 이력 : " + total + "번";
             //alcoholText.text = "혈중 알콜 농도 : " + (Player.GetPlayer().drunkGauge / 1000.0f).ToString("F3") + "%";

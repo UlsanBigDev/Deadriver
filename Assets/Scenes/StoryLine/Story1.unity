@@ -311,6 +311,8 @@ MonoBehaviour:
     storyButtonText2: {fileID: 1169374879}
     phoneBoard: {fileID: 1534371533}
     phoneBoardText: {fileID: 1883677905}
+    alchorEventBottle: {fileID: 0}
+    alchorEventHand: {fileID: 0}
 --- !u!4 &568328005
 Transform:
   m_ObjectHideFlags: 0
@@ -1601,6 +1603,7 @@ MonoBehaviour:
   - {fileID: 1624620841}
   sfxClip:
   - {fileID: 8300000, guid: 6c5e06d1d96ff264892587fa12d8dd98, type: 3}
+  - {fileID: 8300000, guid: 18743f9de7f0d4746aa3e797bc142738, type: 3}
 --- !u!4 &1595023116
 Transform:
   m_ObjectHideFlags: 0
