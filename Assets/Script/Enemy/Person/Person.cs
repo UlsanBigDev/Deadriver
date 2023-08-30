@@ -7,23 +7,27 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Person : AbstractEnemy
 {
-    PersonBlood personBlood;
+    public Image PersonBloodPanel;
 
     public GameObject person;
     Animator anim;
     public float speed;
     private Rigidbody rigid;
 
-    private void Awake()
+    public Person(Image PersonBlood)
     {
-        personBlood = new PersonBlood();
+        this.PersonBloodPanel = PersonBlood;
+    }
+
+    void Awake()
+    {
         anim = person.GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
     }
+
     private void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * speed;
-        
+        transform.position += transform.forward * Time.deltaTime * speed;        
     }
 
     private void OnEnable()
@@ -35,7 +39,12 @@ public class Person : AbstractEnemy
     protected override void OnPlayerCrash(Player player)
     {
         Debug.Log("사람 충돌");
-        personBlood.ShowBlood();
         anim.SetBool("Hit", true);;  
+    }
+
+    public void ShowBlood()
+    {
+        Debug.Log(PersonBloodPanel);
+        PersonBloodPanel.gameObject.SetActive(true);
     }
 }
