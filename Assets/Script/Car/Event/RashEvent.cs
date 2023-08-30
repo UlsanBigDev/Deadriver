@@ -15,12 +15,12 @@ public class RashEvent : DrunkEvent //가속도 디버프
         }
         else if (level == DrunkLevel.ORANGE)
         {
-            Car.playerAccelSpeed = 20f;
+            Car.playerAccelSpeed = 35f;
             Debug.Log("ORANGE 급발진");
         }
         else if (level == DrunkLevel.RED)
         {
-            Car.playerAccelSpeed = 25f;
+            Car.playerAccelSpeed = 60f;
             Debug.Log("RED 급발진");
         }
        

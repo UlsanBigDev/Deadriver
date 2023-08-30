@@ -26,7 +26,7 @@ public class ManyEnemy : DrunkEvent
         switch (level)
         {            
             case DrunkLevel.YELLOW:
-                GameManager.enemyCarSpawnCoolTime = 18f;
+                GameManager.enemyCarSpawnCoolTime = 20f;
                 break;
             case DrunkLevel.ORANGE:
                 GameManager.enemyCarSpawnCoolTime = 15f;
