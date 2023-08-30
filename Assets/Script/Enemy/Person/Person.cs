@@ -46,9 +46,9 @@ public class Person : AbstractEnemy
         gameObject.SetActive(false);
     }
 
-    public void ShowBlood()
-    {
-        Debug.Log(PersonBloodPanel);
-        Instantiate(PersonBloodPanel);
-    }
+    //public void ShowBlood()
+    //{
+    //    Debug.Log(PersonBloodPanel);
+    //    Instantiate(PersonBloodPanel);
+    //}
 }
