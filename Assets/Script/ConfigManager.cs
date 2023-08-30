@@ -58,4 +58,9 @@ public class ConfigManager : MonoBehaviour
         GameManager.GameResume();
         systemPanel.SetActive(false);
     }
+
+    public void GameEnd()
+    {
+        Application.Quit();
+    }
 }
