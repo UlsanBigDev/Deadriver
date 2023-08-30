@@ -13,7 +13,8 @@ public class ConfigManager : MonoBehaviour
     [SerializeField]
     private GameObject soundSettingPanel;
     public static bool isSystemPanel;
-    
+    public static bool isSoundPanel;
+
     private void Awake()
     {
         InitScreen();
@@ -62,5 +63,15 @@ public class ConfigManager : MonoBehaviour
     public void GameEnd()
     {
         Application.Quit();
+    }
+
+    public void OpenSoundPanel()
+    {
+        soundSettingPanel.SetActive(true);
+    }
+
+    public void CloseSoundPanel()
+    {
+        soundSettingPanel.SetActive(false);
     }
 }
