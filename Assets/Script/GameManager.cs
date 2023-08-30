@@ -53,7 +53,6 @@ public class GameManager : MonoBehaviour
     public Text missionText, timeText, crashText;
     public List<Mission> missions = Player.missionList;
     int i;
-    
 
     private void Awake() //디버프를 drunkEvents 리스트에 추가(Add)해줌
     {
