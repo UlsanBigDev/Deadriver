@@ -8,12 +8,7 @@ public class RashEvent : DrunkEvent //가속도 디버프
     
     public override void Run()
     {
-        if (level == DrunkLevel.GREEN)
-        {
-            Car.playerAccelSpeed = 10f;
-            Debug.Log("GREEN 급발진");
-        }
-        else if (level == DrunkLevel.YELLOW)
+        if (level == DrunkLevel.YELLOW)
         {
             Car.playerAccelSpeed = 15f;
             Debug.Log("YELLOW 급발진");

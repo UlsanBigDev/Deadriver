@@ -24,10 +24,7 @@ public class ManyEnemy : DrunkEvent
     private void SetEnemyCarCoolTime()
     {
         switch (level)
-        {
-            case DrunkLevel.GREEN:
-                GameManager.enemyCarSpawnCoolTime = 20f;
-                break;
+        {            
             case DrunkLevel.YELLOW:
                 GameManager.enemyCarSpawnCoolTime = 18f;
                 break;
@@ -43,10 +40,7 @@ public class ManyEnemy : DrunkEvent
     private void SetEnemyPersonCoolTime()
     {
         switch (level)
-        {
-            case DrunkLevel.GREEN:
-                GameManager.personSpawnCoolTime = 15f;
-                break;
+        {            
             case DrunkLevel.YELLOW:
                 GameManager.personSpawnCoolTime = 12f;
                 break;
