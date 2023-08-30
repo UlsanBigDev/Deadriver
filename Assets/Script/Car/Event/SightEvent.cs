@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class SightEvent : DrunkEvent //Panel의 투명도를 이용해서 시야 방해 디버프를 만듬
 {
+    private static Animator sAnim;
     public Image image;
     private DrunkLevel level;
     public Animator anim;
 
     public SightEvent(Image panel)
     {
+        
         this.image = panel;
-        anim = image.GetComponent<Animator>();
+        this.anim = image.GetComponent<Animator>();
+        if (sAnim == null) sAnim = this.anim;
     }
 
     public override void Run()
@@ -20,12 +23,9 @@ public class SightEvent : DrunkEvent //Panel의 투명도를 이용해서 시야
         /*Sight();*/
         level = Player.GetPlayer().drunkLevel;
         /*level = DrunkLevel.RED;*/
-        anim.SetInteger("sight", (int) level);
-    }
-
-    private void Sighting()
-    {
-
+        /*Debug.Log(anim);*/
+        sAnim.SetInteger("sight", (int) level);
+        
     }
 
     public void Sight()
