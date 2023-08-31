@@ -37,27 +37,8 @@ public class ImageChange : MonoBehaviour
     public void SetScore()
     {
         total = AbstractCar.buildingint + AbstractCar.personint + AbstractCar.carint;
-        if (total == 0)
-        {
-            crashScore = 25;
-        }
-        else if (total >= 1 && total <= 5)
-        {
-            crashScore = 20;
-        }
-        else if (total >= 6 && total <= 10)
-        {
-            crashScore = 15;
-        }
-        else if (total >= 11 && total <= 20)
-        {
-            crashScore = 10;
-        }
-        else if (total >= 21)
-        {
-            crashScore = 5;
-        }
-
+        // Debug.Log("Crash Score : " + (crashScore - (total / 5) * 5));
+        crashScore = 25 - (total / 5) * 5;
         if (Car.carHp > 90 && Car.carHp <= 100)
         {
             carScore = 25;
@@ -103,19 +84,22 @@ public class ImageChange : MonoBehaviour
         else
         {
             missionScore = 0;
-        } 
+        }
+        
+        // scoreTotal = (crashScore + carScore + drunkScore + missionScore) / 10;
+        scoreTotal = (crashScore + carScore + drunkScore + missionScore);
 
-        scoreTotal = (crashScore + carScore + drunkScore + missionScore) / 10;
+        // Debug.Log(scoreTotal);
 
-        if (scoreTotal >= 6 && scoreTotal < 8)
+        if (scoreTotal >= 60 && scoreTotal < 80)
         {
             AScore.sprite = BScore;
         }
-        else if (scoreTotal >= 4 && scoreTotal < 6)
+        else if (scoreTotal >= 40 && scoreTotal < 60)
         {
             AScore.sprite = CScore;
         }
-        else if (scoreTotal >= 2 && scoreTotal < 4)
+        else if (scoreTotal >= 20 && scoreTotal < 40)
         {
             AScore.sprite = DScore;
         }
