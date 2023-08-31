@@ -50,7 +50,8 @@ public class StoryManager : MonoBehaviour
     private void Reading()
     {
         if (ConfigManager.isSystemPanel) return;
-        if (!Input.GetMouseButtonDown(0)) return;
+        // if (!Input.GetMouseButtonDown(0)) return; // 마우스
+        if (!Input.GetKeyDown(KeyCode.Space)) return;
         
         if (!current.isLast) {
             storyChatUI.PrintStoryChatText(current.Now());
