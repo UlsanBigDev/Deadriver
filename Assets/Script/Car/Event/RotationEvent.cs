@@ -8,24 +8,19 @@ public class RotationEvent : DrunkEvent //회전속도 증가 디버프
 
     public override void Run()
     {
-        if (level == DrunkLevel.GREEN)
-        {
-            Car.playerAccelSpeed = 10f;
-            Debug.Log("GREEN 회전속력");
-        }
-        else if (level == DrunkLevel.YELLOW)
+        if (level == DrunkLevel.YELLOW)
         {
             Car.playerAccelSpeed = 15f;
             Debug.Log("YELLOW 회전속력");
         }
         else if (level == DrunkLevel.ORANGE)
         {
-            Car.playerAccelSpeed = 20f;
+            Car.playerAccelSpeed = 35f;
             Debug.Log("ORANGE 회전속력");
         }
         else if (level == DrunkLevel.RED)
         {
-            Car.playerAccelSpeed = 25f;
+            Car.playerAccelSpeed = 50f;
             Debug.Log("RED 회전속력");
         }
     }
