@@ -37,8 +37,9 @@ public class Person : AbstractEnemy
     //사람이랑 충돌되면 이 스크립트가 실행
     protected override void OnPlayerCrash(Player player)
     {
-        Debug.Log("사람 충돌");   
-        anim.SetBool("Hit", true);
+        Debug.Log("사람 충돌");
+        gameObject.SetActive(false);
+        // anim.SetBool("Hit", true);
     }
 
     public void PersonFade()
